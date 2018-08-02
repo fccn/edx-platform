@@ -3,3 +3,5 @@ from .aws import *
 ################### CEPH
 
 AWS_S3_HOST =  ENV_TOKENS.get('AWS_S3_HOST', 's3.amazonaws.com')
+
+MAX_ASSET_UPLOAD_FILE_SIZE_IN_MB = ENV_TOKENS.get('MAX_ASSET_UPLOAD_FILE_SIZE_IN_MB', MAX_ASSET_UPLOAD_FILE_SIZE_IN_MB)
