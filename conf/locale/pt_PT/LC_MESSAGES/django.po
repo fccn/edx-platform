@@ -24,7 +24,7 @@
 # Ricardo Jorge Basílio de Almeida <ricardo.j.basilio@gmail.com>, 2014
 # Rui Ribeiro <rui.ribeiro@fccn.pt>, 2018-2019
 # #-#-#-#-#  django-studio.po (edx-platform)  #-#-#-#-#
-# edX community translations have been downloaded from Portuguese (Portugal) (http://www.transifex.com/open-edx/edx-platform/language/pt_PT/).
+# edX translation file.
 # Copyright (C) 2019 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 #
@@ -65,7 +65,7 @@
 # Rui Ribeiro <rui.ribeiro@fccn.pt>, 2018-2019
 # CptOrange <saraluis12@hotmail.com>, 2014
 # #-#-#-#-#  mako-studio.po (edx-platform)  #-#-#-#-#
-# edX community translations have been downloaded from Portuguese (Portugal) (http://www.transifex.com/open-edx/edx-platform/language/pt_PT/)
+# edX translation file
 # Copyright (C) 2019 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 #
@@ -81,7 +81,7 @@
 # Drew Melim <nokostya.translation@gmail.com>, 2015
 # Rui Ribeiro <rui.ribeiro@fccn.pt>, 2018-2019
 # #-#-#-#-#  wiki.po (edx-platform)  #-#-#-#-#
-# edX community translations have been downloaded from Portuguese (Portugal) (http://www.transifex.com/open-edx/edx-platform/language/pt_PT/)
+# edX translation file
 # Copyright (C) 2019 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 #
@@ -107,8 +107,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2019-01-06 20:42+0000\n"
-"PO-Revision-Date: 2019-01-02 08:36+0000\n"
+"POT-Creation-Date: 2019-01-16 20:16+0000\n"
+"PO-Revision-Date: 2019-01-15 12:51+0000\n"
 "Last-Translator: Rui Ribeiro <rui.ribeiro@fccn.pt>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/open-edx/edx-platform/language/pt_PT/)\n"
 "Language: pt_PT\n"
@@ -882,6 +882,12 @@ msgstr ""
 msgid ""
 "Add a recovery email to retain access when single-sign on is not available. "
 "Go to {link_start}your Account Settings{link_end}."
+msgstr ""
+
+#: common/djangoapps/student/views/dashboard.py
+msgid ""
+"Recovery email is not activated yet. Kindly visit your email and follow the "
+"instructions to activate it."
 msgstr ""
 
 #: common/djangoapps/student/views/dashboard.py
@@ -3508,6 +3514,8 @@ msgstr ""
 msgid "Course Visibility In Catalog"
 msgstr "Visibilidade do Curso no Catálogo"
 
+#. Translators: the quoted words 'both', 'about', and 'none' must be
+#. left untranslated.  Leave them as English words.
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
 "Defines the access permissions for showing the course in the course catalog."
@@ -3520,22 +3528,6 @@ msgstr ""
 " permitir o acesso à página 'sobre o curso'), 'about' (apenas permitir o "
 "acesso à página 'sobre o curso'), 'none' (não mostrar no catálogo nem "
 "permite o acesso à página 'sobre o curso')."
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "Both"
-msgstr "Ambos"
-
-#: common/lib/xmodule/xmodule/course_module.py lms/djangoapps/branding/api.py
-#: lms/templates/footer.html lms/templates/static_templates/about.html
-#: themes/red-theme/lms/templates/footer.html
-#: themes/stanford-style/lms/templates/footer.html
-#: themes/stanford-style/lms/templates/static_templates/about.html
-msgid "About"
-msgstr "Sobre"
-
-#: common/lib/xmodule/xmodule/course_module.py cms/templates/settings.html
-msgid "None"
-msgstr "Nenhum"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Entrance Exam Enabled"
@@ -3760,6 +3752,8 @@ msgstr "Especifique o que os estudantes podem aprender neste curso."
 msgid "Course Visibility For Unenrolled Learners"
 msgstr "Visibilidade do Curso para Estudantes Não Matriculados"
 
+#. Translators: the quoted words 'private', 'public_outline', and 'public'
+#. must be left untranslated.  Leave them as English words.
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
 "Defines the access permissions for unenrolled learners. This can be set to "
@@ -3767,18 +3761,6 @@ msgid ""
 "enrolled students), 'public_outline' (allow access to course outline) and "
 "'public' (allow access to both outline and course content)."
 msgstr ""
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "private"
-msgstr "private"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "public_outline"
-msgstr "public_outline"
-
-#: common/lib/xmodule/xmodule/course_module.py
-msgid "public"
-msgstr "public"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Course Instructor"
@@ -5207,13 +5189,12 @@ msgstr "Criar a minha Palavra-passe"
 #: common/templates/student/edx_ace/accountrecovery/email/body.txt
 #: common/templates/student/edx_ace/passwordreset/email/body.txt
 msgid "Please go to the following page and choose a new password:"
-msgstr ""
-"Por favor, visite para a próxima página e escolha uma nova palavra-passe:"
+msgstr "Por favor, visite a seguinte página e escolha uma nova palavra-passe:"
 
 #: common/templates/student/edx_ace/accountrecovery/email/body.txt
 #: common/templates/student/edx_ace/passwordreset/email/body.txt
 msgid "Thanks for using our site!"
-msgstr "Obrigado por usar a nossa página!"
+msgstr "Obrigado por usar o nosso serviço!"
 
 #: common/templates/student/edx_ace/accountrecovery/email/body.txt
 #: common/templates/student/edx_ace/passwordreset/email/body.txt
@@ -5467,6 +5448,14 @@ msgstr "Kit Multimédia"
 #: lms/djangoapps/branding/api.py lms/templates/static_templates/donate.html
 msgid "Donate"
 msgstr "Faça um donativo"
+
+#: lms/djangoapps/branding/api.py lms/templates/footer.html
+#: lms/templates/static_templates/about.html
+#: themes/red-theme/lms/templates/footer.html
+#: themes/stanford-style/lms/templates/footer.html
+#: themes/stanford-style/lms/templates/static_templates/about.html
+msgid "About"
+msgstr "Sobre"
 
 #: lms/djangoapps/branding/api.py
 #, python-brace-format
@@ -6221,6 +6210,11 @@ msgstr "Não tem acesso a este curso"
 #: lms/djangoapps/courseware/access_response.py
 msgid "You do not have access to this course on a mobile device"
 msgstr "Não tem acesso a este curso através de um dispositivo móvel"
+
+#: lms/djangoapps/courseware/access_utils.py
+msgid ""
+"This user does not have access to this content due to the content start date"
+msgstr ""
 
 #: lms/djangoapps/courseware/course_tools.py
 #: lms/templates/dashboard/_dashboard_course_listing.html
@@ -10123,7 +10117,7 @@ msgstr "Eliminar"
 
 #: lms/templates/wiki/delete.html wiki/templates/wiki/delete.html
 msgid "You cannot delete a root article."
-msgstr "Não pode excluir um artigo raiz."
+msgstr "Não pode apagar um artigo raiz."
 
 #: lms/templates/wiki/delete.html wiki/templates/wiki/delete.html
 msgid ""
@@ -10266,7 +10260,7 @@ msgstr "Voltar para visualização de histórico"
 
 #: lms/templates/wiki/history.html wiki/templates/wiki/history.html
 msgid "Switch to this version"
-msgstr "Trocar para esta versão"
+msgstr "Mudar para esta versão"
 
 #: lms/templates/wiki/history.html
 msgid "Merge Revision"
@@ -11721,8 +11715,8 @@ msgid ""
 "This account has been temporarily locked due to excessive login failures. "
 "Try again later."
 msgstr ""
-"Esta contas de entrada foi temporariamente bloqueada devido a excesso de "
-"tentativas falhadas. Tente outra vez mais tarde."
+"Esta conta foi temporariamente bloqueada devido ao excesso de tentativas "
+"falhadas. Por favor, tente mais tarde."
 
 #: openedx/core/djangoapps/user_api/accounts/views.py
 #: openedx/core/djangoapps/user_authn/views/login.py
@@ -13134,8 +13128,8 @@ msgid "{course}_video_urls"
 msgstr "{course}_video_urls"
 
 #: cms/djangoapps/contentstore/views/videos.py
-msgid "A non zero postive integar is expected"
-msgstr "É esperado um número inteiro positivo superior a zero."
+msgid "A non zero positive integer is expected"
+msgstr ""
 
 #: cms/djangoapps/course_creators/models.py
 msgid "unrequested"
@@ -13302,7 +13296,7 @@ msgstr "Entrega do curso:"
 #: lms/templates/navigation/bootstrap/navbar-authenticated.html
 #: themes/edx.org/lms/templates/header/navbar-authenticated.html
 msgid "Courses"
-msgstr "Curso:"
+msgstr "Cursos"
 
 #: cms/templates/login.html themes/red-theme/cms/templates/login.html
 msgid "Sign In to {studio_name}"
@@ -13671,7 +13665,7 @@ msgstr "Ativar a sua conta!"
 
 #: lms/templates/dashboard.html themes/edx.org/lms/templates/dashboard.html
 msgid "Course-loading errors"
-msgstr "Erros ao carregar cursos "
+msgstr "Erros relacionados com o carregamento do curso "
 
 #: lms/templates/dashboard.html themes/edx.org/lms/templates/dashboard.html
 msgid "Search Your Courses"
@@ -13782,7 +13776,7 @@ msgstr "Estudantes rejeitados:"
 
 #: lms/templates/enroll_students.html
 msgid "Debug: "
-msgstr "Debug"
+msgstr "Debug:"
 
 #: lms/templates/extauth_failure.html
 msgid "External Authentication failed"
@@ -14817,7 +14811,7 @@ msgstr "Página anterior"
 
 #: lms/templates/staticbook.html
 msgid "Next page"
-msgstr "Página seguinte"
+msgstr "Próxima Página"
 
 #: lms/templates/sysadmin_dashboard.html
 #: lms/templates/sysadmin_dashboard_gitlogs.html
@@ -16514,6 +16508,22 @@ msgid ""
 "Audit this course for free and have access to course materials and "
 "discussions forums. {b_start}This track does not include graded assignments,"
 " or unlimited course access.{b_end}"
+msgstr ""
+
+#: lms/templates/course_modes/choose.html
+#: themes/edx.org/lms/templates/course_modes/choose.html
+msgid ""
+"Audit this course for free and have access to course materials and "
+"discussions forums. {b_start}This track does not include graded "
+"assignments.{b_end}"
+msgstr ""
+
+#: lms/templates/course_modes/choose.html
+#: themes/edx.org/lms/templates/course_modes/choose.html
+msgid ""
+"Audit this course for free and have access to course materials and "
+"discussions forums. {b_start}This track does not include unlimited course "
+"access.{b_end}"
 msgstr ""
 
 #: lms/templates/course_modes/choose.html
@@ -25138,6 +25148,10 @@ msgstr "Tempo despendido em todas as tarefas do curso"
 #: cms/templates/settings.html
 msgid "Prerequisite Course"
 msgstr "Pré-requisito do Curso"
+
+#: cms/templates/settings.html
+msgid "None"
+msgstr "Nenhum"
 
 #: cms/templates/settings.html
 msgid "Course that students must complete before beginning this course"
