@@ -24,14 +24,14 @@
 # Ricardo Jorge Basílio de Almeida <ricardo.j.basilio@gmail.com>, 2014
 # Rui Ribeiro <rui.ribeiro@fccn.pt>, 2018-2019
 # #-#-#-#-#  django-studio.po (edx-platform)  #-#-#-#-#
-# edX translation file.
+# edX community translations have been downloaded from Portuguese (Portugal) (http://www.transifex.com/open-edx/edx-platform/language/pt_PT/).
 # Copyright (C) 2019 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 #
 # Translators:
 # Beatriz Sousa <beatriz.sousa@bridgelk.com>, 2018
 # Carlos <carlos.c.saraiva@gmail.com>, 2013
-# Cátia Lopes <catia.lopes@bridgelk.com>, 2018
+# Cátia Lopes <catia.lopes@bridgelk.com>, 2018-2019
 # Jorge Daniel Sequeira Matias <jorgedsmatias@gmail.com>, 2016
 # Carlos <carlos.c.saraiva@gmail.com>, 2013
 # MS <manuelarodsilva@gmail.com>, 2018
@@ -48,7 +48,7 @@
 # Angelica Leite <angelicalleite@gmail.com>, 2015
 # Beatriz Sousa <beatriz.sousa@bridgelk.com>, 2018
 # Carlos <carlos.c.saraiva@gmail.com>, 2013
-# Cátia Lopes <catia.lopes@bridgelk.com>, 2018
+# Cátia Lopes <catia.lopes@bridgelk.com>, 2018-2019
 # CptOrange <saraluis12@hotmail.com>, 2014
 # David Azevedo <davidc.azevedo@gmail.com>, 2014
 # David Azevedo <davidc.azevedo@gmail.com>, 2014
@@ -65,14 +65,14 @@
 # Rui Ribeiro <rui.ribeiro@fccn.pt>, 2018-2019
 # CptOrange <saraluis12@hotmail.com>, 2014
 # #-#-#-#-#  mako-studio.po (edx-platform)  #-#-#-#-#
-# edX translation file
+# edX community translations have been downloaded from Portuguese (Portugal) (http://www.transifex.com/open-edx/edx-platform/language/pt_PT/)
 # Copyright (C) 2019 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 #
 # Translators:
 # Beatriz Sousa <beatriz.sousa@bridgelk.com>, 2018
 # Carlos <carlos.c.saraiva@gmail.com>, 2013-2014
-# Cátia Lopes <catia.lopes@bridgelk.com>, 2018
+# Cátia Lopes <catia.lopes@bridgelk.com>, 2018-2019
 # Drew Melim <nokostya.translation@gmail.com>, 2015
 # Carlos <carlos.c.saraiva@gmail.com>, 2013
 # MS <manuelarodsilva@gmail.com>, 2018
@@ -81,7 +81,7 @@
 # Drew Melim <nokostya.translation@gmail.com>, 2015
 # Rui Ribeiro <rui.ribeiro@fccn.pt>, 2018-2019
 # #-#-#-#-#  wiki.po (edx-platform)  #-#-#-#-#
-# edX translation file
+# edX community translations have been downloaded from Portuguese (Portugal) (http://www.transifex.com/open-edx/edx-platform/language/pt_PT/)
 # Copyright (C) 2019 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
 #
@@ -107,7 +107,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2019-01-16 20:16+0000\n"
+"POT-Creation-Date: 2019-01-20 20:42+0000\n"
 "PO-Revision-Date: 2019-01-15 12:51+0000\n"
 "Last-Translator: Rui Ribeiro <rui.ribeiro@fccn.pt>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/open-edx/edx-platform/language/pt_PT/)\n"
@@ -883,12 +883,17 @@ msgid ""
 "Add a recovery email to retain access when single-sign on is not available. "
 "Go to {link_start}your Account Settings{link_end}."
 msgstr ""
+"Adicione um e-mail de recuperação para manter o acesso quando o processo de "
+"autenticação \"single-sign on\" não estiver disponível. Adicione em "
+"{link_start}Definições de Conta{link_end}."
 
 #: common/djangoapps/student/views/dashboard.py
 msgid ""
 "Recovery email is not activated yet. Kindly visit your email and follow the "
 "instructions to activate it."
 msgstr ""
+"O e-mail de recuperação ainda não está ativo. Por favor, consulte o seu "
+"e-mail e siga as instruções para ativá-lo."
 
 #: common/djangoapps/student/views/dashboard.py
 #, python-brace-format
@@ -1016,7 +1021,7 @@ msgstr "Erro ao redefinir a sua palavra-passe. Por favor, tente novamente."
 
 #: common/djangoapps/student/views/management.py
 msgid "Password creation unsuccessful"
-msgstr ""
+msgstr "Criação de palavra-passe sem sucesso"
 
 #: common/djangoapps/student/views/management.py
 msgid "Error in creating your password. Please try again."
@@ -1028,6 +1033,9 @@ msgid ""
 "{html_start}Password Creation Complete{html_end}Your password has been "
 "created. {bold_start}{email}{bold_end} is now your primary login email."
 msgstr ""
+"{html_start}Criação de Palavra-passe Finalizada{html_end}A sua palavra-passe"
+" foi criada. {bold_start}{email}{bold_end} é agora o seus e-mail de registo "
+"principal."
 
 #: common/djangoapps/student/views/management.py
 msgid "Valid e-mail address required."
@@ -2806,6 +2814,8 @@ msgid ""
 "The selected proctoring provider, {proctoring_provider}, is not a valid "
 "provider. Please select from one of {available_providers}."
 msgstr ""
+"O operador de supervisão, {proctoring_provider}, não é válido. Por favor, "
+"selecione um dos {available_providers}."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "LTI Passports"
@@ -3641,6 +3651,8 @@ msgid ""
 "Enter the proctoring provider you want to use for this course run. Choose "
 "from the following options: {available_providers}."
 msgstr ""
+"Indique o operador de supervisão que quer utilizar nesta edição do curso. "
+"Escolha a partir das seguintes opções: {available_providers}."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Allow Opting Out of Proctored Exams"
@@ -5174,6 +5186,8 @@ msgid ""
 "You're receiving this e-mail because you requested to create a password for "
 "your user account at %(platform_name)s."
 msgstr ""
+"Está a receber este e-mail porque solicitou a criação de uma palavra-passe "
+"para a sua conta %(platform_name)s."
 
 #: common/templates/student/edx_ace/accountrecovery/email/body.html
 #: common/templates/student/edx_ace/accountrecovery/email/body.txt
@@ -5181,6 +5195,8 @@ msgid ""
 "If you didn't request this change, you can disregard this email - we have "
 "not yet created your password."
 msgstr ""
+"Se não solicitou esta alteração, pode ignorar este e-mail - ainda não "
+"criámos a sua palavra-passe."
 
 #: common/templates/student/edx_ace/accountrecovery/email/body.html
 msgid "Create my Password"
@@ -5219,6 +5235,9 @@ msgid ""
 "%(platform_name)s account to %(new_email)s. If this is correct, please "
 "confirm your new secondary e-mail address by visiting:"
 msgstr ""
+"Recebemos um pedido de alteração do e-mail secundário, associado à sua conta"
+" %(platform_name)s, para %(new_email)s. Se solicitou este pedido, por favor "
+"confirme o seu endereço de e-mail secundário em:"
 
 #: common/templates/student/edx_ace/emailchange/email/body.html
 #: common/templates/student/edx_ace/emailchange/email/body.txt
@@ -5251,7 +5270,7 @@ msgstr ""
 #: common/templates/student/edx_ace/emailchange/email/subject.txt
 #, python-format
 msgid "Request to change %(platform_name)s account secondary e-mail"
-msgstr ""
+msgstr "Pedido para alterar o e-mail da conta secundária da %(platform_name)s"
 
 #: common/templates/student/edx_ace/emailchange/email/subject.txt
 #, python-format
@@ -5854,7 +5873,7 @@ msgstr "Validação do Certificado"
 #: lms/djangoapps/certificates/views/webview.py
 #, python-brace-format
 msgid "About {platform_name} Accomplishments"
-msgstr "Sobre as realizações em {platform_name}"
+msgstr "O seu êxito em {platform_name}"
 
 #. Translators:  This line appears on the page just before the generation date
 #. for the certificate
@@ -5935,7 +5954,7 @@ msgstr "Contacto {platform_name}"
 #: lms/djangoapps/certificates/views/webview.py
 #, python-brace-format
 msgid "{platform_name} acknowledges the following student accomplishment"
-msgstr "{platform_name} reconhece a seguinte realização do estudante"
+msgstr "{platform_name} reconhece o seguinte progresso do estudante"
 
 #. Translators:  This text represents the description of course
 #: lms/djangoapps/certificates/views/webview.py
@@ -5983,15 +6002,15 @@ msgid ""
 "Congratulations! This page summarizes what you accomplished. Show it off to "
 "family, friends, and colleagues in your social and professional networks."
 msgstr ""
-"Parabéns! Esta página resume as suas conquistas. Partilhe com a família, "
-"amigos e colegas através das suas redes sociais e profissionais."
+"Parabéns! Esta página resume o seu êxito. Partilhe com a família, amigos e "
+"colegas através das suas redes sociais e profissionais."
 
 #. Translators: This line leads the reader to understand more about the
 #. certificate that a student has been awarded
 #: lms/djangoapps/certificates/views/webview.py
 #, python-brace-format
 msgid "More about {fullname}'s accomplishment"
-msgstr "Mais informação sobre a conquista de {fullname}"
+msgstr "Mais informação sobre o êxito de {fullname}"
 
 #: lms/djangoapps/class_dashboard/dashboard_data.py
 #: lms/djangoapps/instructor/views/api.py
@@ -6211,11 +6230,6 @@ msgstr "Não tem acesso a este curso"
 msgid "You do not have access to this course on a mobile device"
 msgstr "Não tem acesso a este curso através de um dispositivo móvel"
 
-#: lms/djangoapps/courseware/access_utils.py
-msgid ""
-"This user does not have access to this content due to the content start date"
-msgstr ""
-
 #: lms/djangoapps/courseware/course_tools.py
 #: lms/templates/dashboard/_dashboard_course_listing.html
 msgid "Upgrade to Verified"
@@ -6425,6 +6439,14 @@ msgid ""
 msgstr ""
 "Não existe o nome de utilizador ou endereço de email \"{user_identifier}\" "
 "matriculado neste curso."
+
+#: lms/djangoapps/courseware/masquerade.py
+msgid ""
+"This user does not have access to this content because"
+"                         the content start date is in the future"
+msgstr ""
+"O utilizador não tem acesso a este conteúdo porque apenas será "
+"disponibilizado a partir da data definida para o início do conteúdo"
 
 #: lms/djangoapps/courseware/masquerade.py
 msgid ""
@@ -10832,6 +10854,8 @@ msgstr "Ativado"
 #: openedx/core/djangoapps/config_model_utils/models.py
 msgid "Configuration may not be specified at more than one level at once."
 msgstr ""
+"A configuração pode não ser especificada a mais do que um nível de uma só "
+"vez."
 
 #: openedx/core/djangoapps/cors_csrf/models.py
 msgid ""
@@ -11155,11 +11179,11 @@ msgid ""
 "to the email address associated with this account. Thank you for helping us "
 "keep your data safe."
 msgstr ""
-"{strong_tag_open} Nós mudamos recentemente nossos requisitos de palavra-"
-"passe {strong_tag_close} {break_line_tag} sua palavra-passe atual não atende"
-" aos novos requisitos de segurança. Acabamos de enviar uma mensagem de "
-"redefinição de palavra-passe para o endereço de email associado a esta "
-"conta. Obrigado por nos ajudar a manter os seus dados seguros."
+"{strong_tag_open} Mudamos recentemente nossos requisitos de palavra-passe "
+"{strong_tag_close} {break_line_tag} a sua palavra-passe atual não "
+"corresponde aos novos requisitos de segurança. Acabamos de enviar uma "
+"mensagem de redefinição de palavra-passe para o endereço de email associado "
+"a esta conta. Obrigado por nos ajudar a manter os seus dados seguros."
 
 #: openedx/core/djangoapps/password_policy/compliance.py
 #, python-brace-format
@@ -11773,6 +11797,8 @@ msgid ""
 "Secondary email address you registered with {platform_name} using account "
 "settings page"
 msgstr ""
+"Endereço de e-mail secundário com o qual se registou em {platform_name} na "
+"página de definições de conta"
 
 #: openedx/core/djangoapps/user_api/api.py lms/templates/login.html
 msgid "Remember me"
@@ -11783,7 +11809,7 @@ msgstr "Lembrar-me"
 #. below a field meant to hold the user's email address.
 #: openedx/core/djangoapps/user_api/api.py
 msgid "This is what you will use to login."
-msgstr "Isto será utilizado para login."
+msgstr "Este email será utilizado para login."
 
 #. Translators: This label appears above a field on the registration form
 #. meant to confirm the user's email address.
@@ -12032,6 +12058,8 @@ msgid ""
 "If you don't have an {platform_name} account yet, click "
 "{register_label_strong} at the top of the page."
 msgstr ""
+"Se ainda não tem uma conta {platform_name}, clique em "
+"{register_label_strong} no topo da página."
 
 #: openedx/core/djangoapps/user_authn/views/login.py
 #: lms/templates/register-form.html
@@ -12237,13 +12265,15 @@ msgstr ""
 
 #: openedx/features/content_type_gating/models.py
 msgid "Studio Override Enabled"
-msgstr ""
+msgstr "Substituição do Studio Ativada"
 
 #: openedx/features/content_type_gating/models.py
 msgid ""
 "Allow Feature Based Enrollment visibility to be overriden on a per-component"
 " basis in Studio."
 msgstr ""
+"Permitir que a visibilidade da Matrícula por Funcionalidade seja "
+"substituída, no Studio, componente a componente."
 
 #: openedx/features/content_type_gating/models.py
 #: openedx/features/course_duration_limits/models.py
@@ -12259,6 +12289,8 @@ msgstr "Matricula baseada em funcionalidades"
 #: openedx/features/content_type_gating/partitions.py
 msgid "Partition for segmenting users by access to gated content types"
 msgstr ""
+"Partição para segmentar utilizadores por acesso a tipos de conteúdo "
+"bloqueados"
 
 #: openedx/features/content_type_gating/partitions.py
 msgid ""
@@ -12300,7 +12332,7 @@ msgstr "Acesso ao {course_name} expirou em {expiration_date}"
 #: openedx/features/course_duration_limits/access.py
 #, python-brace-format
 msgid "Access to the course you were looking for expired on {expiration_date}"
-msgstr ""
+msgstr "O acesso ao curso que está à procura expirou a {expiration_date}"
 
 #: openedx/features/course_duration_limits/access.py
 #, python-brace-format
@@ -13129,7 +13161,7 @@ msgstr "{course}_video_urls"
 
 #: cms/djangoapps/contentstore/views/videos.py
 msgid "A non zero positive integer is expected"
-msgstr ""
+msgstr "É esperado um número inteiro positivo"
 
 #: cms/djangoapps/course_creators/models.py
 msgid "unrequested"
@@ -14631,6 +14663,8 @@ msgid ""
 "Your secondary email has been activated. Please visit "
 "{link_start}dashboard{link_end} for courses."
 msgstr ""
+"O seu e-mail secundário foi ativado. Por favor, entre no {link_start}painel "
+"de controlo{link_end} para aceder aos cursos."
 
 #: lms/templates/seq_module.html
 msgid "Important!"
@@ -15229,6 +15263,29 @@ msgid ""
 " you do not understand or do not wish to be bound by the Terms, you should "
 "not use the APIs."
 msgstr ""
+"Bem-vindo à {platform_name}. Obrigado por usar a API de Descoberta de Cursos"
+" da {platform_name}, API empresarial e/ou quaisquer APIs adicionais que "
+"possamos oferecer de tempos em tempos (coletivamente, as \"APIs\"). Por "
+"favor, leia estes Termos de Serviço antes de aceder ou usar as APIs. Estes "
+"Termos de Serviço, quaisquer termos adicionais incluídos na documentação da "
+"API e quaisquer políticas e diretrizes aplicáveis ​​que a {platform_name} "
+"disponibilize e/ou atualize são acordos (coletivamente, os \"Termos\") entre"
+" si e a {platform_name}. Estes Termos são emitidos sob o acordo de produto "
+"da empresa, acordo de participação ou outro acordo que rege a compra de "
+"produtos {platform_name}, se houver (o \"Acordo\"), executado por si ou pela"
+" entidade a partir da qual está a aceder ou a utilizar os APIs e a "
+"{platform_name}. No caso de ter um outro Acordo que se aplique ao uso das "
+"APIs, esse Acordo vai prevalecer no caso de qualquer conflito entre ele e "
+"estes Termos. Ao aceder ou usar as APIs, está a aceitar e a concordar em "
+"estar legalmente vinculado aos Termos, seja ou não um utilizador registado. "
+"Se estiver a aceder ou a usar as APIs em nome de uma empresa, organização ou"
+" outra entidade legal, estará a concordar com estes Termos para essa "
+"entidade e a garantir à {platform_name} que tem total autoridade para "
+"aceitar e concordar com estes Termos em nome da entidade, em cujo caso as "
+"palavras \"você,\" \"seu/a\" ou palavras relacionadas aqui devem referir-se "
+"à tal entidade através da qual está a aceder ou a usar as APIs. Se não tiver"
+" esta permissão, não entender ou não quiser vincular-se aos Termos, não "
+"deverá usar as APIs."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid "API Access"
@@ -15281,6 +15338,12 @@ msgid ""
 "at any time, in its sole discretion, does not benefit or serve the best "
 "interests of {platform_name}, its users and its partners."
 msgstr ""
+"{platform_name_capitalized} deve ter o direito exclusivo de determinar se um"
+" determinado uso das APIs é aceitável ou não, e a {platform_name} reserva-se"
+" o direito de revogar o acesso à API para qualquer uso que a {platform_name}"
+" determine, a qualquer momento e a seu exclusivo critério, que não beneficia"
+" ou ou não corresponde aos melhores interesses da {platform_name}, dos seus "
+"utilizadores e dos seus parceiros."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid ""
@@ -15318,7 +15381,7 @@ msgstr ""
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid "altering or editing any content or graphics in the API Content;"
-msgstr ""
+msgstr "alterar ou editar qualquer conteúdo ou gráfico no Conteúdo da API;"
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid ""
@@ -15365,6 +15428,10 @@ msgid ""
 "calls made by you or Your Application to the APIs. You must not attempt to "
 "circumvent any restrictions or limitations imposed by {platform_name}."
 msgstr ""
+"{platform_name_capitalized} reserva-se o direito, a seu critério, de impor "
+"restrições e limitações razoáveis ​​no número e na frequência de chamadas "
+"feitas por si ou pela Sua Inscrição para as APIs. Não deve tentar contornar "
+"quaisquer restrições ou limitações impostas pela {platform_name}."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid "Compliance"
@@ -15382,6 +15449,14 @@ msgid ""
 "or mask either your identity or Your Application's identity when using the "
 "APIs."
 msgstr ""
+"Concorda em cumprir todas as leis, regulamentos e direitos de terceiros "
+"​​(incluindo, sem limitação, as leis relativas à importação ou exportação de"
+" dados ou software, privacidade, direitos de autor e leis locais). Não usará"
+" as APIs para incentivar ou promover atividades ilegais ou violações de "
+"direitos de terceiros. Não violará nenhum outro termo de serviço com a "
+"{platform_name}. Apenas vai aceder (ou tentar aceder) à API pelos meios "
+"descritos na documentação dessa mesma API. Não irá deturpar ou mascarar a "
+"sua identidade ou a identidade da Sua Aplicação ao usar as APIs."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid "Ownership"
@@ -15481,6 +15556,9 @@ msgid ""
 "{platform_name} reserves the right to charge fees for future use or access "
 "to the APIs."
 msgstr ""
+"Um determinado acesso à APIs pode ser concedido gratuitamente, mas a "
+"{platform_name} reserva-se o direito de cobrar taxas para uso futuro ou "
+"acesso às APIs."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid ""
@@ -15513,6 +15591,10 @@ msgid ""
 "discourage others from using your credentials. Your credentials may not be "
 "embedded in open source projects."
 msgstr ""
+"As suas credenciais (como as IDs) devem ser usadas apenas por si. Você vai "
+"manter as suas credenciais confidenciais e desencorajar outras pessoas a "
+"usar as suas credenciais. As suas credenciais não podem ser incorporadas em "
+"projetos de código aberto."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid ""
@@ -15582,6 +15664,14 @@ msgid ""
 "DOWNLOAD OR USE OF SUCH INFORMATION, MATERIALS OR DATA, UNLESS OTHERWISE "
 "EXPRESSLY PROVIDED FOR IN THE {platform_name} PRIVACY POLICY."
 msgstr ""
+"O USO DAS APIS, E DO CONTEÚDO DA API E QUAISQUER SERVIÇOS OBTIDOS A PARTIR "
+"DA APIS OU POR SI, ESTÃO POR SUA CONTA E RISCO. O SEU ACESSO OU DOWNLOAD DE "
+"INFORMAÇÕES, MATERIAIS OU DADOS ATRAVÉS DAS APIS É POR SUA PRÓPRIA CONTA E "
+"RISCO, E SERÁ O ÚNICO RESPONSÁVEL POR QUAISQUER DANOS À SUA PROPRIEDADE "
+"(INCLUINDO O SEU SISTEMA DE COMPUTADOR) OU PERDA DE DADOS QUE RESULTEM DA "
+"DOWNLOAD OU USO DE TAIS INFORMAÇÕES, MATERIAIS OU DADOS, A MENOS QUE "
+"EXPRESSAMENTE FORNECIDO  DE OUTRA FORMA NA POLÍTICA DE PRIVACIDADE DA "
+"{platform_name}."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid ""
@@ -15593,6 +15683,13 @@ msgid ""
 "INFORMATION OBTAINED FROM OR THROUGH THE APIS, WHETHER YOUR CLAIM IS BASED "
 "IN CONTRACT, TORT, STATUTORY OR OTHER LAW."
 msgstr ""
+"NA MÁXIMA EXTENSÃO PERMITIDA PELA LEI APLICÁVEL, CONCORDA QUE NEM A "
+"{platform_name} NEM QUALQUER PARTICIPANTE {platform_name} SERÁ RESPONSÁVEL "
+"POR QUALQUER PERDA OU DANO, REAL OU CONSEQUENTE, DECORRENTE OU RELACIONADA "
+"COM OS TERMOS, OU O SEU USO (OU DE QUALQUER TERCEIRO) OU INCAPACIDADE DE "
+"USAR O APIS OU QUALQUER CONTEÚDO DA API, OU A SUA CONFIANÇA SOBRE AS "
+"INFORMAÇÕES OBTIDAS PELOS APIS, SE A SUA REIVINDICAÇÃO É BASEADA NO "
+"CONTRATO, DELITO, LEI ESTATUTÁRIA OU OUTRA LEI."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid ""
@@ -15652,6 +15749,18 @@ msgid ""
 "{platform_name} or one of the {platform_name} Participants will provide you "
 "with written notice of such claim, action or demand."
 msgstr ""
+"Na máxima extensão permitida pela lei aplicável, concorda em defender, "
+"isentar e indemnizar a {platform_name}, os Participantes {platform_name} as "
+"suas respectivas subsidiárias, afiliadas, diretores, professores, alunos, "
+"bolsistas, membros do conselho administrativo, agentes e funcionários de e "
+"contra quaisquer reivindicações, ações ou exigências de terceiros, "
+"decorrentes ou relacionadas com o seu uso das APIs e de qualquer Conteúdo da"
+" API, incluindo qualquer responsabilidade ou despesa derivada de todas e "
+"quaisquer reivindicações, perdas, danos (reais e consequentes), ações "
+"judiciais, jurisprudências, custos de contencioso e honorários dos "
+"advogados, de todo tipo e natureza. Neste caso, a {platform_name} ou um dos "
+"Participantes {platform_name} enviar-lhe-á uma notificação por escrito de "
+"tal reivindicação, ação ou exigência."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid "General Legal Terms"
@@ -15703,6 +15812,18 @@ msgid ""
 "still be allowed to apply for injunctive remedies (or an equivalent type of "
 "urgent legal relief) in any jurisdiction."
 msgstr ""
+"Concorda que os Termos, as APIs e qualquer reivindicação ou litígio "
+"decorrente ou relacionado com os Termos ou às APIs serão regidos pelas leis "
+"da Comunidade de Massachusetts, excluindo conflitos de cláusulas legais. "
+"Concorda que todas as reclamações e litígios serão ouvidos e resolvidos "
+"exclusivamente nos tribunais federais ou estaduais localizados em Cambridge,"
+" Massachusetts, EUA. Concorda com a jurisdição pessoal desses tribunais "
+"sobre si para este fim, e renuncia e concorda não afirmar qualquer objeção a"
+" tais processos nos tribunais mencionados (incluindo qualquer defesa ou "
+"objeção de falta de jurisdição apropriada, local ou inconveniência do "
+"tribunal). Não obstante o acima exposto, concorda que a {platform_name} "
+"ainda poderá solicitar medidas cautelares (ou um tipo equivalente de "
+"assistência jurídica urgente) em qualquer jurisdição."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid "Termination"
@@ -15715,6 +15836,10 @@ msgid ""
 "any API Content for any reason or no reason, without prior notice or "
 "liability."
 msgstr ""
+"Pode parar de utilizar as APIs a qualquer momento. Concorda que a "
+"{platform_name}, a seu exclusivo critério e a qualquer momento, pode "
+"rescindir o uso das APIs ou de qualquer Conteúdo da API por qualquer motivo "
+"ou sem motivo, sem aviso ou responsabilidade."
 
 #: lms/templates/api_admin/terms_of_service.html
 msgid ""
@@ -16396,6 +16521,8 @@ msgid ""
 "{b_start}Unlimited Course Access: {b_end}Learn at your own pace, and access "
 "materials anytime to brush up on what you've learned."
 msgstr ""
+"{b_start}Acesso Ilimitado ao Curso: {b_end}Aprenda ao seu próprio ritmo e "
+"aceda aos materiais a qualquer momento para rever o que aprendeu."
 
 #: lms/templates/course_modes/choose.html
 #: themes/edx.org/lms/templates/course_modes/choose.html
@@ -16403,6 +16530,8 @@ msgid ""
 "{b_start}Graded Assignments: {b_end}Build your skills through graded "
 "assignments and projects."
 msgstr ""
+"{b_start}Atividades de Avaliação: {b_end}Desenvolva as suas competências "
+"através de tarefas e projetos de avaliação."
 
 #: lms/templates/course_modes/choose.html
 #: themes/edx.org/lms/templates/course_modes/choose.html
@@ -16410,6 +16539,8 @@ msgid ""
 "{b_start}Easily Sharable: {b_end}Add the certificate to your CV or resume, "
 "or post it directly on LinkedIn."
 msgstr ""
+"{b_start}Partilha Rápida: {b_end}Adicione o certificado ao seu CV ou "
+"publique diretamente no LinkedIn."
 
 #: lms/templates/course_modes/choose.html
 #: themes/edx.org/lms/templates/course_modes/choose.html
@@ -16509,6 +16640,9 @@ msgid ""
 "discussions forums. {b_start}This track does not include graded assignments,"
 " or unlimited course access.{b_end}"
 msgstr ""
+"Assista a este curso gratuitamente e tenha acesso aos materiais e aos fóruns"
+" de discussão. {b_start}Este percurso formativo não inclui atividades de "
+"avaliação, nem dá acesso ilimitado ao curso.{b_end}"
 
 #: lms/templates/course_modes/choose.html
 #: themes/edx.org/lms/templates/course_modes/choose.html
@@ -16517,6 +16651,9 @@ msgid ""
 "discussions forums. {b_start}This track does not include graded "
 "assignments.{b_end}"
 msgstr ""
+"Assista a este curso gratuitamente e tenha acesso aos materiais e aos fóruns"
+" de discussão. {b_start}Este percurso formativo não inclui atividades de "
+"avaliação.{b_end}"
 
 #: lms/templates/course_modes/choose.html
 #: themes/edx.org/lms/templates/course_modes/choose.html
@@ -16525,6 +16662,9 @@ msgid ""
 "discussions forums. {b_start}This track does not include unlimited course "
 "access.{b_end}"
 msgstr ""
+"Assista a este curso gratuitamente e tenha acesso aos materiais e aos fóruns"
+" de discussão. {b_start}Este percurso formativo não dá acesso ilimitado ao "
+"curso.{b_end}"
 
 #: lms/templates/course_modes/choose.html
 #: themes/edx.org/lms/templates/course_modes/choose.html
@@ -18245,6 +18385,10 @@ msgid ""
 "your verification was successful.You can also check the status of the "
 "verification process on your dashboard."
 msgstr ""
+"Recebemos as suas informações e o processo de verificação de ID já começou. "
+"Nos próximos dias, vai receber um e-mail enviado por nós para confirmar se o"
+" processo de verificação foi bem sucedido. Também pode consultar o estado do"
+" processo de verificação no seu painel de controlo."
 
 #: lms/templates/emails/registration_codes_sale_email.txt
 msgid "Thank you for purchasing enrollments in {course_name}."
@@ -19038,6 +19182,10 @@ msgid ""
 "by-chapter, or problem-by-problem basis, or contact your site administrator "
 "to increase the limit."
 msgstr ""
+"O relatório gerado está limitado a {max_entries} respostas. Se espera mais "
+"de {max_entries} respostas, tente gerar o relatório por capítulo ou por "
+"problema, ou entre em contacto com o administrador do site para aumentar o "
+"limite."
 
 #: lms/templates/instructor/instructor_dashboard_2/data_download.html
 msgid "Download a CSV of problem responses"
@@ -20006,6 +20154,12 @@ msgid ""
 "open threads, and endorse responses. Their posts are marked as 'Community "
 "TA'. Only enrolled learners can be added as Community TAs."
 msgstr ""
+"A Comunidade TAs são elementos da comunidade que ajudam as Equipas de Curso "
+"a moderar fóruns de discussão. A Comunidade TAs pode ver publicações dos "
+"alunos nas suas sub-comunidades ou no seu percurso formativo, e podem editar"
+" ou eliminar publicações, limpar sinalizações, fechar ou reabrir tópicos, e "
+"reforçar respostas. As suas publicações são marcadas como 'Community TA'. "
+"Apenas os  estudantes inscritos podem ser adicionados como Community TAs."
 
 #: lms/templates/instructor/instructor_dashboard_2/membership.html
 msgid "Add Community TA"
@@ -21978,8 +22132,7 @@ msgid ""
 msgstr ""
 "Trabalhou muito para obter o seu certificado "
 "{accomplishment_copy_course_org} {dash} partilhe-o com colegas, amigos, e "
-"família para espalhar a palavra sobre o que alcançou em "
-"{accomplishment_course_title}."
+"família para comunicar o seu progresso em {accomplishment_course_title}."
 
 #: themes/edx.org/lms/templates/certificates/_accomplishment-banner.html
 msgid "Share this certificate on Facebook (opens a new tab/window)"
@@ -22023,6 +22176,9 @@ msgid ""
 "{b_start}Support our Mission: {b_end}EdX, a non-profit, relies on verified "
 "certificates to help fund affordable education to everyone globally."
 msgstr ""
+"{b_start}Apoie a nossa missão: {b_end}EdX, organização sem fins lucrativos, "
+"depende de certificados validados para ajudar a financiar a educação "
+"acessível para todos no mundo inteiro."
 
 #: themes/edx.org/lms/templates/course_modes/choose.html
 msgid ""
@@ -22504,7 +22660,7 @@ msgstr ""
 
 #: cms/templates/container.html
 msgid "Location in Course Outline"
-msgstr "Localização no Delineamento Geral do Curso"
+msgstr "Localização na Descrição Geral do Curso"
 
 #: cms/templates/course-create-rerun.html
 msgid "Create a Course Rerun of:"
@@ -22639,9 +22795,9 @@ msgid ""
 "course. All problems, videos, announcements, and other files are duplicated "
 "to the new course."
 msgstr ""
-"O novo curso tem o mesmo delineamento geral e conteúdo do curso original. "
-"Todos os problemas, vídeos, avisos e outros ficheiros são duplicados para o "
-"novo curso."
+"O novo curso tem a mesma descrição geral e conteúdo do curso original. Todos"
+" os problemas, vídeos, avisos e outros ficheiros são duplicados para o novo "
+"curso."
 
 #: cms/templates/course-create-rerun.html
 msgid "What does not transfer from the original course?"
@@ -22775,8 +22931,8 @@ msgstr "A criar a sua organização do curso"
 #: cms/templates/course_outline.html
 msgid "You add sections, subsections, and units directly in the outline."
 msgstr ""
-"Pode adicionar secções, subsecções e unidades diretamente no delineamento "
-"geral do curso."
+"Pode adicionar secções, subsecções e unidades diretamente na descrição geral"
+" do curso."
 
 #: cms/templates/course_outline.html
 msgid ""
@@ -22793,12 +22949,12 @@ msgstr "A reorganizar o seu curso"
 #: cms/templates/course_outline.html
 msgid "Drag sections, subsections, and units to new locations in the outline."
 msgstr ""
-"Arraste secções, subsecções e unidades para novos locais no delineamento "
-"geral do curso"
+"Arraste secções, subsecções e unidades para novos locais na descrição geral "
+"do curso"
 
 #: cms/templates/course_outline.html
 msgid "Learn more about the course outline"
-msgstr "Saiba mais sobre o delineamento geral do curso"
+msgstr "Saiba mais sobre a descrição geral do curso"
 
 #: cms/templates/course_outline.html
 msgid "Setting release dates and grading policies"
@@ -23372,7 +23528,7 @@ msgid ""
 "On unit pages in the course outline, you can restrict access to components "
 "to learners based on their enrollment track."
 msgstr ""
-"Nas páginas das unidades no delineamento geral do curso, pode restringir o "
+"Nas páginas das unidades na descrição geral do curso, pode restringir o "
 "acesso dos estudantes aos componentes, com base no modo de inscrição."
 
 #: cms/templates/group_configurations.html
@@ -23497,10 +23653,10 @@ msgid ""
 "easy drag and drop to help you and your students stay organized."
 msgstr ""
 "A estrutura do seu curso prende-se com a forma como está organizado. "
-"{studio_name} oferece um editor de {strong_start} Delineamento Geral do "
-"Curso {strong_end}, onde é disponibilizada uma hierarquia simples e fácil "
-"arrastar e soltar, de modo a ajudá-lo a si e aos seus estudantes a manterem-"
-"se organizados."
+"{studio_name} oferece um editor de {strong_start}Descrição "
+"Geral{strong_end}, disponibilizando uma hierarquia simples e fácil arrastar "
+"e soltar, de modo a ajudá-lo a si e aos seus estudantes a manterem-se "
+"organizados."
 
 #: cms/templates/howitworks.html
 msgid "Simple Organization For Content"
@@ -23524,9 +23680,9 @@ msgid ""
 "Draft your outline and build content anywhere. Simple drag and drop tools "
 "let you reorganize quickly."
 msgstr ""
-"Esboce o delineamento geral do curso e crie o conteúdo em qualquer lugar. "
-"Existe ferramentas simples de arrastar e soltar que lhe permitem reorganizar"
-" rapidamente."
+"Esboce a descrição geral do curso e crie o conteúdo em qualquer lugar. "
+"Existem ferramentas simples de arrastar e soltar que lhe permitem "
+"reorganizar rapidamente a informação."
 
 #: cms/templates/howitworks.html
 msgid "Go A Week Or A Semester At A Time"
@@ -23667,15 +23823,15 @@ msgstr "Já tem uma conta {studio_name}? Inicie a Sessão"
 
 #: cms/templates/howitworks.html
 msgid "Outlining Your Course"
-msgstr "Delineamento Geral do seu Curso"
+msgstr "Descrição Geral do seu Curso"
 
 #: cms/templates/howitworks.html
 msgid ""
 "Simple two-level outline to organize your course. Drag and drop, and see "
 "your course at a glance."
 msgstr ""
-"Delineamento Simples a dois-níveis para organizar o seu curso. Arraste e "
-"solte, e pré-visualize o seu curso."
+"Descrição simples a dois níveis para organizar o seu curso. Arraste e solte,"
+" e pré-visualize o seu curso."
 
 #: cms/templates/howitworks.html
 msgid "More than Just Lectures"
@@ -24964,8 +25120,8 @@ msgid ""
 "Appears on the course catalog page when students roll over the course name. "
 "Limit to ~150 characters"
 msgstr ""
-"Aparece na página do catálogo do curso quando os estudantes passam pelo nome"
-" do curso. Limite de 150 caracteres"
+"Descrição que surge no catálogo de cursos quando os estudantes passam com o "
+"apontador do rato sobre o nome do curso. Limite de 150 caracteres"
 
 #: cms/templates/settings.html
 msgid "Course Overview"
@@ -25174,7 +25330,7 @@ msgid ""
 "{link_start}Course Outline{link_end}."
 msgstr ""
 "Agora pode visualizar e criar seu exame de admissão no curso a partir do "
-"{link_start}Delineamento Geral do Curso{link_end}."
+"{link_start}Descrição  Geral do Curso{link_end}."
 
 #: cms/templates/settings.html
 msgid "Grade Requirements"
@@ -25737,7 +25893,7 @@ msgstr "Navegação do Curso"
 
 #: cms/templates/widgets/header.html
 msgid "Outline"
-msgstr "Delineamento Geral do Curso"
+msgstr "Descrição Geral do Curso"
 
 #: cms/templates/widgets/header.html
 msgid "Import"
