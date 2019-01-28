@@ -107,7 +107,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2019-01-20 20:42+0000\n"
+"POT-Creation-Date: 2019-01-27 20:42+0000\n"
 "PO-Revision-Date: 2019-01-15 12:51+0000\n"
 "Last-Translator: Rui Ribeiro <rui.ribeiro@fccn.pt>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/open-edx/edx-platform/language/pt_PT/)\n"
@@ -1018,14 +1018,6 @@ msgstr "Erro a redefinir a sua palavra-passe."
 #: common/djangoapps/student/views/management.py
 msgid "Error in resetting your password. Please try again."
 msgstr "Erro ao redefinir a sua palavra-passe. Por favor, tente novamente."
-
-#: common/djangoapps/student/views/management.py
-msgid "Password creation unsuccessful"
-msgstr "Criação de palavra-passe sem sucesso"
-
-#: common/djangoapps/student/views/management.py
-msgid "Error in creating your password. Please try again."
-msgstr "Erro ao criar a palavra-chave. Por favor, tente novamente."
 
 #: common/djangoapps/student/views/management.py
 #, python-brace-format
@@ -5192,20 +5184,28 @@ msgstr ""
 #: common/templates/student/edx_ace/accountrecovery/email/body.html
 #: common/templates/student/edx_ace/accountrecovery/email/body.txt
 msgid ""
-"If you didn't request this change, you can disregard this email - we have "
-"not yet created your password."
+"We've restored access to your edX account using the recovery email you "
+"provided at registration."
 msgstr ""
-"Se não solicitou esta alteração, pode ignorar este e-mail - ainda não "
-"criámos a sua palavra-passe."
 
 #: common/templates/student/edx_ace/accountrecovery/email/body.html
-msgid "Create my Password"
-msgstr "Criar a minha Palavra-passe"
-
 #: common/templates/student/edx_ace/accountrecovery/email/body.txt
+#, python-format
+msgid ""
+"Once you've created a password [below], you will be able to log in to edX "
+"with this email (%(email)s) and your new password."
+msgstr ""
+
+#: common/templates/student/edx_ace/accountrecovery/email/body.html
+#: common/templates/student/edx_ace/accountrecovery/email/body.txt
+#: common/templates/student/edx_ace/passwordreset/email/body.html
 #: common/templates/student/edx_ace/passwordreset/email/body.txt
-msgid "Please go to the following page and choose a new password:"
-msgstr "Por favor, visite a seguinte página e escolha uma nova palavra-passe:"
+msgid ""
+"If you didn't request this change, you can disregard this email - we have "
+"not yet reset your password."
+msgstr ""
+"Se não solicitou esta alteração, queira por favor ignorar este email - ainda"
+" não redefinimos a sua palavra-passe. "
 
 #: common/templates/student/edx_ace/accountrecovery/email/body.txt
 #: common/templates/student/edx_ace/passwordreset/email/body.txt
@@ -5220,8 +5220,8 @@ msgstr "A equipa da %(platform_name)s"
 
 #: common/templates/student/edx_ace/accountrecovery/email/subject.txt
 #, python-format
-msgid "Create password on %(platform_name)s"
-msgstr "Criar Palavra-passe%(platform_name)s"
+msgid "Password creation on %(platform_name)s"
+msgstr ""
 
 #: common/templates/student/edx_ace/emailchange/email/body.html
 msgid "Email Change"
@@ -5308,17 +5308,12 @@ msgid "If you did not request this change, you can ignore this email."
 msgstr "Se não solicitou esta alteração, ignore este email."
 
 #: common/templates/student/edx_ace/passwordreset/email/body.html
-#: common/templates/student/edx_ace/passwordreset/email/body.txt
-msgid ""
-"If you didn't request this change, you can disregard this email - we have "
-"not yet reset your password."
-msgstr ""
-"Se não solicitou esta alteração, queira por favor ignorar este email - ainda"
-" não redefinimos a sua palavra-passe. "
-
-#: common/templates/student/edx_ace/passwordreset/email/body.html
 msgid "Change my Password"
 msgstr "Alterar a minha Palavra-passe"
+
+#: common/templates/student/edx_ace/passwordreset/email/body.txt
+msgid "Please go to the following page and choose a new password:"
+msgstr "Por favor, visite a seguinte página e escolha uma nova palavra-passe:"
 
 #: common/templates/student/edx_ace/passwordreset/email/subject.txt
 #, python-format
@@ -11785,21 +11780,6 @@ msgstr "username@domain.com"
 msgid "The email address you used to register with {platform_name}"
 msgstr "O endereço de email que usou para se registar em {platform_name}"
 
-#. Translators: This label appears above a field on the password reset
-#. form meant to hold the user's email address.
-#: openedx/core/djangoapps/user_api/api.py
-msgid "Secondary email"
-msgstr "Email Secundário"
-
-#: openedx/core/djangoapps/user_api/api.py
-#, python-brace-format
-msgid ""
-"Secondary email address you registered with {platform_name} using account "
-"settings page"
-msgstr ""
-"Endereço de e-mail secundário com o qual se registou em {platform_name} na "
-"página de definições de conta"
-
 #: openedx/core/djangoapps/user_api/api.py lms/templates/login.html
 msgid "Remember me"
 msgstr "Lembrar-me"
@@ -15122,14 +15102,6 @@ msgstr "{num} de {total}"
 #: lms/templates/word_cloud.html
 msgid "Your words were:"
 msgstr "As suas palavras:"
-
-#: lms/templates/account_recovery/password_create_confirm.html
-msgid "Create Your {platform_name} Password"
-msgstr "Crie a sua palavra-passe {platform_name}"
-
-#: lms/templates/account_recovery/password_create_confirm.html
-msgid "Invalid Password Create Link"
-msgstr "Link para Criar Palavra-chave inválido"
 
 #: lms/templates/api_admin/api_access_request_form.html
 msgid "API Access Request"

@@ -75,7 +75,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2019-01-20 20:42+0000\n"
+"POT-Creation-Date: 2019-01-27 20:42+0000\n"
 "PO-Revision-Date: 2019-01-22 13:07+0000\n"
 "Last-Translator: Cátia Lopes <catia.lopes@bridgelk.com>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/open-edx/edx-platform/language/pt_PT/)\n"
@@ -4902,19 +4902,12 @@ msgstr "Verifique o seu email"
 msgid ""
 "{paragraphStart}You entered {boldStart}{email}{boldEnd}. If this email "
 "address is associated with your {platform_name} account, we will send a "
-"message with password reset instructions to this email "
+"message with password recovery instructions to this email "
 "address.{paragraphEnd}{paragraphStart}If you do not receive a password reset"
 " message, verify that you entered the correct email address, or check your "
 "spam folder.{paragraphEnd}{paragraphStart}If you need further assistance, "
 "{anchorStart}contact technical support{anchorEnd}.{paragraphEnd}"
 msgstr ""
-"{paragraphStart}Inseriu {boldStart}{email}{boldEnd}. Se este endereço de "
-"email estiver associado à sua conta {platform_name}, enviaremos um email com"
-" instruções para redefinir a sua palavra-passe. "
-"{paragraphEnd}{paragraphStart} Se não receber esta mensagem, verifique se "
-"inseriu o endereço de email correcto, ou verifique a caixa de Spam. "
-"{paragraphEnd}{paragraphStart} Se necessitar de assistência, {anchorStart} "
-"contate o suporte técnico {anchorEnd}.{paragraphEnd}"
 
 #: lms/static/js/student_account/views/LoginView.js
 msgid ""
@@ -4979,8 +4972,8 @@ msgstr ""
 "Recebe mensagens de {platform_name} e equipas de curso neste endereço."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
-msgid "Secondary Email Address"
-msgstr "Endereço E-mail Secundário"
+msgid "Recovery Address"
+msgstr ""
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 msgid "You may access your account when single-sign on is not available."
@@ -8654,23 +8647,6 @@ msgstr "Alterar o meu endereço de email"
 msgid "Reset Password"
 msgstr "Redefinir Palavra-passe"
 
-#: lms/templates/student_account/account_recovery.underscore
-msgid "Account Recovery"
-msgstr "Recuperar Conta"
-
-#: lms/templates/student_account/account_recovery.underscore
-msgid ""
-"Please enter your secondary email address below and we will send you "
-"instructions for recovering your account and setting a new password."
-msgstr ""
-"Por favor, introduza o seu endereço de e-mail secundário para que possamos "
-"enviar instruções de forma a que possa recuperar a sua conta e definir uma "
-"nova password."
-
-#: lms/templates/student_account/account_recovery.underscore
-msgid "Recover my account"
-msgstr "Recuperar a minha Conta"
-
 #: lms/templates/student_account/account_settings.underscore
 msgid "Account Settings"
 msgstr "Configurações de Conta"
@@ -8680,8 +8656,8 @@ msgid "An error occurred. Please reload the page."
 msgstr "Ocorreu um erro. Por favor, recarregue a página."
 
 #: lms/templates/student_account/form_field.underscore
-msgid "Forgot password?"
-msgstr "Esqueceu-se da sua palavra-passe?"
+msgid "Need help logging in?"
+msgstr ""
 
 #: lms/templates/student_account/hinted_login.underscore
 #, python-format
@@ -8802,15 +8778,13 @@ msgstr "Limpar palavra-passe"
 
 #: lms/templates/student_account/password_reset.underscore
 msgid ""
-"Please enter your email address below and we will send you instructions for "
-"setting a new password."
+"Please enter your registration or recovery email address below and we will "
+"send you an email with instructions."
 msgstr ""
-"Por favor, introduza abaixo o seu endereço de email e ser-lhe-ão enviadas "
-"instruções para definir uma nova palavra-passe."
 
 #: lms/templates/student_account/password_reset.underscore
-msgid "Reset my password"
-msgstr "Redefinir a minha palavra-passe"
+msgid "Recover my password"
+msgstr ""
 
 #: lms/templates/student_account/register.underscore
 msgid "Already have an {platformName} account?"
