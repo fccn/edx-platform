@@ -50,7 +50,7 @@
 #
 # Translators:
 # Beatriz Sousa <beatriz.sousa@bridgelk.com>, 2018
-# Cátia Lopes <catia.lopes@bridgelk.com>, 2018
+# Cátia Lopes <catia.lopes@bridgelk.com>, 2018-2019
 # Waldo Luís Ribeiro, 2016
 # João Gomes da Graça <johngraceair@gmail.com>, 2015
 # MS <manuelarodsilva@gmail.com>, 2018
@@ -75,8 +75,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2019-01-27 20:42+0000\n"
-"PO-Revision-Date: 2019-01-22 13:07+0000\n"
+"POT-Creation-Date: 2019-02-10 20:42+0000\n"
+"PO-Revision-Date: 2019-02-12 16:41+0000\n"
 "Last-Translator: Cátia Lopes <catia.lopes@bridgelk.com>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/open-edx/edx-platform/language/pt_PT/)\n"
 "Language: pt_PT\n"
@@ -4908,6 +4908,13 @@ msgid ""
 "spam folder.{paragraphEnd}{paragraphStart}If you need further assistance, "
 "{anchorStart}contact technical support{anchorEnd}.{paragraphEnd}"
 msgstr ""
+"{paragraphStart}Introduziu {boldStart}{email}{boldEnd}. Se este endereço de "
+"e-mail está associado à sua conta {platform_name}, será enviada uma mensagem"
+" com as instruções de recuperação de palavra-passe para este "
+"e-mail.{paragraphEnd}{paragraphStart}Se não receber a mensagem, verifique se"
+" introduziu corretamente o endereço de e-mail, ou procure na pasta \"spam\" "
+"do seu e-mail.{paragraphEnd}{paragraphStart}Se precisar de mais assistência,"
+" {anchorStart}contacte o suporte técnico{anchorEnd}.{paragraphEnd}"
 
 #: lms/static/js/student_account/views/LoginView.js
 msgid ""
@@ -4972,14 +4979,17 @@ msgstr ""
 "Recebe mensagens de {platform_name} e equipas de curso neste endereço."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
-msgid "Recovery Address"
-msgstr ""
+msgid "Recovery Email Address"
+msgstr "Endereço de E-mail de Recuperação"
 
 #: lms/static/js/student_account/views/account_settings_factory.js
-msgid "You may access your account when single-sign on is not available."
+msgid ""
+"You may access your account with this address if single-sign on or access to"
+" your primary email is not available."
 msgstr ""
-"Poderá ter acesso à sua conta no caso do mecanismo de autenticação \"single-"
-"sign on\" não estar disponível."
+"Pode aceder à sua conta com este endereço de e-mail se o processo de "
+"autenticação \"single-sign on\" ou o acesso ao seu e-mail principal não está"
+" disponível."
 
 #: lms/static/js/student_account/views/account_settings_factory.js
 #: openedx/features/learner_profile/static/learner_profile/js/learner_profile_factory.js
@@ -5229,6 +5239,22 @@ msgstr "Informação da conta"
 #: lms/static/js/student_account/views/account_settings_view.js
 msgid "Order History"
 msgstr "Histórico de Pedidos"
+
+#: lms/static/js/student_account/views/account_settings_view.js
+msgid ""
+"You have set your language to {beta_language}, which is currently not fully "
+"translated. You can help us translate this language fully by joining the "
+"Transifex community and adding translations from English for learners that "
+"speak {beta_language}."
+msgstr ""
+"Definiu o idioma {beta_language}, que atualmente não está completamente "
+"traduzido. Pode ajudar-nos a completar a tradução deste idioma juntando-se à"
+" comunidade Transifex e adicionando traduções de Inglês para "
+"{beta_language}."
+
+#: lms/static/js/student_account/views/account_settings_view.js
+msgid "Help Translate into {beta_language}"
+msgstr "Ajude-nos a Traduzir para {beta_language}"
 
 #: lms/static/js/verify_student/views/image_input_view.js
 msgid "Image Upload Error"
@@ -5692,7 +5718,7 @@ msgid ""
 "Are you sure you want to delete {email} from the course team for "
 "“{container}”?"
 msgstr ""
-"Tem a certeza de que quer apagar {email} da equipa do curso para "
+"Tem a certeza de que quer apagar {email} da equipa de curso para "
 "“{container}”?"
 
 #: cms/static/js/factories/manage_users.js
@@ -5787,7 +5813,7 @@ msgstr "Ocorreu um erro com o carregamento"
 
 #: cms/static/js/features_jsx/studio/CourseOrLibraryListing.jsx
 msgid "Course Number:"
-msgstr "Número do Curso:"
+msgstr "Código do Curso:"
 
 #: cms/static/js/features_jsx/studio/CourseOrLibraryListing.jsx
 msgid "(Read-only)"
@@ -6725,8 +6751,8 @@ msgid ""
 "The combined length of the organization, course number, and course run "
 "fields cannot be more than <%=limit%> characters."
 msgstr ""
-"A largura definida dos campos da organização, o número de curso e a execução"
-" do curso não podem ser superiores a <%=limit%> carateres."
+"A largura definida dos campos da organização, o código do curso e a edição "
+"do curso não podem ser superiores a <%=limit%> caracteres."
 
 #: cms/static/js/views/utils/create_library_utils.js
 msgid ""
@@ -6734,7 +6760,7 @@ msgid ""
 "more than <%=limit%> characters."
 msgstr ""
 "A largura definida dos campos de código da organização e a biblioteca não "
-"podem ser superiores a <%=limit%> carateres."
+"podem ser superiores a <%=limit%> caracteres."
 
 #: cms/static/js/views/utils/move_xblock_utils.js
 msgid "Success! \"{displayName}\" has been moved."
@@ -7162,7 +7188,7 @@ msgstr "Denunciar abuso"
 
 #: common/static/common/templates/discussion/forum-action-report.underscore
 msgid "Report"
-msgstr "Data da Execução do Relatório"
+msgstr "Relatório"
 
 #: common/static/common/templates/discussion/forum-action-report.underscore
 msgid "Unreport"
@@ -7906,8 +7932,13 @@ msgid "Mark Exam As Completed"
 msgstr "Marcar o Exame Como Finalizado"
 
 #: lms/templates/courseware/proctored-exam-status.underscore
-msgid "timed"
-msgstr "cronometrado"
+msgid "a timed exam"
+msgstr "um exame cronometrado"
+
+#: lms/templates/courseware/proctored-exam-status.underscore
+msgid "The timer on the right shows the time remaining in the exam."
+msgstr ""
+"O temporizador à direita mostra o tempo que resta para finalizar o exame."
 
 #: lms/templates/courseware/proctored-exam-status.underscore
 msgid ""
@@ -7916,6 +7947,18 @@ msgid ""
 msgstr ""
 "Para receber créditos por problema, deverá selecionar \"enviar\" em cada "
 "problema antes de selecionar \"finalizar o meu exame\"."
+
+#: lms/templates/courseware/proctored-exam-status.underscore
+msgid "Show More"
+msgstr "Ver Mais"
+
+#: lms/templates/courseware/proctored-exam-status.underscore
+msgid "Show Less"
+msgstr "Ver Menos"
+
+#: lms/templates/courseware/proctored-exam-status.underscore
+msgid "Exam timer and end exam button"
+msgstr "Temporizador e botão do exame"
 
 #: lms/templates/courseware/proctored-exam-status.underscore
 msgid "End My Exam"
@@ -8648,6 +8691,10 @@ msgid "Reset Password"
 msgstr "Redefinir Palavra-passe"
 
 #: lms/templates/student_account/account_settings.underscore
+msgid "Switch Language Back"
+msgstr "Voltar ao Idioma Anterior"
+
+#: lms/templates/student_account/account_settings.underscore
 msgid "Account Settings"
 msgstr "Configurações de Conta"
 
@@ -8657,7 +8704,7 @@ msgstr "Ocorreu um erro. Por favor, recarregue a página."
 
 #: lms/templates/student_account/form_field.underscore
 msgid "Need help logging in?"
-msgstr ""
+msgstr "Precisa de ajuda para iniciar sessão?"
 
 #: lms/templates/student_account/hinted_login.underscore
 #, python-format
@@ -8778,13 +8825,15 @@ msgstr "Limpar palavra-passe"
 
 #: lms/templates/student_account/password_reset.underscore
 msgid ""
-"Please enter your registration or recovery email address below and we will "
-"send you an email with instructions."
+"Please enter your log-in or recovery email address below and we will send "
+"you an email with instructions."
 msgstr ""
+"Por favor, insira abaixo o seu e-mail principal ou o seu e-mail de "
+"recuperação e vamos enviar-lhe um e-mail com as instruções necessárias."
 
 #: lms/templates/student_account/password_reset.underscore
 msgid "Recover my password"
-msgstr ""
+msgstr "Recuperar a minha palavra-passe"
 
 #: lms/templates/student_account/register.underscore
 msgid "Already have an {platformName} account?"
@@ -9671,11 +9720,11 @@ msgstr "Substituição do Título do Curso"
 
 #: cms/templates/js/certificate-details.underscore
 msgid "Course Number"
-msgstr "Número do Curso"
+msgstr "Código do Curso"
 
 #: cms/templates/js/certificate-details.underscore
 msgid "Course Number Override"
-msgstr "Substituição do Número do Curso"
+msgstr "Substituição do Código do Curso"
 
 #: cms/templates/js/certificate-details.underscore
 #: cms/templates/js/certificate-editor.underscore
@@ -9966,6 +10015,10 @@ msgstr ""
 #: cms/templates/js/course-outline.underscore
 msgid "Ungraded"
 msgstr "Não classificado"
+
+#: cms/templates/js/course-outline.underscore
+msgid "Onboarding Exam"
+msgstr "Exame de Integração/Onboarding"
 
 #: cms/templates/js/course-outline.underscore
 msgid "Practice proctored Exam"
@@ -10776,7 +10829,7 @@ msgid ""
 "Titles more than 100 characters may prevent students from printing their "
 "certificate on a single page."
 msgstr ""
-"Os títulos com mais de 100 carateres podem impedir que os estudantes "
+"Os títulos com mais de 100 caracteres podem impedir que os estudantes "
 "imprimam o seu certificado numa única página."
 
 #: cms/templates/js/signatory-editor.underscore
@@ -10904,6 +10957,22 @@ msgstr ""
 "Os exames Proctored são cronometrados e gravam vídeo de cada estudante "
 "fazendo o exame. Os vídeos são então revistos para garantir que os "
 "estudantes sigam todas as regras de exame."
+
+#: cms/templates/js/timed-examination-preference-editor.underscore
+msgid "Onboarding"
+msgstr "Integração/Onboarding"
+
+#: cms/templates/js/timed-examination-preference-editor.underscore
+msgid ""
+"Use Onboarding to introduce learners to proctoring, verify their identity, "
+"and create an onboarding profile. Learners must complete the onboarding "
+"profile step prior to taking a proctored exam. Profile reviews take 2+ "
+"business days."
+msgstr ""
+"Use Integração/Onboarding para introduzir aos estudantes o processo de "
+"Supervisão de Avaliação, verifique as suas identidades e crie um perfil de "
+"boas-vindas. Os estudantes devem completar o seu perfil antes de fazer o "
+"exame vigiado. As revisões de perfil demoram mais de 2 dias úteis."
 
 #: cms/templates/js/timed-examination-preference-editor.underscore
 msgid "Practice Proctored"

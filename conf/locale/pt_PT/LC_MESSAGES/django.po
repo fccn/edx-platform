@@ -107,7 +107,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2019-01-27 20:42+0000\n"
+"POT-Creation-Date: 2019-02-10 20:42+0000\n"
 "PO-Revision-Date: 2019-01-15 12:51+0000\n"
 "Last-Translator: Rui Ribeiro <rui.ribeiro@fccn.pt>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/open-edx/edx-platform/language/pt_PT/)\n"
@@ -2380,6 +2380,22 @@ msgid "Correct or Past Due"
 msgstr "Correto ou Prazo ultrapassado"
 
 #: common/lib/xmodule/xmodule/capa_base.py
+msgid "After Some Number of Attempts"
+msgstr "Depois de Algumas Tentativas"
+
+#: common/lib/xmodule/xmodule/capa_base.py
+msgid "Show Answer: Number of Attempts"
+msgstr "Mostrar Resposta: Número de Tentativas"
+
+#: common/lib/xmodule/xmodule/capa_base.py
+msgid ""
+"Number of times the student must attempt to answer the question before the "
+"Show Answer button appears."
+msgstr ""
+"Número de tentativas que o estudante deve usar até aparecer o botão Mostrar "
+"Resposta."
+
+#: common/lib/xmodule/xmodule/capa_base.py
 msgid "Whether to force the save button to appear on the page"
 msgstr "Para forçar o botão guardar a aparecer na página"
 
@@ -3404,8 +3420,8 @@ msgid ""
 "Allows courses to share the same css class across runs even if they have "
 "different numbers."
 msgstr ""
-"Permite que várias instâncias dos cursos partilhem a mesma classe css, mesmo"
-" que tenham números diferentes."
+"Permite que várias edições dos cursos partilhem a mesma classe css, mesmo "
+"que tenham códigos diferentes."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Discussion Forum External Link"
@@ -3441,7 +3457,7 @@ msgstr ""
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Course Number Display String"
-msgstr "Número do Curso a exibir"
+msgstr "Código do Curso"
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid ""
@@ -3450,9 +3466,9 @@ msgid ""
 " use the course number that you entered when you created the course, enter "
 "null."
 msgstr ""
-"Insira o número do curso que deseja que apareça no curso. Esta configuração "
-"substitui o número do curso inserido quando o curso foi criado. Para usar o "
-"número do curso inicial, insira 'null'."
+"Insira o código do curso que deseja que apareça no curso. Esta configuração "
+"substitui o código do curso definido quando o curso foi criado. Para usar o "
+"código do curso inicial, insira 'null'."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Course Maximum Student Enrollment"
@@ -3765,6 +3781,10 @@ msgid ""
 "enrolled students), 'public_outline' (allow access to course outline) and "
 "'public' (allow access to both outline and course content)."
 msgstr ""
+"Define as permissões de acesso a estudantes não matriculados. Há três tipos "
+"de permissão: 'private' (permissão predefinida, apenas estudantes "
+"matriculados), 'public_outline' (permite o acesso à estrutura do curso), e "
+"'public' (permite o acesso à estrutura e ao conteúdo do curso)."
 
 #: common/lib/xmodule/xmodule/course_module.py
 msgid "Course Instructor"
@@ -4610,6 +4630,15 @@ msgstr ""
 "exames de prática não são verificados."
 
 #: common/lib/xmodule/xmodule/seq_module.py
+msgid "Is Onboarding Exam"
+msgstr "É um exame de integração/onboarding"
+
+#: common/lib/xmodule/xmodule/seq_module.py
+msgid "This setting indicates whether this exam is an onboarding exam."
+msgstr ""
+"Esta definição indica se este exame é um exame de integração/onboarding."
+
+#: common/lib/xmodule/xmodule/seq_module.py
 msgid ""
 "This subsection is unlocked for learners when they meet the prerequisite "
 "requirements."
@@ -5167,6 +5196,16 @@ msgstr "Todas as palavras possíveis de todos os estudantes."
 msgid "Top num_top_words words for word cloud."
 msgstr "Top de palavras num_top_words para nuvem de palavras."
 
+#: common/lib/xmodule/xmodule/x_module.py
+#, python-brace-format
+msgid ""
+"{display_name} is only accessible to enrolled learners. Sign in or register,"
+" and enroll in this course to view it."
+msgstr ""
+"{display_name} apenas está acessível a estudantes matriculados. Inicie "
+"sessão ou registe-se na plataforma, e inscreva-se neste curso para o "
+"conseguir ver."
+
 #: common/templates/student/edx_ace/accountrecovery/email/body.html
 msgid "Create Password"
 msgstr "Criar Palavra-passe"
@@ -5183,18 +5222,24 @@ msgstr ""
 
 #: common/templates/student/edx_ace/accountrecovery/email/body.html
 #: common/templates/student/edx_ace/accountrecovery/email/body.txt
+#, python-format
 msgid ""
-"We've restored access to your edX account using the recovery email you "
-"provided at registration."
+"We've restored access to your %(platform_name)s account using the recovery "
+"email you provided at registration."
 msgstr ""
+"O acesso à sua conta %(platform_name)s foi restabelecido usando o e-mail de "
+"recuperação que definiu no processo de criação de conta."
 
 #: common/templates/student/edx_ace/accountrecovery/email/body.html
 #: common/templates/student/edx_ace/accountrecovery/email/body.txt
 #, python-format
 msgid ""
-"Once you've created a password [below], you will be able to log in to edX "
-"with this email (%(email)s) and your new password."
+"Once you've created a password [below], you will be able to log in to "
+"%(platform_name)s with this email (%(email)s) and your new password."
 msgstr ""
+"Uma vez criada a palavra-passe [abaixo], será possível iniciar a sessão na "
+"plataforma %(platform_name)s através deste endereço de e-mail (%(email)s) e "
+"da nova palavra-passe."
 
 #: common/templates/student/edx_ace/accountrecovery/email/body.html
 #: common/templates/student/edx_ace/accountrecovery/email/body.txt
@@ -5216,28 +5261,16 @@ msgstr "Obrigado por usar o nosso serviço!"
 #: common/templates/student/edx_ace/passwordreset/email/body.txt
 #, python-format
 msgid "The %(platform_name)s Team"
-msgstr "A equipa da %(platform_name)s"
+msgstr "Equipa %(platform_name)s"
 
 #: common/templates/student/edx_ace/accountrecovery/email/subject.txt
 #, python-format
 msgid "Password creation on %(platform_name)s"
-msgstr ""
+msgstr "Criar palavra-passe na %(platform_name)s"
 
 #: common/templates/student/edx_ace/emailchange/email/body.html
 msgid "Email Change"
 msgstr "Alteração de Email"
-
-#: common/templates/student/edx_ace/emailchange/email/body.html
-#: common/templates/student/edx_ace/emailchange/email/body.txt
-#, python-format
-msgid ""
-"We received a request to change the secondary e-mail associated with your "
-"%(platform_name)s account to %(new_email)s. If this is correct, please "
-"confirm your new secondary e-mail address by visiting:"
-msgstr ""
-"Recebemos um pedido de alteração do e-mail secundário, associado à sua conta"
-" %(platform_name)s, para %(new_email)s. Se solicitou este pedido, por favor "
-"confirme o seu endereço de e-mail secundário em:"
 
 #: common/templates/student/edx_ace/emailchange/email/body.html
 #: common/templates/student/edx_ace/emailchange/email/body.txt
@@ -5266,11 +5299,6 @@ msgstr ""
 "Se não pediu isto, não precisa de fazer nada; Não receberá mais nenhum email"
 " nosso. Por favor, não responda a este email; Se necessitar de assistência, "
 "consulte a secção de ajuda do site %(platform_name)s."
-
-#: common/templates/student/edx_ace/emailchange/email/subject.txt
-#, python-format
-msgid "Request to change %(platform_name)s account secondary e-mail"
-msgstr "Pedido para alterar o e-mail da conta secundária da %(platform_name)s"
 
 #: common/templates/student/edx_ace/emailchange/email/subject.txt
 #, python-format
@@ -5319,6 +5347,37 @@ msgstr "Por favor, visite a seguinte página e escolha uma nova palavra-passe:"
 #, python-format
 msgid "Password reset on %(platform_name)s"
 msgstr "Palavra-passe redefinida em %(platform_name)s"
+
+#: common/templates/student/edx_ace/recoveryemailcreate/email/body.html
+msgid "Create Recovery Email"
+msgstr "Criar E-mail de Recuperação"
+
+#: common/templates/student/edx_ace/recoveryemailcreate/email/body.html
+#: common/templates/student/edx_ace/recoveryemailcreate/email/body.txt
+#, python-format
+msgid "You've registered this recovery email address for %(platform_name)s."
+msgstr "Registou este e-mail de recuperação na sua conta %(platform_name)s."
+
+#: common/templates/student/edx_ace/recoveryemailcreate/email/body.html
+#: common/templates/student/edx_ace/recoveryemailcreate/email/body.txt
+msgid ""
+"If you set this email address, click \"confirm email.\"  If you didn't "
+"request this change, you can disregard this email."
+msgstr ""
+"Se definiu este endereço de e-mail, clique em \"confirmar e-mail\". Se não "
+"solicitou a alteração, ignore este e-mail."
+
+#. Translators: This label appears above a field on the registration form
+#. meant to confirm the user's email address.
+#: common/templates/student/edx_ace/recoveryemailcreate/email/body.html
+#: openedx/core/djangoapps/user_api/api.py
+msgid "Confirm Email"
+msgstr "Confirme o Email"
+
+#: common/templates/student/edx_ace/recoveryemailcreate/email/subject.txt
+#, python-format
+msgid "Confirm your recovery email for %(platform_name)s"
+msgstr "Confirme o seu e-mail de recuperação %(platform_name)s"
 
 #: lms/djangoapps/badges/events/course_complete.py
 #, python-brace-format
@@ -6429,11 +6488,11 @@ msgstr ""
 #: lms/djangoapps/courseware/masquerade.py
 #, python-brace-format
 msgid ""
-"There is no user with the username or email address \"{user_identifier}\" "
+"There is no user with the username or email address u\"{user_identifier}\" "
 "enrolled in this course."
 msgstr ""
-"Não existe o nome de utilizador ou endereço de email \"{user_identifier}\" "
-"matriculado neste curso."
+"Não foi encontrado nenhum utilizador com este nome de utilizador ou endereço"
+" de e-mail u\"{user_identifier}\" matriculado neste curso."
 
 #: lms/djangoapps/courseware/masquerade.py
 msgid ""
@@ -6914,12 +6973,6 @@ msgid "Information about all courses"
 msgstr "Informação sobre todos os cursos"
 
 #: lms/djangoapps/dashboard/sysadmin.py
-#, python-brace-format
-msgid "Error - cannot get course with ID {0}<br/><pre>{1}</pre>"
-msgstr ""
-"Erro - não foi possível carregar o curso com ID. {0}<br/><pre>{1}</pre>"
-
-#: lms/djangoapps/dashboard/sysadmin.py
 msgid "Deleted"
 msgstr "Deletado"
 
@@ -7162,6 +7215,8 @@ msgid ""
 "A proctored exam attempt for {exam_name} in {course_name} by username: {student_username} was reviewed as {review_status} by the proctored exam review provider.\n"
 "Review link: {review_url}"
 msgstr ""
+"Tentativa de exame vigiado para {exam_name} em {course_name}por nome de utilizador: {student_username} foi considerado como {review_status} pelo provedor de revisão .\n"
+"Link de revisão: {review_url}"
 
 #: lms/djangoapps/instructor/settings/common.py
 msgid "Your Platform Insights"
@@ -9376,11 +9431,11 @@ msgstr "Ver, criar e reemitir direitos do estudante"
 #: lms/djangoapps/support/views/index.py
 #: lms/templates/support/feature_based_enrollments.html
 msgid "Feature Based Enrollments"
-msgstr ""
+msgstr "Matrículas Baseadas em Características"
 
 #: lms/djangoapps/support/views/index.py
 msgid "View feature based enrollment settings"
-msgstr ""
+msgstr "Ver definições de matrículas baseadas em características"
 
 #: lms/djangoapps/support/views/manage_user.py
 msgid "user_support_url"
@@ -10074,6 +10129,7 @@ msgstr ""
 #: cms/templates/course-create-rerun.html cms/templates/index.html
 #: cms/templates/manage_users.html cms/templates/manage_users_lib.html
 #: cms/templates/videos_index_pagination.html
+#: lms/templates/bulk_email/unsubscribe.html
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -10641,6 +10697,10 @@ msgstr "Descarregar a aplicação Android na Google Play Store"
 msgid "Our mailing address is"
 msgstr "O nosso endereço para correspondência é"
 
+#: openedx/core/djangoapps/ace_common/templates/ace_common/edx_ace/common/base_body.html
+msgid "Unsubscribe from these emails."
+msgstr "Cancelar subscrição destes e-mails."
+
 #: openedx/core/djangoapps/ace_common/templates/ace_common/edx_ace/common/base_head.html
 msgid "edX Email"
 msgstr "Email edX"
@@ -10947,7 +11007,7 @@ msgid ""
 " hyphens (-) are allowed. The identifier is case-sensitive."
 msgstr ""
 "Identificador único para este fornecedor de crédito. Só são permitidos "
-"carateres alfanuméricos e hífenes (-). O identificador diferencia as "
+"caracteres alfanuméricos e hífenes (-). O identificador diferencia as "
 "maiúsculas de minúsculas."
 
 #: openedx/core/djangoapps/credit/models.py
@@ -11791,12 +11851,6 @@ msgstr "Lembrar-me"
 msgid "This is what you will use to login."
 msgstr "Este email será utilizado para login."
 
-#. Translators: This label appears above a field on the registration form
-#. meant to confirm the user's email address.
-#: openedx/core/djangoapps/user_api/api.py
-msgid "Confirm Email"
-msgstr "Confirme o Email"
-
 #. Translators: These instructions appear on the registration form,
 #. immediately
 #. below a field meant to hold the user's full name.
@@ -11829,7 +11883,7 @@ msgstr ""
 #. form used to select the user's highest completed level of education.
 #: openedx/core/djangoapps/user_api/api.py
 msgid "Highest level of education completed"
-msgstr "Maior nível de educação concluído"
+msgstr "Nível de educação concluído"
 
 #. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: This label appears above a dropdown menu on the registration
@@ -12218,6 +12272,14 @@ msgid ""
 " for the org that the course is in, then the more specific context overrides"
 " the more general context."
 msgstr ""
+"Estes definem o contexto para ativar os limites de duração do curso. Se "
+"nenhum valor for definido, então a configuração aplica-se globalmente. Se um"
+" único valor for definido, então a configuração aplica-se a todos os cursos "
+"dentro desse contexto. No máximo pode ser definido um valor de cada vez.<br>"
+" Se vários contextos se aplicarem a um curso (por exemplo, se uma "
+"configuração é especifica para o curso, e para a organização a que pertence "
+"o curso/, então o contexto mais específico substituirá o contexto mais "
+"geral."
 
 #: openedx/features/content_type_gating/admin.py
 #: openedx/features/course_duration_limits/admin.py
@@ -12227,6 +12289,10 @@ msgid ""
 "For example, if \"Enabled\" is left as \"Unknown\" in the course context, "
 "then that course will be Enabled only if the org that it is in is Enabled."
 msgstr ""
+"Se algum destes valores estiver vazio ou \"Unknown\", será assumido o valor "
+"do contexto mais próximo. Por exemplo, se \"Enabled\" for deixado como "
+"\"Unknown\" no contexto do curso, então o curso será Ativado somente se "
+"\"Enabled\" está definido no contexto da organização do curso."
 
 #: openedx/features/content_type_gating/models.py
 #: openedx/features/course_duration_limits/models.py
@@ -12330,6 +12396,9 @@ msgid ""
 "{expiration_date}{strong_close}{line_break}You lose all access to this "
 "course, including your progress, on {expiration_date}."
 msgstr ""
+"{strong_open}O Acesso para Assistir expira a  "
+"{expiration_date}{strong_close}{line_break}Vai perder todo acesso a este "
+"curso, inclusive o seu progresso, a {expiration_date}."
 
 #: openedx/features/course_duration_limits/access.py
 #, python-brace-format
@@ -12762,23 +12831,23 @@ msgid ""
 "Special characters not allowed in organization, course number, and course "
 "run."
 msgstr ""
-"Não são permitidos carateres especiais na organização, no número do curso e "
-"na execução do curso."
+"Não são permitidos caracteres especiais na organização, no código do curso e"
+" na execução do curso."
 
 #: cms/djangoapps/contentstore/views/course.py
 msgid ""
 "There is already a course defined with the same organization and course "
 "number. Please change either organization or course number to be unique."
 msgstr ""
-"Já existe um curso definido com a mesma organização e número do curso. Por "
-"favor, altere a organização ou o número do curso para ser identificativo e "
+"Já existe um curso definido com a mesma organização e código do curso. Por "
+"favor, altere a organização ou o código do curso para ser identificativo e "
 "único."
 
 #: cms/djangoapps/contentstore/views/course.py
 msgid ""
 "Please change either the organization or course number so that it is unique."
 msgstr ""
-"Por favor, altere o nome da organização ou o número do curso para que seja "
+"Por favor, altere o nome da organização ou o código do curso para que seja "
 "único."
 
 #: cms/djangoapps/contentstore/views/course.py
@@ -13272,7 +13341,7 @@ msgstr "A carregar"
 #: cms/templates/course-create-rerun.html cms/templates/index.html
 #: cms/templates/settings.html lms/templates/courseware/course_about.html
 msgid "Course Number"
-msgstr "Número do Curso"
+msgstr "Código do Curso"
 
 #: cms/templates/course_outline.html
 #: openedx/features/course_experience/templates/course_experience/course-home-fragment.html
@@ -13291,7 +13360,7 @@ msgstr "Organização:"
 #: cms/templates/index.html
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
 msgid "Course Number:"
-msgstr "Número do Curso:"
+msgstr "Código do Curso:"
 
 #: cms/templates/index.html
 #: lms/templates/instructor/instructor_dashboard_2/course_info.html
@@ -13347,7 +13416,7 @@ msgstr "exemplo: username@dominio.com"
 #: cms/templates/login.html lms/templates/login.html
 #: themes/red-theme/cms/templates/login.html
 msgid "Forgot password?"
-msgstr "Esqueceu a palavra-passe?"
+msgstr "Esqueceu-se da palavra-passe?"
 
 #. Translators: This is the placeholder text for a field that requests the
 #. user's full name.
@@ -14720,7 +14789,7 @@ msgstr "Grupos Inativos"
 
 #: lms/templates/staff_problem_info.html
 msgid "Staff Debug Info"
-msgstr "Informação de 'debug' para a equipa do curso"
+msgstr "Informação de 'debug' para a equipa de curso"
 
 #: lms/templates/staff_problem_info.html
 msgid "Submission history"
@@ -15882,6 +15951,39 @@ msgid "Enter a username to view catalogs belonging to that user."
 msgstr ""
 "Insira um nome de utilizador para visualizar os catálogos pertencentes a "
 "esse utilizador."
+
+#: lms/templates/bulk_email/unsubscribe.html
+msgid "Unsubscribe Successful"
+msgstr "Cancelamento da Subscrição Bem-Sucedido"
+
+#: lms/templates/bulk_email/unsubscribe.html
+msgid "Unsubscribe Cancelled"
+msgstr "Cancelamento da Subscrição Anulado"
+
+#: lms/templates/bulk_email/unsubscribe.html
+msgid "Confirm Unsubscribe"
+msgstr "Confirmar Cancelamento de Subscrição"
+
+#: lms/templates/bulk_email/unsubscribe.html
+msgid "You have been unsubscribed from emails for {course}."
+msgstr ""
+"Cancelou a subscrição para receber informações sobre o curso {course}."
+
+#: lms/templates/bulk_email/unsubscribe.html
+msgid "You have not been unsubscribed from emails for {course}."
+msgstr ""
+"A subscrição para receber informações sobre o curso {course} não foi "
+"cancelada."
+
+#: lms/templates/bulk_email/unsubscribe.html
+msgid "Do you want to unsubscribe from emails for {course}?"
+msgstr ""
+"Deseja cancelar a subscrição e deixar de receber informações sobre o curso "
+"{course}?"
+
+#: lms/templates/bulk_email/unsubscribe.html
+msgid "Unsubscribe"
+msgstr "Cancelar Subscrição"
 
 #: lms/templates/calculator/toggle_calculator.html
 msgid "Open Calculator"
@@ -17281,7 +17383,7 @@ msgstr ""
 #: lms/templates/emails/activation_email.txt
 #: lms/templates/emails/order_confirmation_email.txt
 msgid "The {platform_name} Team"
-msgstr "A equipa de {platform_name}"
+msgstr "Equipa {platform_name}"
 
 #: lms/templates/credit_notifications/credit_eligibility_email.html
 msgid ""
@@ -18050,7 +18152,7 @@ msgstr ""
 
 #: lms/templates/emails/activation_email.txt
 msgid "Enjoy learning with {platform_name}."
-msgstr "Desfrute da sua aprendizagem com {platform_name}."
+msgstr "Desfrute da sua aprendizagem na {platform_name}."
 
 #: lms/templates/emails/activation_email.txt
 msgid ""
@@ -18314,7 +18416,7 @@ msgstr "Obrigado,"
 #: lms/templates/emails/photo_submission_confirmation.txt
 #: lms/templates/emails/reverification_processed.txt
 msgid "The {platform_name} team"
-msgstr "A Equipa de {platform_name}"
+msgstr "Equipa {platform_name}"
 
 #: lms/templates/emails/order_confirmation_email.txt
 msgid ""
@@ -18395,7 +18497,7 @@ msgid ""
 "The {platform_name} Team"
 msgstr ""
 "Obrigado,\n"
-"A Equipa de {platform_name}"
+"Equipa {platform_name}"
 
 #. Translators: please translate the text inside [[ ]]. This is meant as a
 #. template for course teams to use.
@@ -18509,10 +18611,9 @@ msgid ""
 "name from {old_name} to {new_name}. If you need further assistance, please "
 "e-mail the course staff at {email}."
 msgstr ""
-"Pedimos desculpa. A equipa do nosso curso não aprovou o seu pedido para "
-"alterar o seu nome de {old_name} para {new_name}. Se precisar de mais "
-"assistência, por favor envie um email para a equipa do curso através de "
-"{email}."
+"Pedimos desculpa. A equipa de curso não aprovou o seu pedido para alterar o "
+"seu nome de {old_name} para {new_name}. Se precisar de mais assistência, por"
+" favor envie um e-mail para a equipa de curso através de {email}."
 
 #: lms/templates/emails/reverification_processed.txt
 msgid ""
@@ -19808,7 +19909,7 @@ msgstr "O número total de códigos de inscrição para criar"
 
 #: lms/templates/instructor/instructor_dashboard_2/generate_registarion_codes_modal.html
 msgid "Course Team Internal Reference"
-msgstr "Referência Interna da Equipa do Curso"
+msgstr "Referência Interna da Equipa de Curso"
 
 #: lms/templates/instructor/instructor_dashboard_2/generate_registarion_codes_modal.html
 msgid "Internal reference information for the sale"
@@ -19965,14 +20066,14 @@ msgstr "Remover utilizadores beta"
 #. users can be added to.
 #: lms/templates/instructor/instructor_dashboard_2/membership.html
 msgid "Course Team Management"
-msgstr "Administração da Equipa do Curso"
+msgstr "Gestão da Equipa de Curso"
 
 #. Translators: an "Administrator Group" is a group, such as Course Staff,
 #. that
 #. users can be added to.
 #: lms/templates/instructor/instructor_dashboard_2/membership.html
 msgid "Select a course team role:"
-msgstr "Selecione uma função na equipa do curso:"
+msgstr "Selecione uma função na equipa de curso:"
 
 #: lms/templates/instructor/instructor_dashboard_2/membership.html
 msgid "Getting available lists..."
@@ -19984,10 +20085,10 @@ msgid ""
 "Admin must give you the Admin role to add Staff or Beta Testers, or the "
 "Discussion Admin role to add discussion moderators and TAs."
 msgstr ""
-"A equipa não pode modificar essas listas. Para gerir a adesão à equipa do "
-"curso, um administrador do curso deve atribuir-lhe a função Admin para "
-"adicionar Staff ou Utilizadores Beta, ou a função de Administrador de Debate"
-" para adicionar moderadores de debate e ATs."
+"A Equipa não pode modificar estas listas. Para gerir a adesão à equipa de "
+"curso, um administrador do curso deve atribuir-lhe a função administrador "
+"para adicionar Equipa ou Utilizadores Beta, ou a função de Administrador de "
+"Debate para adicionar moderadores de debate e ATs."
 
 #: lms/templates/instructor/instructor_dashboard_2/membership.html
 msgid ""
@@ -19996,8 +20097,8 @@ msgid ""
 "all course data. Staff also have access to your course in Studio and "
 "Insights. You can only give course team roles to enrolled users."
 msgstr ""
-"Os elementos da equipa do curso com a função de Staff auxiliam na gestão do "
-"seu curso. Podem inscrever e cancelar a inscrição de estudantes, além de "
+"Os elementos da equipa de curso com a função de Equipa auxiliam na gestão do"
+" seu curso. Podem inscrever e cancelar a inscrição de estudantes, além de "
 "modificar as suas classificações e aceder a toda a informação do curso. A "
 "equipa de curso também tem acesso ao curso em Studio e Insights. Só pode "
 "atribuir funções de equipa de curso a utilizadores inscritos."
@@ -20371,16 +20472,16 @@ msgid "View gradebook for enrolled learners"
 msgstr "Ver relatório de classificações dos estudantes matriculados"
 
 #: lms/templates/instructor/instructor_dashboard_2/student_admin.html
+msgid "View Gradebook"
+msgstr "Ver Relatório de Classificações"
+
+#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
 msgid ""
 "Note: This feature is available only to courses with a small number of "
 "enrolled learners."
 msgstr ""
 "Nota: Esta funcionalidade está disponível apenas para cursos com um pequeno "
 "número de estudantes matriculados."
-
-#: lms/templates/instructor/instructor_dashboard_2/student_admin.html
-msgid "View Gradebook"
-msgstr "Ver Relatório de Classificações"
 
 #: lms/templates/instructor/instructor_dashboard_2/student_admin.html
 msgid "View a specific learner's enrollment status"
@@ -21442,7 +21543,7 @@ msgstr "Suporte ao Estudante: Inscrição"
 
 #: lms/templates/support/feature_based_enrollments.html
 msgid "Student Support: Feature Based Enrollments"
-msgstr ""
+msgstr "Apoio ao Estudante: Matrículas Baseadas em Características"
 
 #: lms/templates/support/feature_based_enrollments.html
 msgid "Is Enabled"
@@ -22493,7 +22594,7 @@ msgstr "Classificação"
 #: cms/templates/settings_advanced.html cms/templates/settings_graders.html
 #: cms/templates/widgets/header.html
 msgid "Course Team"
-msgstr "Equipa do Curso"
+msgstr "Equipa de Curso"
 
 #: cms/templates/certificates.html cms/templates/group_configurations.html
 #: cms/templates/settings.html cms/templates/settings_advanced.html
@@ -22659,8 +22760,8 @@ msgid ""
 "Note: Together, the organization, course number, and course run must "
 "uniquely identify this new course instance."
 msgstr ""
-"Nota: Juntos, a organização, o número do curso e a execução do curso devem "
-"identificar única e exclusivamente esta nova edição do curso."
+"Nota: Juntos, a organização, o código do curso e a edição do curso devem "
+"identificar única e exclusivamente este novo curso."
 
 #: cms/templates/course-create-rerun.html
 msgid "Required Information to Create a re-run of a course"
@@ -22720,8 +22821,8 @@ msgid ""
 "(This number will be the same as the original course number and cannot be "
 "changed.)"
 msgstr ""
-"O número exclusivo que identifica o novo curso dentro da organização. (Este "
-"número será igual ao número do curso original e não pode ser alterado)."
+"O código exclusivo que identifica o novo curso dentro da organização. (Este "
+"número será igual ao código do curso original e não pode ser alterado)."
 
 #: cms/templates/course-create-rerun.html cms/templates/index.html
 #: cms/templates/settings.html
@@ -23304,7 +23405,7 @@ msgstr "Dados do utilizador"
 
 #: cms/templates/export.html
 msgid "Course Team Data"
-msgstr "Dados da Equipa do Curso"
+msgstr "Dados da Equipa de Curso"
 
 #: cms/templates/export.html
 msgid "Forum/discussion Data"
@@ -24561,7 +24662,7 @@ msgstr "Saiba mais sobre as bibliotecas de conteúdo"
 
 #: cms/templates/manage_users.html
 msgid "Course Team Settings"
-msgstr "Configurações da Equipa do Curso"
+msgstr "Configurações da Equipa de Curso"
 
 #: cms/templates/manage_users.html cms/templates/manage_users_lib.html
 msgid "New Team Member"
@@ -24569,7 +24670,7 @@ msgstr "Novo Elemento da Equipa"
 
 #: cms/templates/manage_users.html
 msgid "Add a User to Your Course's Team"
-msgstr "Adicionar um Utilizador à Equipa do seu Curso"
+msgstr "Adicionar um Utilizador à Equipa de Curso"
 
 #: cms/templates/manage_users.html cms/templates/manage_users_lib.html
 msgid "New Team Member Information"
@@ -24607,7 +24708,7 @@ msgstr "Adicionar um Novo Elemento à Equipa"
 
 #: cms/templates/manage_users.html
 msgid "Course Team Roles"
-msgstr "Perfis da Equipa do Curso"
+msgstr "Perfis da Equipa de Curso"
 
 #: cms/templates/manage_users.html
 msgid ""
@@ -24622,8 +24723,8 @@ msgid ""
 "Admins are course team members who can add and remove other course team "
 "members."
 msgstr ""
-"Os administradores/Admins são elementos da equipa do curso que podem "
-"adicionar e remover outros elementos da equipa."
+"Os administradores são elementos da equipa de curso que podem adicionar e "
+"remover outros elementos da equipa."
 
 #: cms/templates/manage_users.html
 msgid ""
@@ -24689,8 +24790,8 @@ msgstr "Perfis de Acesso a Bibliotecas"
 #: cms/templates/manage_users_lib.html
 msgid "There are three access roles for libraries: User, Staff, and Admin."
 msgstr ""
-"Há três perfis para o acesso a bibliotecas: utilizador, Equipa do Curso, e "
-"Admin."
+"Há três perfis para o acesso a bibliotecas: Utilizador, Equipa de Curso, e "
+"Administrador."
 
 #: cms/templates/manage_users_lib.html
 msgid ""
@@ -24785,7 +24886,7 @@ msgstr ""
 "{studio_name} está desenvolvido para qualquer pessoa que deseje criar cursos"
 " online e que aproveite a plataforma global {platform_name}. Os nossos "
 "utilizadores são frequentemente elementos do corpo docente, assistentes de "
-"ensino e equipa do curso, e elementos de grupos de Tecnologia Educativa."
+"ensino e equipa de curso, e elementos de grupos de Tecnologia Educativa."
 
 #: cms/templates/register.html
 msgid ""
