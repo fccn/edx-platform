@@ -11886,8 +11886,9 @@ msgid ""
 msgstr ""
 "Ao criar uma conta com {platform_name}, você concorda em respeitar o nosso "
 "{platform_name} {terms_of_service_link_start} {terms_of_service} "
-"{terms_of_service_link_end} e concordar com a nossa política de privacidade "
-"{privacy_policy_link_start} { privacy_policy_link_end}."
+"{terms_of_service_link_end} e concordar com a nossa  "
+"{privacy_policy_link_start}política de privacidade "
+"{privacy_policy_link_end}."
 
 #. Translators: "Terms of service" is a legal document users must agree to
 #. in order to register a new account.
