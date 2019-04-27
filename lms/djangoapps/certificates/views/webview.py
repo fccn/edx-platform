@@ -5,6 +5,7 @@ Certificate HTML webview.
 import logging
 import urllib
 from datetime import datetime
+from importlib import import_module
 from uuid import uuid4
 
 import pytz
@@ -444,6 +445,37 @@ def _update_badge_context(context, course, user):
     context['badge'] = badge
 
 
+def _update_context_with_plugins(context, *args, **kwargs):
+    """
+    Extension point to alter the context of a certificate from an external plugin
+    """
+    path = None
+    try:
+        path = configuration_helpers.get_value(
+            'CERTIFICATE_CONTEXT_EXTENSION',
+            getattr(settings, 'CERTIFICATE_CONTEXT_EXTENSION', None)
+        )
+        if not path:
+            return
+    except AttributeError:
+        return
+
+    try:
+        module, func_name = path.rsplit('.', 1)
+        module = import_module(module)
+        update_function = getattr(module, func_name)
+        return update_function(context, *args, **kwargs)
+    except ImportError:
+        log.info('Could not import the CERTIFICATE_CONTEXT_EXTENSION: %s', module)
+        return
+    except AttributeError:
+        log.info('Could not import the function %s in the module %s', func_name, module)
+        return
+    except ValueError:
+        log.info('Could not load the CERTIFICATE_CONTEXT_EXTENSION information from \"%s\"', path)
+        return
+
+
 def _update_organization_context(context, course):
     """
     Updates context with organization related info.
@@ -603,6 +635,9 @@ def render_html_view(request, user_id, course_id):
         # Add certificate header/footer data to current context
         context.update(get_certificate_header_context(is_secure=request.is_secure()))
         context.update(get_certificate_footer_context())
+
+        # Append/Override the existing view context values with plugin defined values
+        _update_context_with_plugins(context, request, course, user, user_certificate, configuration)
 
         # Append/Override the existing view context values with any course-specific static values from Advanced Settings
         context.update(course.cert_html_view_overrides)
