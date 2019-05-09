@@ -21,6 +21,7 @@ from django_countries import countries
 
 import third_party_auth
 from edxmako.shortcuts import marketing_link
+from openedx.core.djangoapps.plugins.plugin_extension_points import run_extension_point
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from openedx.core.djangoapps.user_api import accounts
 from openedx.core.djangoapps.user_api.helpers import FormDescription
@@ -1098,3 +1099,10 @@ class RegistrationFormFactory(object):
                         default=current_provider.name if current_provider.name else "Third Party",
                         required=False,
                     )
+
+            run_extension_point(
+                'NAU_APPLY_SAML_OVERRIDES',
+                request=request,
+                form_desc=form_desc,
+                extra_settings=self._extra_fields_setting,
+            )
