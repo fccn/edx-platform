@@ -607,7 +607,7 @@ def render_html_view(request, user_id, course_id):
 
         # Append/Override the existing view context values with plugin defined values
         run_extension_point(
-            'CERTIFICATE_CONTEXT_EXTENSION',
+            'NAU_CERTIFICATE_CONTEXT_EXTENSION',
             context=context,
             request=request,
             course=course,

@@ -974,7 +974,7 @@ class RegistrationFormFactory(object):
                     )
 
             run_extension_point(
-                'APPLY_SAML_OVERRIDES',
+                'NAU_APPLY_SAML_OVERRIDES',
                 request=request,
                 form_desc=form_desc,
                 extra_settings=self._extra_fields_setting,
