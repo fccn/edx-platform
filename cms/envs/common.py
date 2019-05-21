@@ -1541,3 +1541,7 @@ plugin_settings.add_plugins(__name__, plugin_constants.ProjectType.CMS, plugin_c
 # setting for the FileWrapper class used to iterate over the export file data.
 # See: https://docs.python.org/2/library/wsgiref.html#wsgiref.util.FileWrapper
 COURSE_EXPORT_DOWNLOAD_CHUNK_SIZE = 8192
+
+############### Cache for Anonymous users ##################
+
+FEATURES['ENABLE_CACHE_IF_ANONYMOUS'] = True
