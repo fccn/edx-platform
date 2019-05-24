@@ -2199,6 +2199,7 @@
     "You are not enrolled in any programs yet.": "Ainda n\u00e3o est\u00e1 inscrito em nenhum programa.", 
     "You are now enrolled as a verified student for:": "J\u00e1 est\u00e1 inscrito como um estudante validado para:", 
     "You are sending an email message with the subject {subject} to the following recipients.": "A enviar uma mensagem de email com o assunto '{subject}' para os seguintes destinat\u00e1rios.", 
+    "You are taking \"{exam_link}\" as a {exam_type} exam. The timer on the right shows the time remaining in the exam.": "\"{exam_link}\" \u00e9 um exame {exam_type}. O cron\u00f3metro \u00e0 direita mostra o tempo que resta para o exame terminar.", 
     "You are upgrading your enrollment for: {courseName}": "Vai atualizar a sua inscri\u00e7\u00e3o para: {courseName}", 
     "You can also retry this practice exam": "Tamb\u00e9m pode repetir este exame pr\u00e1tico", 
     "You can change sessions until {expiration_date}.": "Poder\u00e1 alterar as sess\u00f5es at\u00e9 {expiration_date}.", 

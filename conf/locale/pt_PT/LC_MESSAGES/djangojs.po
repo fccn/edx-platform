@@ -7677,6 +7677,14 @@ msgstr "Marcar o Exame Como Finalizado"
 msgid "a timed exam"
 msgstr "um exame cronometrado"
 
+#: lms/templates/courseware/proctored-exam-status.underscore:10
+msgid ""
+"You are taking \"{exam_link}\" as a {exam_type} exam. The timer on the "
+"right shows the time remaining in the exam."
+msgstr ""
+"\"{exam_link}\" é um exame {exam_type}. O cronómetro à "
+"direita mostra o tempo que resta para o exame terminar."
+
 #: lms/templates/courseware/proctored-exam-status.underscore
 msgid "The timer on the right shows the time remaining in the exam."
 msgstr ""
