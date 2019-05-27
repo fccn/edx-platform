@@ -614,6 +614,7 @@ def render_html_view(request, user_id, course_id):
             user=user,
             user_certificate=user_certificate,
             configuration=configuration,
+            certificate_language=certificate_language,
         )
 
         # Append/Override the existing view context values with any course-specific static values from Advanced Settings
