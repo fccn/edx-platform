@@ -15,6 +15,7 @@ from rest_framework import serializers
 from six import text_type
 
 from lms.djangoapps.badges.utils import badges_enabled
+from openedx.core.djangoapps.plugins.plugin_extension_points import run_extension_point
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from openedx.core.djangoapps.user_api import errors
 from openedx.core.djangoapps.user_api.accounts.utils import is_secondary_email_feature_enabled
@@ -191,6 +192,13 @@ class UserReadOnlySerializer(serializers.Serializer):
                     "secondary_email_enabled": True,
                 }
             )
+
+        # Append/Override the existing data values with plugin defined values
+        run_extension_point(
+            'NAU_STUDENT_SERIALIZER_CONTEXT_EXTENSION',
+            data=data,
+            user=user,
+        )
 
         if self.custom_fields:
             fields = self.custom_fields
