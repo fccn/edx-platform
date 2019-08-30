@@ -12,6 +12,7 @@ from django.urls import reverse
 from six import text_type
 
 from lms.djangoapps.badges.utils import badges_enabled
+from openedx.core.djangoapps.plugins.plugin_extension_points import run_extension_point
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from openedx.core.djangoapps.user_api import errors
 from openedx.core.djangoapps.user_api.models import (
@@ -149,6 +150,13 @@ class UserReadOnlySerializer(serializers.Serializer):
                     "extended_profile": get_extended_profile(user_profile),
                 }
             )
+
+        # Append/Override the existing data values with plugin defined values
+        run_extension_point(
+            'NAU_STUDENT_SERIALIZER_CONTEXT_EXTENSION',
+            data=data,
+            user=user,
+        )
 
         if self.custom_fields:
             fields = self.custom_fields

@@ -28,6 +28,7 @@ from openedx.core.djangoapps.commerce.utils import ecommerce_api_client
 from openedx.core.djangoapps.external_auth.login_and_register import login as external_auth_login
 from openedx.core.djangoapps.external_auth.login_and_register import register as external_auth_register
 from openedx.core.djangoapps.lang_pref.api import all_languages, released_languages
+from openedx.core.djangoapps.plugins.plugin_extension_points import run_extension_point
 from openedx.core.djangoapps.programs.models import ProgramsApiConfig
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from openedx.core.djangoapps.theming.helpers import is_request_in_themed_site, get_current_site
@@ -602,5 +603,13 @@ def account_settings_context(request):
             # We only want to include providers if they are either currently available to be logged
             # in with, or if the user is already authenticated with them.
         } for state in auth_states if state.provider.display_for_login or state.has_account]
+
+    # Append/Override the existing view context values with plugin defined values
+    run_extension_point(
+        'NAU_STUDENT_ACCOUNT_CONTEXT_EXTENSION',
+        context=context,
+        request=request,
+        user=user,
+    )
 
     return context

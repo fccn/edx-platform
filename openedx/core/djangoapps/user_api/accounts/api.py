@@ -20,6 +20,7 @@ from student import views as student_views
 from util.model_utils import emit_setting_changed_event
 from util.password_policy_validators import validate_password
 
+from openedx.core.djangoapps.plugins.plugin_extension_points import run_extension_point
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 from openedx.core.djangoapps.user_api import errors, accounts, forms, helpers
 from openedx.core.djangoapps.user_api.config.waffle import PREVENT_AUTH_USER_WRITES, SYSTEM_MAINTENANCE_MSG, waffle
@@ -245,6 +246,13 @@ def update_account_settings(requesting_user, update, username=None):
                 meta[field_name] = new_value
             existing_user_profile.set_meta(meta)
             existing_user_profile.save()
+
+        # Allow a plugin to save the updated values
+        run_extension_point(
+            'NAU_STUDENT_ACCOUNT_PARTIAL_UPDATE',
+            update=update,
+            user=existing_user,
+        )
 
     except PreferenceValidationError as err:
         raise AccountValidationError(err.preference_errors)
