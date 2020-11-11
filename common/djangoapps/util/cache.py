@@ -55,7 +55,8 @@ def cache_if_anonymous(*get_parameters):
             # If that page is cached the authentication doesn't
             # happen, so we disable the cache when that feature is enabled.
             if (
-                not request.user.is_authenticated
+                not request.user.is_authenticated and
+                settings.FEATURES['ENABLE_CACHE_IF_ANONYMOUS']
             ):
                 # Use the cache. The same view accessed through different domain names may
                 # return different things, so include the domain name in the key.
