@@ -71,7 +71,6 @@ from lms.djangoapps.courseware.courses import (
     sort_by_announcement,
     sort_by_start_date
 )
-from lms.djangoapps.courseware.date_summary import verified_upgrade_deadline_link
 from lms.djangoapps.courseware.exceptions import CourseAccessRedirect, Redirect
 from lms.djangoapps.courseware.masquerade import setup_masquerade
 from lms.djangoapps.courseware.model_data import FieldDataCache
@@ -82,6 +81,7 @@ from lms.djangoapps.courseware.permissions import (
     VIEW_COURSEWARE,
     VIEW_XQA_INTERFACE
 )
+from lms.djangoapps.courseware.tabs import get_course_tab_by_type
 from lms.djangoapps.courseware.url_helpers import get_redirect_url
 from lms.djangoapps.courseware.user_state_client import DjangoXBlockUserStateClient
 from lms.djangoapps.experiments.utils import get_experiment_user_metadata_context
@@ -598,7 +598,7 @@ class CourseTabView(EdxFragmentView):
             course = get_course_with_access(request.user, 'load', course_key)
             try:
                 # Render the page
-                tab = CourseTabList.get_tab_by_type(course.tabs, tab_type)
+                tab = get_course_tab_by_type(request, course, tab_type)
                 page_context = self.create_page_context(request, course=course, tab=tab, **kwargs)
 
                 # Show warnings if the user has limited access
