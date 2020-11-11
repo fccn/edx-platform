@@ -213,3 +213,5 @@ SECRET_KEY = '85920908f28904ed733fe576320db18cabd7b6cd'
 # See if the developer has any local overrides.
 if os.path.isfile(join(dirname(abspath(__file__)), 'private.py')):
     from .private import *  # pylint: disable=import-error,wildcard-import
+
+FEATURES['ENABLE_CACHE_IF_ANONYMOUS'] = False

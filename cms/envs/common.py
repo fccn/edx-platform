@@ -2258,3 +2258,7 @@ DISABLE_DEPRECATED_SIGNIN_URL = False
 # .. toggle_tickets: ARCH-1253
 # .. toggle_status: supported
 DISABLE_DEPRECATED_SIGNUP_URL = False
+
+############### Cache for Anonymous users ##################
+
+FEATURES['ENABLE_CACHE_IF_ANONYMOUS'] = True

@@ -403,3 +403,6 @@ if os.path.isfile(join(dirname(abspath(__file__)), 'private.py')):
 # ]
 # TEMPLATES[1]["DIRS"] = _make_mako_template_dirs
 # derive_settings(__name__)
+
+# Devstack cache
+FEATURES['ENABLE_CACHE_IF_ANONYMOUS'] = False

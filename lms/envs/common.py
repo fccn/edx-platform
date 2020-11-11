@@ -3916,3 +3916,6 @@ GITHUB_REPO_ROOT = '/edx/var/edxapp/data'
 
 ##################### SUPPORT URL ############################
 SUPPORT_HOW_TO_UNENROLL_LINK = ''
+
+############### Cache for Anonymous users ##################
+FEATURES['ENABLE_CACHE_IF_ANONYMOUS'] = True
