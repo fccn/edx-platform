@@ -16,6 +16,7 @@ from six import text_type
 from social_core.backends.saml import OID_EDU_PERSON_ENTITLEMENT, SAMLAuth, SAMLIdentityProvider
 from social_core.exceptions import AuthForbidden
 
+from openedx.core.djangoapps.plugins.plugin_extension_points import run_extension_point
 from openedx.core.djangoapps.theming.helpers import get_current_request
 from third_party_auth.exceptions import IncorrectConfigurationException
 
@@ -535,10 +536,13 @@ def get_saml_idp_choices():
     Get a list of the available SAMLIdentityProvider subclasses that can be used to process
     SAML requests, for use in the Django administration form.
     """
-    return (
+    choices = (
         (STANDARD_SAML_PROVIDER_KEY, 'Standard SAML provider'),
         (SAP_SUCCESSFACTORS_SAML_KEY, 'SAP SuccessFactors provider'),
     )
+
+    add_extended_saml_idp_choices = run_extension_point('NAU_ADD_SAML_IDP_CHOICES', choices=choices)
+    return add_extended_saml_idp_choices or choices
 
 
 def get_saml_idp_class(idp_identifier_string):
@@ -550,6 +554,10 @@ def get_saml_idp_class(idp_identifier_string):
         STANDARD_SAML_PROVIDER_KEY: EdXSAMLIdentityProvider,
         SAP_SUCCESSFACTORS_SAML_KEY: SapSuccessFactorsIdentityProvider,
     }
+
+    add_extended_saml_idp_class_choices = run_extension_point('NAU_ADD_SAML_IDP_CLASSES', choices=choices, idp_identifier_string=idp_identifier_string)
+    choices = add_extended_saml_idp_class_choices or choices
+
     if idp_identifier_string not in choices:
         log.error(
             u'[THIRD_PARTY_AUTH] Invalid EdXSAMLIdentityProvider subclass--'
