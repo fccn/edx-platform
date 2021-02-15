@@ -2229,7 +2229,7 @@
       "cerca de %d hora",
       "cerca de %d horas"
     ],
-    "about a minute": "\u00e0 cerca de um minuto",
+    "about a minute": "h\u00e1 cerca de um minuto",
     "about a month": "\u00e0 cerca de um m\u00eas",
     "about a year": "\u00e0 cerca de um ano",
     "about an hour": "cerca de uma hora",
@@ -2272,7 +2272,7 @@
     "image omitted": "imagem omitida",
     "incorrect": "incorreto",
     "last activity": "\u00faltima atividade",
-    "less than a minute": "\u00e0 menos de um minuto",
+    "less than a minute": "h\u00e1 menos de um minuto",
     "marked as answer %(time_ago)s": "marcado como resposta %(time_ago)s",
     "marked as answer %(time_ago)s by %(user)s": "marcado como resposta %(time_ago)s por %(user)s",
     "minute": "minuto",

@@ -13,6 +13,7 @@
 # Cátia Lopes <catia.lopes@bridgelk.com>, 2018-2019
 # Developer QUEO <developer@queo.pt>, 2017
 # Guilherme Campos <guilhermemiguel97@hotmail.com>, 2020
+# Ivo Branco <ivo.branco@fccn.pt>, 2021
 # Carlos <carlos.c.saraiva@gmail.com>, 2013
 # Luis Manuel Moreno <luis.moreno@edunext.co>, 2019-2020
 # Manuela Silva <manuelarodsilva@gmail.com>, 2016,2018,2020
@@ -80,6 +81,7 @@
 # Manuela Silva <manuelarodsilva@gmail.com>, 2016
 # MS, 2016,2018
 # Rui Ribeiro <info@nau.edu.pt>, 2019-2020
+# Sandro Costa <sandro.costa@fccn.pt>, 2021
 # Waldo Luis Ribeiro, 2016
 # Waldo Luís Ribeiro, 2016
 # #-#-#-#-#  underscore-studio.po (edx-platform)  #-#-#-#-#
@@ -100,7 +102,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2021-02-07 20:43+0000\n"
+"POT-Creation-Date: 2021-02-14 20:43+0000\n"
 "PO-Revision-Date: 2020-12-06 20:44+0000\n"
 "Last-Translator: edx_transifex_bot <i18n-working-group+edx-transifex-bot@edx.org>\n"
 "Language-Team: Portuguese (Portugal) (http://www.transifex.com/open-edx/edx-platform/language/pt_PT/)\n"
@@ -2399,11 +2401,11 @@ msgstr "%s a partir de agora"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "less than a minute"
-msgstr "à menos de um minuto"
+msgstr "há menos de um minuto"
 
 #: common/static/js/src/jquery.timeago.locale.js
 msgid "about a minute"
-msgstr "à cerca de um minuto"
+msgstr "há cerca de um minuto"
 
 #: common/static/js/src/jquery.timeago.locale.js
 #, javascript-format

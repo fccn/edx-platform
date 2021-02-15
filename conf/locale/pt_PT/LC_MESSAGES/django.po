@@ -130,7 +130,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2021-02-07 20:43+0000\n"
+"POT-Creation-Date: 2021-02-14 20:44+0000\n"
 "PO-Revision-Date: 2019-01-20 20:43+0000\n"
 "Last-Translator: Cátia Lopes <catia.lopes@bridgelk.com>, 2019\n"
 "Language-Team: Portuguese (Portugal) (https://www.transifex.com/open-edx/teams/6205/pt_PT/)\n"
@@ -202,7 +202,7 @@ msgstr "Já existe uma transcrição com o código de linguagem \"{language_code
 #: cms/djangoapps/contentstore/views/transcripts_ajax.py
 #: common/lib/xmodule/xmodule/video_module/video_handlers.py
 msgid "A transcript file is required."
-msgstr "É necessário um arquivo de transcrição."
+msgstr "É necessário um ficheiro de transcrição."
 
 #: cms/djangoapps/contentstore/views/transcript_settings.py
 #: cms/djangoapps/contentstore/views/transcripts_ajax.py
@@ -211,7 +211,7 @@ msgid ""
 "There is a problem with this transcript file. Try to upload a different "
 "file."
 msgstr ""
-"Há um problema com este arquivo de transcrição. Tente carregar um arquivo "
+"Há um problema com este ficheiro de transcrição. Tente enviar um ficheiro "
 "diferente."
 
 #: cms/djangoapps/contentstore/views/videos.py
@@ -742,7 +742,7 @@ msgid ""
 "                     first row being the header and columns will be as "
 "follows:                     course_id, username, mode"
 msgstr ""
-"É esperado que os dados sejam fornecidos num arquivo com o formato csv com"
+"É esperado que os dados sejam fornecidos num ficheiro com o formato csv com"
 "                     a primeira linha sendo o cabeçalho e as colunas serão "
 "as seguintes:                     course_id, username, mode"
 
@@ -1464,7 +1464,7 @@ msgstr[1] ""
 #: common/djangoapps/util/file.py
 #, python-brace-format
 msgid "Maximum upload file size is {file_size} bytes."
-msgstr "O tamanho máximo do arquivo de carregamento é {file_size} bytes."
+msgstr "O tamanho máximo do ficheiro de carregamento é {file_size} bytes."
 
 #: common/djangoapps/util/milestones_helpers.py
 #, python-brace-format
@@ -1744,7 +1744,7 @@ msgstr "Não suportado"
 msgid "Cannot rescore problems with possible file submissions"
 msgstr ""
 "Não foi possível corrigir novamente os problemas com os possíveis envios de "
-"arquivos"
+"ficheiros"
 
 #: common/lib/capa/capa/capa_problem.py
 msgid "Question {}"
@@ -3013,7 +3013,7 @@ msgstr "Credenciais de carregamento de vídeo"
 msgid ""
 "Enter the unique identifier for your course's video files provided by edX."
 msgstr ""
-"Insira o identificador exclusivo para os arquivos de vídeo do seu curso "
+"Insira o identificador exclusivo para os ficheiros de vídeo do seu curso "
 "fornecidos pela edX."
 
 #: common/lib/xmodule/xmodule/course_module.py
@@ -4910,9 +4910,9 @@ msgid ""
 "Not supported in the native mobile app: the full video file will play. "
 "Formatted as HH:MM:SS. The maximum value is 23:59:59."
 msgstr ""
-"Hora a que deseja que o vídeo páre se não deseja que o vídeo seja "
-"reproduzido na totalidade. Não suportado no aplicativo móvel nativo: o "
-"arquivo de vídeo será reproduzido totalmente. Formatado como HH:MM:SS. O "
+"Hora a que deseja que o vídeo pare se não deseja que o vídeo seja "
+"reproduzido na totalidade. Não suportado na aplicação móvel nativa: o "
+"ficheiro de vídeo será reproduzido totalmente. Formatado como HH:MM:SS. O "
 "valor máximo é 23:59:59."
 
 #: common/lib/xmodule/xmodule/video_module/video_xfields.py
@@ -5222,7 +5222,7 @@ msgstr ""
 
 #: common/templates/student/edx_ace/accountactivation/email/body.html
 msgid "Account Activation"
-msgstr "Activação de conta"
+msgstr "Ativação de conta"
 
 #: common/templates/student/edx_ace/accountactivation/email/body.html
 #: common/templates/student/edx_ace/accountactivation/email/body.txt
@@ -7045,7 +7045,7 @@ msgstr "Não foi possível obter o log do git"
 
 #: lms/djangoapps/dashboard/git_import.py
 msgid "git clone or pull failed!"
-msgstr "houve um problema na clonagem do git ou ao baixar o arquivo!"
+msgstr "houve um problema na clonagem do git ou ao baixar o ficheiro!"
 
 #: lms/djangoapps/dashboard/git_import.py
 msgid "Unable to run import command."
@@ -19588,6 +19588,10 @@ msgid "Allowance Section"
 msgstr "Secção de Subsídio"
 
 #: lms/templates/instructor/instructor_dashboard_2/special_exams.html
+msgid "Student Onboarding Status"
+msgstr ""
+
+#: lms/templates/instructor/instructor_dashboard_2/special_exams.html
 msgid "Student Special Exam Attempts"
 msgstr "Tentativas do Estudante para Exame Especial"
 
@@ -20220,6 +20224,14 @@ msgid ""
 msgstr ""
 "A página que estava procurando não foi encontrada. Volte para a "
 "{link_start}página inicial{link_end} ."
+
+#: lms/templates/static_templates/429.html
+msgid "Too Many Requests"
+msgstr ""
+
+#: lms/templates/static_templates/429.html
+msgid "Your request has been rate-limited. Please try again later."
+msgstr ""
 
 #: lms/templates/static_templates/about.html
 #: lms/templates/static_templates/blog.html
