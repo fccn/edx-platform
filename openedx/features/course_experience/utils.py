@@ -264,7 +264,7 @@ def dates_banner_should_display(course_key, request):
     """
     missed_deadlines = False
     course_enrollment = None
-    if RELATIVE_DATES_FLAG.is_enabled(str(course_key)):
+    if RELATIVE_DATES_FLAG.is_enabled(course_key):
         course_overview = CourseOverview.objects.get(id=str(course_key))
         course_end_date = getattr(course_overview, 'end_date', None)
         is_self_paced = getattr(course_overview, 'self_paced', False)

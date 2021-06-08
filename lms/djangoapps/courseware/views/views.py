@@ -71,6 +71,7 @@ from lms.djangoapps.courseware.courses import (
     sort_by_announcement,
     sort_by_start_date
 )
+from lms.djangoapps.courseware.date_summary import verified_upgrade_deadline_link
 from lms.djangoapps.courseware.exceptions import CourseAccessRedirect, Redirect
 from lms.djangoapps.courseware.masquerade import setup_masquerade
 from lms.djangoapps.courseware.model_data import FieldDataCache
