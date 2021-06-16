@@ -308,7 +308,7 @@ class SingleTextbookTab(CourseTab):
         raise NotImplementedError('SingleTextbookTab should not be serialized.')
 
 
-class DatesTab(CourseTab):
+class DatesTab(EnrolledTab):
     """
     A tab representing the relevant dates for a course.
     """
@@ -321,7 +321,7 @@ class DatesTab(CourseTab):
     @classmethod
     def is_enabled(cls, course, user=None):
         """Returns true if this tab is enabled."""
-        return RELATIVE_DATES_FLAG.is_enabled(course.id)
+        return RELATIVE_DATES_FLAG.is_enabled(course.id) and super(DatesTab, cls).is_enabled(course, user=user)
 
 
 def get_course_tab_list(user, course):

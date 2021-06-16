@@ -472,7 +472,7 @@ def get_course_date_blocks(course, user, request=None, include_access=False,
         block_classes.insert(0, CertificateAvailableDate)
 
     blocks = [cls(course, user) for cls in block_classes]
-    if RELATIVE_DATES_FLAG.is_enabled(course.id):
+    if RELATIVE_DATES_FLAG.is_enabled(course.id) and user and user.is_authenticated:
         blocks.append(CourseExpiredDate(course, user))
         blocks.extend(get_course_assignment_date_blocks(
             course, user, request, num_return=num_assignments,
