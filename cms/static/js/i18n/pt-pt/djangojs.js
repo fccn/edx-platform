@@ -1416,7 +1416,7 @@
     "Scope": "\u00c2mbito",
     "Search": "Procurar",
     "Search Results": "Resultados da pesquisa",
-    "Search all posts": "Pesquisar todos as publica\u00e7\u00f5es",
+    "Search all posts": "Pesquisar publica\u00e7\u00f5es",
     "Search teams": "Procurar equipas",
     "Section": "Sec\u00e7\u00e3o",
     "Section Highlights": "Destaques da Sec\u00e7\u00e3o",

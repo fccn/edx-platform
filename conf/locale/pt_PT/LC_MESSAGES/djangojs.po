@@ -7801,7 +7801,7 @@ msgstr "Utilize a lista Todos os Tópicos para localizar tópicos específicos."
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 #: lms/djangoapps/discussion/static/discussion/templates/search.underscore
 msgid "Search all posts"
-msgstr "Pesquisar todos as publicações"
+msgstr "Pesquisar publicações"
 
 #: lms/djangoapps/discussion/static/discussion/templates/discussion-home.underscore
 msgid "Filter and sort topics"
