@@ -5240,7 +5240,7 @@ msgid ""
 "able to log back into your account until you have activated it."
 msgstr ""
 "Está quase lá! Use o link para ativar a sua conta e aceder a cursos "
-"interessantes e de alta qualidade de %(platform_name)s. Tenha em atenção que"
+"interessantes e de alta qualidade da %(platform_name)s. Tenha em atenção que"
 " não poderá iniciar sessão novamente na sua conta até a ativar."
 
 #: common/templates/student/edx_ace/accountactivation/email/body.html
