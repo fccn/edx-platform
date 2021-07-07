@@ -6,7 +6,7 @@
 
   
   django.pluralidx = function(n) {
-    var v=(n != 1);
+    var v=(n > 1);
     if (typeof(v) == 'boolean') {
       return v ? 1 : 0;
     } else {
@@ -38,9 +38,12 @@
     "Midnight": "Midnight",
     "Noon": "Noon",
     "Now": "Now",
+    "Publish": "Publish *",
+    "Re-run Course": "New edition",
     "Remove": "Remove",
     "Remove all": "Remove all",
     "Show": "Show",
+    "Sign In": "Sign In *",
     "This is the list of available %s. You may choose some by selecting them in the box below and then clicking the \"Choose\" arrow between the two boxes.": "This is the list of available %s. You may choose some by selecting them in the box below and then clicking the \"Choose\" arrow between the two boxes.",
     "This is the list of chosen %s. You may remove some by selecting them in the box below and then clicking the \"Remove\" arrow between the two boxes.": "This is the list of chosen %s. You may remove some by selecting them in the box below and then clicking the \"Remove\" arrow between the two boxes.",
     "Today": "Today",

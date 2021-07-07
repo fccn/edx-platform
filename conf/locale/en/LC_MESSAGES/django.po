@@ -1,45 +1,45 @@
 # #-#-#-#-#  django-partial.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2020 EdX
+# Copyright (C) 2021 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2020.
+# EdX Team <info@edx.org>, 2021.
 #
 # #-#-#-#-#  django-studio.po (0.1a)  #-#-#-#-#
 # edX translation file.
-# Copyright (C) 2020 EdX
+# Copyright (C) 2021 EdX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2020.
+# EdX Team <info@edx.org>, 2021.
 #
 # #-#-#-#-#  mako.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2020 edX
+# Copyright (C) 2021 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2020.
+# EdX Team <info@edx.org>, 2021.
 #
 # #-#-#-#-#  mako-studio.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2020 edX
+# Copyright (C) 2021 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2020.
+# EdX Team <info@edx.org>, 2021.
 #
 # #-#-#-#-#  wiki.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2020 edX
+# Copyright (C) 2021 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2020.
+# EdX Team <info@edx.org>, 2021.
 #
 # #-#-#-#-#  edx_proctoring_proctortrack.po (0.1a)  #-#-#-#-#
 # edX translation file
-# Copyright (C) 2020 edX
+# Copyright (C) 2021 edX
 # This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
-# EdX Team <info@edx.org>, 2020.
+# EdX Team <info@edx.org>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1a\n"
 "Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
-"POT-Creation-Date: 2020-06-02 20:41+0000\n"
-"PO-Revision-Date: 2020-06-02 20:41:03.431676\n"
+"POT-Creation-Date: 2021-07-07 08:25+0000\n"
+"PO-Revision-Date: 2021-07-07 08:25:09.864123\n"
 "Last-Translator: \n"
 "Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
 "Language: en\n"
@@ -5116,6 +5116,7 @@ msgstr ""
 
 #: lms/djangoapps/certificates/views/webview.py
 #: lms/templates/certificates/invalid.html
+#: lms/templates/certificates/url_unsupported.html
 #, python-brace-format
 msgid "About {platform_name} Certificates"
 msgstr ""
@@ -12117,6 +12118,7 @@ msgid "Course Outline"
 msgstr ""
 
 #: cms/templates/course_outline.html
+#: cms/templates/widgets/deprecated-course-key-warning.html
 #: lms/templates/dashboard/_dashboard_status_verification.html
 msgid "Warning"
 msgstr ""
@@ -14578,6 +14580,18 @@ msgstr ""
 msgid ""
 "If all of the information is correct and the problem persists, contact "
 "technical support."
+msgstr ""
+
+#: lms/templates/certificates/url_unsupported.html
+msgid "URL Not Supported"
+msgstr ""
+
+#: lms/templates/certificates/url_unsupported.html
+msgid ""
+"This link is no longer valid. But don’t worry—this Verified Certificate is "
+"still valid and available to share. If this is your certificate, please "
+"visit your dashboard to get a new shareable link. If you're viewing someone "
+"else's certificate, please contact them to get an updated link."
 msgstr ""
 
 #: lms/templates/certificates/valid.html
@@ -22663,6 +22677,24 @@ msgstr ""
 
 #: cms/templates/registration/activation_invalid.html
 msgid "Return to the {link_start}home page{link_end}."
+msgstr ""
+
+#: cms/templates/widgets/deprecated-course-key-warning.html
+msgid "Support will be removed in an upcoming release."
+msgstr ""
+
+#: cms/templates/widgets/deprecated-course-key-warning.html
+msgid "Support will be removed on {expiration_date}."
+msgstr ""
+
+#: cms/templates/widgets/deprecated-course-key-warning.html
+msgid "This course uses a legacy storage format."
+msgstr ""
+
+#: cms/templates/widgets/deprecated-course-key-warning.html
+msgid ""
+"Please reach out to your support team contact, if you have any additional "
+"questions or concerns."
 msgstr ""
 
 #: cms/templates/widgets/footer.html

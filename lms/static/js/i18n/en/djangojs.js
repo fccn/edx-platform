@@ -6,7 +6,7 @@
 
   
   django.pluralidx = function(n) {
-    var v=(n != 1);
+    var v=(n > 1);
     if (typeof(v) == 'boolean') {
       return v ? 1 : 0;
     } else {
@@ -18,6 +18,15 @@
   /* gettext library */
 
   django.catalog = django.catalog || {};
+  
+  var newcatalog = {
+    "Publish": "Publish *",
+    "Re-run Course": "New edition",
+    "Sign In": "Sign In *"
+  };
+  for (var key in newcatalog) {
+    django.catalog[key] = newcatalog[key];
+  }
   
 
   if (!django.jsi18n_initialized) {
