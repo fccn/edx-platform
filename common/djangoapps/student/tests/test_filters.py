@@ -2,15 +2,19 @@
 Test that various filters are fired for models/views in the student app.
 """
 from django.http import HttpResponse
-from django.test import override_settings
 from django.urls import reverse
-from openedx_filters import PipelineStep
 from openedx_filters.learning.filters import DashboardRenderStarted, CourseEnrollmentStarted, CourseUnenrollmentStarted
 from rest_framework import status
+
+
+from common.djangoapps.student.models import UnenrollmentNotAllowed
+
+from django.test import override_settings
 from xmodule.modulestore.tests.django_utils import ModuleStoreTestCase
 from xmodule.modulestore.tests.factories import CourseFactory
-
-from common.djangoapps.student.models import CourseEnrollment, EnrollmentNotAllowed, UnenrollmentNotAllowed
+from openedx_filters.learning.filters import CourseEnrollmentStarted
+from openedx_filters import PipelineStep
+from common.djangoapps.student.models import CourseEnrollment, EnrollmentNotAllowed
 from common.djangoapps.student.tests.factories import UserFactory, UserProfileFactory
 from openedx.core.djangolib.testing.utils import skip_unless_lms
 
@@ -108,7 +112,6 @@ class TestRenderCustomResponse(PipelineStep):
             "You can't see this site's dashboard.",
             response=response,
         )
-
 
 @skip_unless_lms
 class EnrollmentFiltersTest(ModuleStoreTestCase):

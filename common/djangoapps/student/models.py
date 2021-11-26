@@ -66,6 +66,7 @@ from openedx_events.learning.signals import (
     COURSE_ENROLLMENT_CREATED,
     COURSE_UNENROLLMENT_COMPLETED,
 )
+
 from openedx_filters.learning.filters import CourseEnrollmentStarted, CourseUnenrollmentStarted
 import openedx.core.djangoapps.django_comment_common.comment_client as cc
 from common.djangoapps.course_modes.models import CourseMode, get_cosmetic_verified_display_price
