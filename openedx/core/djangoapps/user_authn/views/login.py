@@ -28,6 +28,11 @@ from edx_django_utils.monitoring import set_custom_attribute
 from ratelimit.decorators import ratelimit
 from rest_framework.views import APIView
 
+from openedx_events.learning.data import UserData, UserPersonalData
+from openedx_events.learning.signals import SESSION_LOGIN_COMPLETED
+from openedx_filters.learning.filters import StudentLoginRequested
+
+from common.djangoapps import third_party_auth
 from common.djangoapps.edxmako.shortcuts import render_to_response
 from openedx.core.djangoapps.password_policy import compliance as password_policy_compliance
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
@@ -499,6 +504,13 @@ def login_user(request):
         _check_excessive_login_attempts(user)
 
         possibly_authenticated_user = user
+
+        try:
+            possibly_authenticated_user = StudentLoginRequested.run_filter(user=possibly_authenticated_user)
+        except StudentLoginRequested.PreventLogin as exc:
+            raise AuthFailedError(
+                str(exc), redirect_url=exc.redirect_to, error_code=exc.error_code, context=exc.context,
+            ) from exc
 
         if not is_user_third_party_authenticated:
             possibly_authenticated_user = _authenticate_first_party(request, user, third_party_auth_requested)
