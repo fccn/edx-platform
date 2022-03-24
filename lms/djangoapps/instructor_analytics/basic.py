@@ -241,6 +241,8 @@ def enrolled_students_features(course_key, features):
     if include_team_column:
         students = students.prefetch_related('teams')
 
+    STUDENT_FEATURES_WITH_CUSTOM = STUDENT_FEATURES + tuple(configuration_helpers.get_value_for_org(course_key.org, 'student_profile_download_fields_custom_student_attributes', getattr(settings, "STUDENT_PROFILE_DOWNLOAD_FIELDS_CUSTOM_STUDENT_ATTRIBUTES", ())))
+
     def extract_attr(student, feature):
         """Evaluate a student attribute that is ready for JSON serialization"""
         attr = getattr(student, feature)
@@ -252,7 +254,7 @@ def enrolled_students_features(course_key, features):
 
     def extract_student(student, features):
         """ convert student to dictionary """
-        student_features = [x for x in STUDENT_FEATURES if x in features]
+        student_features = [x for x in STUDENT_FEATURES_WITH_CUSTOM if x in features]
         profile_features = [x for x in PROFILE_FEATURES if x in features]
 
         # For data extractions on the 'meta' field
