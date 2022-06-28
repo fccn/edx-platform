@@ -229,7 +229,7 @@ def enrolled_students_features(course_key, features):
     include_team_column = 'team' in features
     include_enrollment_mode = 'enrollment_mode' in features
     include_verification_status = 'verification_status' in features
-
+    
     students = User.objects.filter(
         courseenrollment__course_id=course_key,
         courseenrollment__is_active=1,
@@ -303,6 +303,15 @@ def enrolled_students_features(course_key, features):
                 )
             if include_enrollment_mode:
                 student_dict['enrollment_mode'] = enrollment_mode
+
+        if 'enrollment_created_at' in features:
+            course_enrollment = CourseEnrollment.objects.filter(
+                user=student,
+                course=course_key,
+            ).first()
+            if course_enrollment:
+                enrollment_created_at = course_enrollment.created
+                student_dict['enrollment_created_at'] = enrollment_created_at
 
         return student_dict
 
