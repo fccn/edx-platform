@@ -1,26 +1,25 @@
 
 
-'use strict';
-{
-  const globals = this;
-  const django = globals.django || (globals.django = {});
+(function(globals) {
 
-  
+  var django = globals.django || (globals.django = {});
+
+
   django.pluralidx = function(n) {
-    const v = (n != 1);
-    if (typeof v === 'boolean') {
+    var v=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;
+    if (typeof(v) == 'boolean') {
       return v ? 1 : 0;
     } else {
       return v;
     }
   };
-  
+
 
   /* gettext library */
 
   django.catalog = django.catalog || {};
-  
-  const newcatalog = {
+
+  var newcatalog = {
     "\n                    Make sure you are on a computer with a webcam, and that you have valid photo identification\n                    such as a driver's license or passport, before you continue.\n                ": "\n                    Certifique-se que est\u00e1 num computador com uma webcam, e que tem identifica\u00e7\u00e3o fotogr\u00e1fica v\u00e1lida\n                    como uma carta de condu\u00e7\u00e3o ou passaporte, antes de continuar.\n                ",
     "\n                    Your verification attempt failed. Please read our guidelines to make\n                    sure you understand the requirements for successfully completing verification,\n                    then try again.\n                ": "\n                    A sua tentativa de verifica\u00e7\u00e3o falhou. Por favor, leia as nossas directrizes para se\n                    certificar de que compreende os requisitos para concluir com \u00eaxito a verifica\u00e7\u00e3o,,\n                    depois tente novamente.\n                ",
     "\n                    Your verification has expired. You must successfully complete a new identity verification\n                    before you can start the proctored exam.\n                ": "\n                    A sua verifica\u00e7\u00e3o expirou. Deve concluir com \u00eaxito uma nova verifica\u00e7\u00e3o de identidade\n                    antes de poder iniciar o exame supervisionado.\n                ",
@@ -29,25 +28,14 @@
     "\n                You must successfully complete identity verification before you can start the proctored exam.\n            ": "\n                Voc\u00ea deve concluir com \u00eaxito a verifica\u00e7\u00e3o de identidade antes de poder iniciar o exame supervisionado.\n            ",
     "\n            Do not close this window before you finish your exam. if you close this window, your proctoring session ends, and you will not successfully complete the proctored exam.\n          ": "\n            N\u00e3o feche esta janela antes de terminar o seu exame. se fechar esta janela, a sua sess\u00e3o de supervis\u00e3o termina, e n\u00e3o concluir\u00e1 com sucesso o exame supervisionado.\n          ",
     "\n            Return to the %(platform_name)s course window to start your exam. When you have finished your exam and\n            have marked it as complete, you can close this window to end the proctoring session\n            and upload your proctoring session data for review.\n          ": "\n            Volte \u00e0 janela do curso %(platform_name)s course window to start your exam. para iniciar o exame. Quando terminar o exame e \n            o marcar como completo, pode fechar esta janela para encerrar a sess\u00e3o de supervis\u00e3o\n            e carregar seus dados de sess\u00e3o de supervis\u00e3o para revis\u00e3o.\n          ",
-    "\n          You will be guided through steps to set up online proctoring software and verify your identity.\n        ": "\n          Ser\u00e1 guiado atrav\u00e9s de passos para estabelecer um programa de supervis\u00e3o online e verificar a sua identidade.\n        ",
     "\n        About Proctored Exams\n        ": "\n        Sobre os Exames Supervisionados\n        ",
     "\n        Are you sure you want to take this exam without proctoring?\n      ": "\n        Tem certeza que quer fazer este exame sem supervis\u00e3o?\n      ",
-    "\n        Create your onboarding profile for faster access in the future\n      ": "\n        Crie o seu perfil de admiss\u00e3o para um acesso mais r\u00e1pido no futuro\n      ",
     "\n        Due to unsatisfied prerequisites, you can only take this exam without proctoring.\n      ": "\n        Por n\u00e3o reunir os pr\u00e9-requisitos necess\u00e1rios, apenas pode realizar este exame sem supervis\u00e3o.\n      ",
-    "\n        Establish your identity with the proctoring system to take a proctored exam\n      ": "\n        Estabelecer a sua identidade com o sistema de supervis\u00e3o para fazer um exame com supervis\u00e3o\n      ",
-    "\n        Get familiar with proctoring for real exams later in the course. This practice exam has no impact\n        on your grade in the course.\n      ": "\n        Informe-se sobre a supervis\u00e3o de exames para avalia\u00e7\u00e3o mais tarde no curso. Este exame pr\u00e1tico n\u00e3o tem qualquer impacto\n        sobre a sua nota no curso.\n      ",
     "\n        Hello %(username)s,\n    ": "\n        Ol\u00e1 %(username)s,\n    ",
     "\n        I am ready to start this timed exam.\n      ": "\n       Estou pronto para come\u00e7ar este exame cronometrado.\n      ",
     "\n        No, I want to continue working.\n      ": "\n        N\u00e3o, quero continuar a trabalhar.\n      ",
     "\n        No, I'd like to continue working\n      ": "\n        N\u00e3o, eu gostaria de continuar a trabalhar.\n      ",
-    "\n        Once your profile has been reviewed, you will receive an email with review results. The email will come from\n        <a href=\"mailto:%(learner_notification_from_email)s\">%(learner_notification_from_email)s</a>.\n        Make sure this email has been added to your inbox filter.\n      ": "\n        Assim que o seu perfil tiver sido revisto, receber\u00e1 um e-mail com os resultados da revis\u00e3o. O e-mail do remetente ser\u00e1\n        <a href=\"mailto:%(learner_notification_from_email)s\">%(learner_notification_from_email)s</a>.\n        Certifique-se de que este e-mail foi adicionado ao filtro da sua caixa de entrada.\n      ",
-    "\n        Please contact\n        <a href=\"mailto:%(integration_specific_email)s\">%(integration_specific_email)s</a>\n        if you have questions.\n      ": "\n        Por favor contacte\n        <a href=\"mailto:%(integration_specific_email)s\">%(integration_specific_email)s</a>\n        se tiver quest\u00f5es\n      ",
-    "\n        Practice taking a proctored test\n      ": "\n        Pratique realizando um teste com supervis\u00e3o\n      ",
     "\n        The result will be visible after <strong id=\"wait_deadline\"> Loading... </strong>\n    ": "\n        O resultado ficar\u00e1 vis\u00edvel ap\u00f3s <strong id=\"wait_deadline\"> Carregando... </strong>\n    ",
-    "\n        There was a problem with your practice proctoring session\n      ": "\n        Houve um problema com a sua sess\u00e3o pr\u00e1ctica de supervis\u00e3o\n      ",
-    "\n        To appeal your proctored exam results, please reach out with any relevant information\n        about your exam at \n        <a href=\"%(contact_url)s\">\n            %(contact_url_text)s\n        </a>.\n    ": "\n        Para recorrer dos resultados do seu exame com supervis\u00e3o, por favor contacte com qualquer informa\u00e7\u00e3o relevante\n        sobre o seu exame em \n        <a href=\"%(contact_url)s\">\n            %(contact_url_text)s\n        </a>.\n    ",
-    "\n        Try a proctored exam\n      ": "\n        Tente um exame supervisionado\n      ",
-    "\n        Your proctored exam \"%(exam_name)s\" in\n        <a href=\"%(course_url)s\">%(course_name)s</a> was reviewed and the\n        course team has identified one or more violations of the proctored exam rules. Examples\n        of issues that may result in a rules violation include browsing\n        the internet, blurry or missing photo identification, using a phone,\n        or getting help from another person. As a result of the identified issue(s),\n        you did not successfully meet the proctored exam requirements.\n    ": "\n        O seu exame com supervis\u00e3o \"%(exam_name)s\" em\n        <a href=\"%(course_url)s\">%(course_name)s</a> foi revisto e\n        a equipa do curso identificou uma ou mais viola\u00e7\u00f5es das regras do exame supervisionado. Exemplos\n        de quest\u00f5es que podem resultar numa viola\u00e7\u00e3o das regras incluem a navega\u00e7\u00e3o\na internet, a identifica\u00e7\u00e3o por fotografia desfocada ou em falta, utilizando um telefone,\n        ou obter ajuda de outra pessoa. Como resultado da quest\u00e3o identificada(s),\n        n\u00e3o cumpriu com \u00eaxito os requisitos do exame supervisionado.\n    ",
     "\n        Your proctored exam \"%(exam_name)s\" in\n        <a href=\"%(course_url)s\">%(course_name)s</a> was reviewed and you\n        met all proctoring requirements.\n    ": "\n        O seu exame supervisionado \"%(exam_name)s\" em\n        <a href=\"%(course_url)s\">%(course_name)s</a> foi revisto e voc\u00ea\n        satisfez todos os requisitos de supervis\u00e3o.\n    ",
     "\n        Your proctored exam \"%(exam_name)s\" in\n        <a href=\"%(course_url)s\">%(course_name)s</a> was submitted\n        successfully and will now be reviewed to ensure all exam\n        rules were followed. You should receive an email with your exam\n        status within 5 business days.\n    ": "\n        O seu exame supervisionado \"%(exam_name)s\" em\n        <a href=\"%(course_url)s\">%(course_name)s</a> foi submetido\n        com sucesso e ser\u00e1 agora revisto para assegurar todos os exames\nas regras foram seguidas. Dever\u00e1 receber um e-mail com o seu exame\n        estado dentro de 5 dias \u00fateis.\n    ",
     "\n      After you submit your exam, your exam will be graded.\n    ": "\nDepois de submeter o seu exame, o seu exame ser\u00e1 classificado.",
@@ -55,40 +43,24 @@
     "\n      Are you sure you want to end your proctored exam?\n    ": "\n      Tem certeza que quer terminar o seu exame supervisionado?\n    ",
     "\n      Because the due date has passed, you are no longer able to take this exam.\n    ": "\n      Porque a data limite j\u00e1 passou, j\u00e1 n\u00e3o pode fazer este exame.\n    ",
     "\n      Error with proctored exam\n    ": "\n      Erro com o exame supervisionado\n    ",
-    "\n      If you already have an onboarding profile approved through another course,\n      this submission will not be reviewed. You may retry this exam at any time\n      to validate that your setup still meets the requirements for proctoring.\n    ": "\n      Se j\u00e1 tiver um perfil de admiss\u00e3o aprovado atrav\u00e9s de outro curso,\n      esta submiss\u00e3o n\u00e3o ser\u00e1 revista. Poder\u00e1 repetir este exame em qualquer altura\n      para validar que a sua configura\u00e7\u00e3o ainda preenche os requisitos para a supervis\u00e3o.\n    ",
-    "\n      If you do not have an onboarding profile with the system,\n      Verificient will review your submission and create an onboarding\n      profile to grant you access to proctored exams. Onboarding\n      profile review can take 2+ business days.\n    ": "\n      Se n\u00e3o tiver um perfil de admiss\u00e3o com o sistema,\n      O Verificient ir\u00e1 rever a sua submiss\u00e3o e criar um perfil\n      de admiss\u00e3o para lhe dar acesso aos exames supervisionados. Admiss\u00e3o\n      A revis\u00e3o do perfil pode demorar mais de 2 dias \u00fateis.\n    ",
     "\n      If you have disabilities,\n      you might be eligible for an additional time allowance on timed exams.\n      Ask your course team for information about additional time allowances.\n    ": "\n      Se tiver alguma incapacidade,\n      poder\u00e1 ser eleg\u00edvel para uma extens\u00e3o do tempo de realiza\u00e7\u00e3o de um exame cronometrado.\n      Questione a sua equipa do curso para mais informa\u00e7\u00e3o acerca das permiss\u00f5es para obter tempo extra.\n  ",
-    "\n      If you have made an error in this submission you may restart the onboarding process. \n      Your current submission will be removed and will not receive a review.\n    ": "\n      Se tiver errado nesta submiss\u00e3o, poder\u00e1 reiniciar o processo de admiss\u00e3o. \n      A sua submiss\u00e3o actual ser\u00e1 removida e n\u00e3o receber\u00e1 uma revis\u00e3o.\n    ",
     "\n      If you have questions about the status of your proctored exam results, contact %(platform_name)s Support.\n    ": "\n      Se tiver d\u00favidas sobre o estado dos resultados do exame supervisionado, entre em contato com o  %(platform_name)s Suporte.\n    ",
     "\n      Make sure that you have selected \"Submit\" for each problem before you submit your exam.\n    ": "\nCertifique-se de que seleccionou \"submeter\" para cada problema antes de submeter o exame.",
-    "\n      Once your profile has been reviewed, you will receive an email\n      with review results. The email will come from\n      <a href=\"mailto:%(learner_notification_from_email)s\">\n        %(learner_notification_from_email)s\n      </a>,\n      so make sure this email has been added to your inbox filter.\n    ": "\n      Assim que o seu perfil tiver sido revisto, receber\u00e1 um e-mail\ncom resultados da revis\u00e3o. O e-mail do remetente ser\u00e1\n      <a href=\"mailto:%(learner_notification_from_email)s\">\n        %(learner_notification_from_email)s\n      </a>,\n      por isso certifique-se de que este e-mail foi adicionado ao seu filtro da caixa de entrada.\n    ",
-    "\n      Please contact\n      <a href=\"mailto:%(integration_specific_email)s\">\n        %(integration_specific_email)s\n      </a> if you have questions.\n    ": "\n      Por favor contacte\n      <a href=\"mailto:%(integration_specific_email)s\">\n        %(integration_specific_email)s\n      </a> se tiver quest\u00f5es.\n    ",
-    "\n      Please contact\n      <a href=\"mailto:%(integration_specific_email)s\">\n        %(integration_specific_email)s\n      </a> if you have questions. You may retake this onboarding exam by clicking \"Retry my exam\".\n    ": "\n      Por favor contacte\n      <a href=\"mailto:%(integration_specific_email)s\">\n        %(integration_specific_email)s\n      </a> se tiver d\u00favidas. Pode voltar a fazer este exame de admiss\u00e3o clicando em \"Tentar novamente o meu exame\".\n    ",
-    "\n      Proctoring for this course is provided via %(provider_name)s.  Onboarding review, including identity verification, can take 2+ business days.\n    ": "\n      A supervis\u00e3o para este curso \u00e9 fornecida atrav\u00e9s de%(provider_name)s.  A revis\u00e3o da admiss\u00e3o, incluindo a verifica\u00e7\u00e3o de identidade, pode demorar mais de 2 dias \u00fateis.\n    ",
     "\n      The due date for this exam has passed\n    ": "\n      A data limite deste exame j\u00e1 passou\n    ",
     "\n      This exam is proctored\n    ": "\n      Este exame \u00e9 supervisionado\n    ",
     "\n      To view your exam questions and responses, select <strong>View my exam</strong>. The exam's review status is shown in the left navigation pane.\n    ": "\n      Para ver suas perguntas e respostas do exame, seleccione <strong>Ver o meu exame</strong>. O estado de revis\u00e3o do exame \u00e9 mostrado no painel de navega\u00e7\u00e3o esquerdo\n    ",
-    "\n      Why this is important to you:\n    ": "\n      Porque \u00e9 que isto \u00e9 importante para si:\n    ",
     "\n      Yes, submit my timed exam.\n    ": "\n      Sim, submeter o meu exame cronometrado.\n    ",
-    "\n      You are taking \"%(exam_display_name)s\" as an onboarding exam. You must click \u201cYes, end my proctored exam\u201d and submit your proctoring session to complete onboarding.\n    ": "\n      Est\u00e1 a fazer  \"%(exam_display_name)s\" como um exame de admiss\u00e3o. Deve clicar em \u201cSim, terminar o meu exame supervisionado\u201d e submeter a sua sess\u00e3o de supervis\u00e3o para completar a admiss\u00e3o.\n    ",
     "\n      You have submitted this proctored exam for review\n    ": "\n      Voc\u00ea submeteu este exame supervisionado para revis\u00e3o\n    ",
     "\n      Your practice proctoring results: <b class=\"failure\"> Unsatisfactory </b>\n    ": "\n      Resultado da sess\u00e3o de supervis\u00e3o: <b class=\"failure\"> N\u00e3o Satisfat\u00f3rio </b>\n    ",
-    "\n      Your profile has been established, and you're ready to take proctored exams in this course.\n    ": "\n      O seu perfil foi definido, e est\u00e1 pronto para fazer exames supervisionados neste curso.\n    ",
     "\n    %(exam_name)s is a Timed Exam (%(total_time)s)\n    ": "\n    %(exam_name)s \u00e9 um Exame Cronometrado (%(total_time)s)\n    ",
-    "\n    Error: There was a problem with your onboarding session\n  ": "\n    Erro: Houve um problema com a sua sess\u00e3o de admiss\u00e3o\n  ",
     "\n    If you have any questions about your results, you can reach out at \n        <a href=\"%(contact_url)s\">\n            %(contact_url_text)s\n        </a>.\n    ": "\n    Se tiver alguma d\u00favida sobre os seus resultados, pode contactar  \n        <a href=\"%(contact_url)s\">\n            %(contact_url_text)s\n        </a>.\n    ",
-    "\n    Proctoring onboarding exam\n  ": "\n    Exame de admiss\u00e3o supervisionado\n  ",
     "\n    The following prerequisites are in a <strong>pending</strong> state and must be successfully completed before you can proceed:\n    ": "\nOs seguintes pr\u00e9-requisitos est\u00e3o num estado <strong>pendente</strong> e devem ser conclu\u00eddos com sucesso antes de prosseguir:\n  ",
     "\n    You did not satisfy the following prerequisites:\n    ": "\n    N\u00e3o re\u00fane os seguintes pr\u00e9-requisitos:\n    ",
-    "\n    You have submitted this onboarding exam\n  ": "\n    Submeteu este exame de admiss\u00e3o\n  ",
-    "\n    You will be guided through online proctoring software set up and identity verification.\n  ": "\n    Ser\u00e1 guiado atrav\u00e9s da cria\u00e7\u00e3o de software de supervis\u00e3o online e verifica\u00e7\u00e3o de identidade.\n  ",
-    "\n    Your onboarding profile was reviewed successfully\n  ": "\n    O seu perfil de admiss\u00e3o foi revisto com sucesso\n  ",
-    "\n    Your onboarding session was reviewed, but did not pass all requirements\n  ": "\n    A sua sess\u00e3o de admiss\u00e3o foi revista, mas n\u00e3o satisfez todos os requisitos\n  ",
-    "\n    Your proctoring session ended before you completed this onboarding exam.\n    You should retry this onboarding exam.\n  ": "\n    A sua sess\u00e3o de supervis\u00e3o terminou antes de completar este exame de admiss\u00e3o.\n    Deve tentar novamente este exame de admiss\u00e3o.\n  ",
     " ${price} {currency} )": " ${price} {currency} )",
     " From this point in time, you must follow the <a href=\"%(link_urls.online_proctoring_rules)s\" target=\"_blank\">online proctoring rules</a> to pass the proctoring review for your exam. ": " A partir deste momento, deve seguir o <a href=\"%(link_urls.online_proctoring_rules)s\" target=\"_blank\">regras de supervisi\u00e3o online</a> para passar na revis\u00e3o de supervis\u00e3o para o seu exame.   ",
     " Member": [
       " Membro",
+      " Membros",
       " Membros"
     ],
     " Your Proctoring Session Has Started ": "A Sua Sess\u00e3o De Supervis\u00e3o J\u00e1 Come\u00e7ou",
@@ -116,6 +88,7 @@
     "%(comments_count)s %(span_sr_open)scomments (%(unread_comments_count)s unread comments)%(span_close)s": "%(comments_count)s %(span_sr_open)s coment\u00e1rios (%(unread_comments_count)s coment\u00e1rios por ler) %(span_close)s",
     "%(errorCount)s error found in form.": [
       "%(errorCount)s erro encontrado no formul\u00e1rio.",
+      "%(errorCount)s erros encontrados no formul\u00e1rio.",
       "%(errorCount)s erros encontrados no formul\u00e1rio."
     ],
     "%(field)s can only contain up to %(count)d characters.": "%(field)s pode conter apenas at\u00e9%(count)d caracteres.",
@@ -124,35 +97,43 @@
     "%(programName)s Home Page.": "%(programName)s - P\u00e1gina Inicial.",
     "%(sel)s of %(cnt)s selected": [
       "%(sel)s de %(cnt)s selecionado",
-      "%(sel)s de %(cnt)s selecionados"
+      "%(sel)s de %(cnt)s selecionados",
+      ""
     ],
     "%(type)s Component Template Menu": "%(type)s Menu de Modelo de Componente",
     "%(value)s hour": [
       "%(value)s hora",
+      "%(value)s horas",
       "%(value)s horas"
     ],
     "%(value)s minute": [
       "%(value)s minuto",
+      "%(value)s minutos",
       "%(value)s minutos"
     ],
     "%(value)s second": [
       "%(value)s segundo",
+      "%(value)s segundos",
       "%(value)s segundos"
     ],
     "%d day": [
       "%d dia",
+      "%d dias",
       "%d dias"
     ],
     "%d minute": [
       "%d minuto",
+      "%d minutos",
       "%d minutos"
     ],
     "%d month": [
       "%d m\u00eas",
+      "%d meses",
       "%d meses"
     ],
     "%d year": [
       "%d ano",
+      "%d anos",
       "%d anos"
     ],
     "%s ago": "%s atr\u00e1s",
@@ -170,6 +151,7 @@
     "(Staff)": "(Equipa)",
     "(contains %(student_count)s student)": [
       "(cont\u00e9m %(student_count)s estudante)",
+      "(cont\u00e9m %(student_count)s estudantes)",
       "(cont\u00e9m %(student_count)s estudantes)"
     ],
     "(optional)": "(opcional)",
@@ -311,7 +293,6 @@
     "An error has occurred. Wait a few minutes, and then try again.": "Ocorreu um erro. Aguarde alguns minutos e tente novamente.",
     "An error occurred retrieving your email. Please try again later, and contact technical support if the problem persists.": "Ocorreu um erro ao recuperar o seu email. Por favor, tente novamente mais tarde e contate o suporte t\u00e9cnico se o problema persistir.",
     "An error occurred when signing you in to %s.": "Ocorreu um erro ao iniciar sess\u00e3o em %s.",
-    "An error occurred while attempting to retrieve or save the information below. Please try again later.": "Ocorreu um erro ao tentar recuperar ou salvar as informa\u00e7\u00f5es abaixo. Por favor, tente novamente mais tarde.",
     "An error occurred while looking up team membership. Try refreshing the page.": "Um erro ocorreu ao procurar a ades\u00e3o \u00e0 equipa. Tente atualizar a p\u00e1gina.",
     "An error occurred while removing the member from the team. Try again.": "Ocorreu um erro ao remover um membro da equipa. Tente novamente.",
     "An error occurred.": "Ocorreu um erro.",
@@ -331,7 +312,6 @@
     "Are you having trouble finding a team to join?": "Est\u00e1 a ter problemas em encontrar uma equipa para integrar?",
     "Are you sure that you want to leave this session?": "Tem a certeza que pretende sair desta sess\u00e3o?",
     "Are you sure you want to change to a different session?": "Tem a certeza que pretende mudar para uma sess\u00e3o diferente?",
-    "Are you sure you want to delete the following file? It cannot be restored.\nFile: ": "Tem certeza de que deseja apagar o seguinte ficheiro? N\u00e3o pode ser restaurado.\nFicheiro: ",
     "Are you sure you want to delete this comment?": "Tem a certeza que pretende apagar este coment\u00e1rio?",
     "Are you sure you want to delete this page? This action cannot be undone.": "Tem a certeza que pretende eliminar esta p\u00e1gina? Esta a\u00e7\u00e3o n\u00e3o pode ser anulada.",
     "Are you sure you want to delete this post?": "Tem a certeza que pretende apagar esta publica\u00e7\u00e3o?",
@@ -398,7 +378,6 @@
     "Bottom": "Fundo",
     "Browse": "Procurar",
     "Browse recently launched courses and see what\\'s new in your favorite subjects": "Explore os cursos recentemente lan\u00e7ados e veja o que h\u00e1 de novo sobre os seus temas favoritos",
-    "Browsing": "Navega\u00e7\u00e3o",
     "Bulk Exceptions": "Exce\u00e7\u00f5es em massa",
     "Bullet list": "Lista de marcadores",
     "Bulleted List (Ctrl+U)": "Lista de Marcadores(Ctrl+U)",
@@ -529,6 +508,7 @@
     "Contains staff only content": "Cont\u00e9m apenas conte\u00fado da equipa",
     "Contains {count} group": [
       "Cont\u00e9m {count} grupo",
+      "Cont\u00e9m {count} grupos.",
       "Cont\u00e9m {count} grupos."
     ],
     "Content Group ID": "ID do Grupo de Conte\u00fado",
@@ -537,7 +517,6 @@
     "Continue Exam Without Proctoring": "Continuar o Exame Sem Supervis\u00e3o",
     "Continue to Verification": "Continuar a Verifica\u00e7\u00e3o",
     "Continue to my practice exam": "Continue para o meu exame de pr\u00e1tica",
-    "Continue to onboarding": "Continuar para admiss\u00e3o",
     "Copy": "Copiar",
     "Copy Component Location": "Localiza\u00e7\u00e3o do componente da c\u00f3pia",
     "Copy Email To Editor": "Copiar Email para Editor",
@@ -550,18 +529,19 @@
     "Could not find the specified string.": "N\u00e3o foi poss\u00edvel encontrar a sequ\u00eancia especificada.",
     "Could not find users associated with the following identifiers:": "N\u00e3o foi poss\u00edvel encontrar utilizadores associados aos seguintes identificadores:",
     "Could not grade your answer. The submission was aborted.": "N\u00e3o foi poss\u00edvel classificar a sua resposta. A submiss\u00e3o foi cancelada.",
-    "Could not load teams information.": "N\u00e3o foi poss\u00edvel carregar informa\u00e7\u00e3o das equipas.",
     "Could not override problem score for {user}.": "N\u00e3o foi poss\u00edvel substituir a pontua\u00e7\u00e3o do problema para {user}",
     "Could not retrieve download url.": "N\u00e3o foi poss\u00edvel obter os dados a partir do URL definido.",
     "Could not retrieve upload url.": "N\u00e3o foi poss\u00edvel recuperar o url de envio.",
     "Could not submit order": "N\u00e3o foi poss\u00edvel submeter pedido",
     "Could not submit photos": "N\u00e3o foi poss\u00edvel submeter as fotografias",
     "Could not upload the video image file": "N\u00e3o foi poss\u00edvel carregar o ficheiro de imagem do v\u00eddeo",
+    "Couldn't Save This Assignment": "N\u00e3o \u00e9 poss\u00edvel guardar esta tarefa",
     "Country": "Pa\u00eds",
     "Country of residence": "Pa\u00eds de resid\u00eancia",
     "Country or Region of Residence": "Pa\u00eds ou Regi\u00e3o de Resid\u00eancia",
     "Course": [
       "Curso",
+      "Cursos",
       "Cursos"
     ],
     "Course Content": "Conte\u00fado do Curso",
@@ -579,7 +559,7 @@
     "Course Number Override": "Substitui\u00e7\u00e3o do C\u00f3digo do Curso",
     "Course Number:": "N\u00famero do Curso:",
     "Course Outline": "Descri\u00e7\u00e3o do Curso",
-    "Course Run:": "Curso de Forma\u00e7\u00e3o:",
+    "Course Run:": "Edi\u00e7\u00e3o do Curso:",
     "Course Start": "Data de In\u00edcio do Curso",
     "Course Title": "T\u00edtulo do Curso",
     "Course Title Override": "Substitui\u00e7\u00e3o do T\u00edtulo do Curso",
@@ -591,7 +571,6 @@
     "Create": "Criar",
     "Create Account": "Criar Conta",
     "Create Re-run": "Criar Nova Edi\u00e7\u00e3o do Curso",
-    "Create Support Ticket": "Criar Pedido de Apoio",
     "Create a New Team": "Criar nova equipa",
     "Create a content group": "Criar um grupo de conte\u00fado",
     "Create a new team if you can't find an existing team to join, or if you would like to learn with friends you know.": "Crie uma nova equipa se n\u00e3o conseguir encontrar uma equipa existente para se juntar, ou se pretende aprender com os amigos que conhece.",
@@ -658,10 +637,8 @@
     "Deleting this %(item_display_name)s is permanent and cannot be undone.": "Eliminar %(item_display_name)s \u00e9 permanente e n\u00e3o pode ser anulado.",
     "Deleting this {xblock_type} is permanent and cannot be undone.": "A elimina\u00e7\u00e3o deste {xblock_type} \u00e9 permanente e n\u00e3o pode ser desfeita.",
     "Deprecated": "Descontinuado",
-    "Describe ": "Descreva ",
     "Description": "Descri\u00e7\u00e3o",
     "Description of the certificate": "Descri\u00e7\u00e3o do Certificado",
-    "Details": "Detalhes",
     "Device with Camera": "Dispositivo com C\u00e2mara",
     "Dimensions": "Dimens\u00f5es",
     "Disc": "Disco",
@@ -689,9 +666,7 @@
     "Download Memberships": "Descarregar Membros",
     "Download Software Clicked": "Descarregar Software Seleccionado",
     "Download Transcript for Editing": "Descarregar Transcri\u00e7\u00e3o para Editar",
-    "Download URL": "URL de Transfer\u00eancia",
     "Download available encodings (.csv)": "Transferir codifica\u00e7\u00f5es dispon\u00edveis (.csv)",
-    "Download the user's certificate": "Transferir o certificado do utilizador",
     "Draft (Never published)": "Rascunho (nunca foi publicado)",
     "Draft (Unpublished changes)": "Rascunho (altera\u00e7\u00f5es n\u00e3o publicadas)",
     "Draft saved on {lastSavedStart}{editedOn}{lastSavedEnd} by {editedByStart}{editedBy}{editedByEnd}": "Rascunho guardado em {lastSavedStart}{editedOn}{lastSavedEnd} por {editedByStart}{editedBy}{editedByEnd}",
@@ -813,7 +788,6 @@
     "Error starting a task to rescore problem '<%- problem_id %>' for student '<%- student_id %>'. Make sure that the the problem and student identifiers are complete and correct.": "Erro ao reavaliar o problema '<%- problem_id %>' para o estudante'<%- student_id %>'. Verifique se os identificadores do problema e do estudante est\u00e3o completos e corretos.",
     "Error starting a task to rescore problem '<%- problem_id %>'. Make sure that the problem identifier is complete and correct.": "Erro ao iniciar a tarefa de reavaliar o problema '<%- problem_id %>'. verifique se o identificador do problema est\u00e1 completo e correto.",
     "Error starting a task to reset attempts for all students on problem '<%- problem_id %>'. Make sure that the problem identifier is complete and correct.": "Erro na tarefa de reiniciar tentativas para todos os estudantes no problema '<%- problem_id %>'. Certifique-se que o identificador do problema est\u00e1 correto.",
-    "Error when looking up username": "Erro ao procurar o nome de utilizador",
     "Error while generating certificates. Please try again.": "Erro ao gerar certificados. Por favor, tente novamente.",
     "Error while regenerating certificates. Please try again.": "Erro ao gerar certificados. Por favor, tente novamente.",
     "Error.": "Erro.",
@@ -851,8 +825,6 @@
     "File": "Ficheiro",
     "File Name": "Nome do ficheiro",
     "File format not supported. Please upload a file with a {ext} extension.": "O formato de ficheiro n\u00e3o \u00e9 suportado. Por favor, carregue um ficheiro com uma extens\u00e3o {ext}.",
-    "File types can not be empty.": "O tipo de ficheiro n\u00e3o pode estar vazio.",
-    "File upload failed: unsupported file type. Only the supported file types can be uploaded. If you have questions, please reach out to the course team.": "Falha no carregamento do ficheiro: tipo de ficheiro n\u00e3o suportado. Apenas os tipos de ficheiros suportados podem ser carregados. Se tiver d\u00favidas, entre em contato com a equipa de curso.",
     "File upload succeeded": "Carregamento de ficheiro bem-sucedido",
     "File {filename} exceeds maximum size of {maxFileSizeInMBs} MB": "Ficheiro {filename} excede o tamanho m\u00e1ximo de {maxFileSizeInMBs} MB",
     "Files must be in JPEG or PNG format.": "Os ficheiros devem ser nos formatos JPEG ou PNG.",
@@ -873,7 +845,6 @@
     "Find next": "Encontrar o seguinte",
     "Find previous": "Localizar anterior",
     "Finish": "Terminar",
-    "Finish later": "Terminar mais tarde",
     "First time here?": "\u00c9 a primeira vez aqui?",
     "Follow": "Seguir",
     "Follow or unfollow posts": "Siga ou deixe de seguir publica\u00e7\u00f5es",
@@ -926,7 +897,6 @@
     "H Align": "Alinhamento horizontal",
     "HTML preview of post": "HTML pr\u00e9-visualiza\u00e7\u00e3o da publica\u00e7\u00e3o",
     "HTML source code": "C\u00f3digo-fonte HTML",
-    "Have you ever served on active duty in the U.S. Armed Forces, Reserves, or National Guard?": "J\u00e1 serviu, em ativo, nas For\u00e7as Armadas, Reservas ou Guarda Nacional dos EUA?",
     "Header": "Cabe\u00e7alho",
     "Header 1": "Cabe\u00e7alho 1",
     "Header 2": "Cabe\u00e7alho 2",
@@ -974,7 +944,6 @@
     "How to use %(platform_name)s discussions": "Como utilizar os a plataforma de debates na %(platform_name)s",
     "Hyperlink (Ctrl+L)": "Link (Ctrl+L)",
     "I am ready to start this timed exam,": "Estou pronto para come\u00e7ar este exame cronometrado,",
-    "I understand and want to reset this onboarding exam.": "Compreendo e quero reiniciar este exame de admiss\u00e3o.",
     "ID": "ID",
     "ID-Verification is not required for this Professional Education course.": "A valida\u00e7\u00e3o do ID n\u00e3o \u00e9 necess\u00e1ria para este curso de educa\u00e7\u00e3o profissional.",
     "Identity Verification In Progress": "Verifica\u00e7\u00e3o de identidade em andamento",
@@ -1016,7 +985,6 @@
     "Incorrect url format.": "Formato url incorreto.",
     "Increase indent": "Aumentar travess\u00e3o",
     "Individual Exceptions": "Exce\u00e7\u00f5es Individuais",
-    "Individual file size must be {max_files_mb}MB or less.": "O tamanho do ficheiro individual deve ser {max_files_mb}MB ou menos.",
     "Inheriting Student Visibility": "Obter Visibilidade do Estudante",
     "Inline": "Em linha",
     "Insert": "Inserir",
@@ -1048,7 +1016,6 @@
     "Invalidate Certificate": "Anular Certificado",
     "Invalidated": "Invalidado",
     "Invalidated By": "Invalidado Por",
-    "Is Resumable": "\u00c9 Retom\u00e1vel",
     "Is Sample Attempt": "\u00c9 Tentativa de Demonstra\u00e7\u00e3o",
     "Is Visible To:": "Est\u00e1 Visivel para:",
     "Is this OK?": "Isto est\u00e1 correto?",
@@ -1120,6 +1087,7 @@
     "Load next {numResponses} responses": "Carregar pr\u00f3ximas {numResponses} respostas",
     "Load next {num_items} result": [
       "Carregar o pr\u00f3ximo {num_items} resultado",
+      "Carregar os pr\u00f3ximos {num_items} resultados",
       "Carregar os pr\u00f3ximos {num_items} resultados"
     ],
     "Loading": "Carregando",
@@ -1128,7 +1096,6 @@
     "Loading more threads": "A carregar mais t\u00f3picos",
     "Loading posts list": "A carregar lista de publica\u00e7\u00f5es",
     "Loading your courses": "Carregando os seus cursos",
-    "Loading...": "Carregando...",
     "Location": "Local",
     "Location in Course": "Localiza\u00e7\u00e3o no Curso",
     "Lock this asset": "Bloquear este ficheiro",
@@ -1174,7 +1141,6 @@
     "Move cancelled. \"{sourceDisplayName}\" has been moved back to its original location.": "Mudan\u00e7a cancelada. \"{sourceDisplayName}\" foi mudado de novo para a sua localiza\u00e7\u00e3o original.",
     "Move: {displayName}": "Mover: {displayName}",
     "Moving": "A mover",
-    "Multiple teams returned for course": "V\u00e1rias equipas voltaram para o curso",
     "Must be a Staff User to Perform this request.": "Deve ser um Utilizador da Equipa para Realizar este pedido.",
     "Must complete verification checkpoint": "Deve concluir o ponto de valida\u00e7\u00e3o",
     "Mute": "Silenciar",
@@ -1189,7 +1155,6 @@
     "Name of the signatory": "Nome do Signat\u00e1rio",
     "Name or short description of the configuration": "Nome ou breve descri\u00e7\u00e3o da configura\u00e7\u00e3o",
     "Navigate up": "Subir",
-    "Need help logging in?": "Precisa de ajuda para iniciar sess\u00e3o?",
     "Need help signing in?": "Precisa de ajuda para entrar?",
     "Need other help signing in?": "Precisa de outra ajuda para entrar?",
     "Needs verified certificate ": "Necessita de certificado validado ",
@@ -1231,7 +1196,6 @@
     "Not Selected": "N\u00e3o Selecionado",
     "Not Supported": "N\u00e3o Suportado",
     "Not able to set passing grade to less than %(minimum_grade_cutoff)s%.": "N\u00e3o \u00e9 poss\u00edvel definir uma classifica\u00e7\u00e3o inferior a %(minimum_grade_cutoff)s%.",
-    "Not available": "N\u00e3o dispon\u00edvel",
     "Not divided": "N\u00e3o dividido",
     "Not in Use": "N\u00e3o est\u00e1 em Uso",
     "Not selected": "N\u00e3o selecionado",
@@ -1242,11 +1206,13 @@
     "Note: Learners can be in only one cohort. Adding learners to this group overrides any previous group assignment.": "Nota: os estudantes apenas podem pertencer a um grupo. Adicionar alunos a este grupo sobrep\u00f5e-se a qualquer atribui\u00e7\u00e3o de grupo anterior.",
     "Note: You are %s hour ahead of server time.": [
       "Nota: O seu fuso hor\u00e1rio est\u00e1 %s hora adiantado em rela\u00e7\u00e3o ao servidor.",
-      "Nota: O seu fuso hor\u00e1rio est\u00e1 %s horas adiantado em rela\u00e7\u00e3o ao servidor."
+      "Nota: O seu fuso hor\u00e1rio est\u00e1 %s horas adiantado em rela\u00e7\u00e3o ao servidor.",
+      ""
     ],
     "Note: You are %s hour behind server time.": [
       "Nota: O use fuso hor\u00e1rio est\u00e1 %s hora atrasado em rela\u00e7\u00e3o ao servidor.",
-      "Nota: O use fuso hor\u00e1rio est\u00e1 %s horas atrasado em rela\u00e7\u00e3o ao servidor."
+      "Nota: O use fuso hor\u00e1rio est\u00e1 %s horas atrasado em rela\u00e7\u00e3o ao servidor.",
+      ""
     ],
     "Noted in:": "Anotado em:",
     "Notes": "Notas",
@@ -1276,7 +1242,6 @@
     "Once you complete one of the program requirements you have a program record. This record is marked complete once you meet all program requirements. A program record can be used to continue your learning journey and demonstrate your learning to others.": "Uma vez que complete um dos requisitos do programa, tem um registo do programa. Este registo \u00e9 marcado como completo uma vez cumpridos todos os requisitos do programa. Um registo do programa pode ser utilizado para continuar o seu percurso de aprendizagem e demonstrar o que aprendeu aos outros",
     "Once your account is deleted, you cannot use it to take courses on the {platformName} app, {siteName}, or any other site hosted by {platformName}.": "Uma vez apagada a sua conta, n\u00e3o pode us\u00e1-la para fazer cursos na aplica\u00e7\u00e3o {platformName}, {siteName} ou qualquer outro site hospedado por {platformName}.",
     "One or more rescheduling tasks failed.": "Ocorreu erro no reagendamento de uma ou mais tarefas.",
-    "Only ": "Apenas ",
     "Only <%- fileTypes %> files can be uploaded. Please select a file ending in <%- (fileExtensions) %> to upload.": "Apenas os ficheiros <%- fileTypes %> podem ser enviados . Por favor, selecione um ficheiro que termine em <%- (fileExtensions) %> para enviar.",
     "Only properly formatted .csv files will be accepted.": "Apenas ficheiros .csv formatados corretamente ser\u00e3o aceites.",
     "Only the parent course staff of a CCX can create content groups.": "Apenas os respons\u00e1veis pela cria\u00e7\u00e3o do curso de CCX podem criar grupos de conte\u00fado.",
@@ -1345,6 +1310,7 @@
     "Please add the instructor's title": "Por favor, adicione o t\u00edtulo do formador",
     "Please address the errors on this page first, and then save your progress.": "Por favor, primeiro corrija os erros nesta p\u00e1gina e depois guarde o seu progresso. ",
     "Please check the following validation feedbacks and reflect them in your course settings:": "Por favor, verifique os seguintes coment\u00e1rios de valida\u00e7\u00e3o e considere-os nas suas configura\u00e7\u00f5es de curso:",
+    "Please correct the outlined fields.": "Por favor, corrija os campos indicados.",
     "Please describe this image or agree that it has no contextual value by checking the checkbox.": "Por favor, descreva esta imagem ou concorde que n\u00e3o tem valor contextual marcando a caixa de sele\u00e7\u00e3o.",
     "Please do not use any spaces in this field.": "Por favor, n\u00e3o use espa\u00e7os neste campo.",
     "Please do not use any spaces or special characters in this field.": "Por favor, n\u00e3o utilize nenhum espa\u00e7o ou caracteres especiais neste campo.",
@@ -1443,6 +1409,7 @@
     "Re-run Course": "Reexecutar Curso",
     "Read More": "Ler Mais",
     "Read more": "Ler mais",
+    "Ready To Resume": "Pronto Para Retomar",
     "Ready To Start": "Pronto Para Come\u00e7ar",
     "Ready To Submit": "Pronto Para Submeter",
     "Reason": "Raz\u00e3o",
@@ -1501,7 +1468,6 @@
     "Reset Password": "Redefinir Palavra-passe",
     "Reset Your Password": "Redefinir a sua palavra-passe",
     "Reset attempts for all students on problem '<%- problem_id %>'?": "Reiniciar tentativas para todos os estudantes no problema '<%- problem_id %>'?",
-    "Resetting Onboarding Exam": "Reiniciar Exame de Admiss\u00e3o",
     "Responses could not be loaded. Refresh the page and try again.": "N\u00e3o foi poss\u00edvel carregar as respostas. Atualize a p\u00e1gina e tente de novo.",
     "Restore enrollment code": "Recuperar o c\u00f3digo de inscri\u00e7\u00e3o",
     "Restore last draft": "Repor \u00faltimo projecto",
@@ -1510,12 +1476,10 @@
     "Retake Your Photos": "Regressar \u00e0s Suas Fotografias",
     "Retrieving enrollment status...": "Obtendo estado da matricula...",
     "Retry Verification": "Repita a verifica\u00e7\u00e3o",
-    "Retry my exam": "Tentar de novo o meu exame",
     "Return and add email address": "Volte atr\u00e1s e adicione um endere\u00e7o de email",
     "Return to Export": "Regressar a Exporta\u00e7\u00e3o",
     "Return to Your Dashboard": "Regressar ao Painel de Controlo",
     "Return to all posts": "Regressar a todos os artigos",
-    "Return to my dashboard": "Voltar ao meu painel",
     "Return to team listing": "Regressar \u00e0 listagem da equipa",
     "Review Policy Exception": "Excep\u00e7\u00e3o \u00e0 Pol\u00edtica de Revis\u00e3o",
     "Review Rules": "Regras de Revis\u00e3o",
@@ -1567,14 +1531,12 @@
     "Select a subject for your support request.": "Selecione um assunto para o seu pedido de apoio.",
     "Select a time allotment for the exam. If it is over 24 hours, type in the amount of time. You can grant individual learners extra time to complete the exam through the Instructor Dashboard.": "Selecione o tempo de aloca\u00e7\u00e3o para o exame. Se for mais de 24 horas, digite a quantidade de tempo. Pode conceder tempo adicional aos estudantes para completarem o exame atrav\u00e9s do painel do formador.",
     "Select all": "Selecionar tudo",
-    "Select employment status": "Selecione o estatuto profissional.",
     "Select fidelity": "Selecionar fidelidade",
     "Select language": "Selecionar idioma",
     "Select one or more groups:": "Selecione um ou mais grupos:",
     "Select the course-wide discussion topics that you want to divide.": "Selecionar os t\u00f3picos de debate de todo o curso que pretende dividir.",
     "Select the time zone for displaying course dates. If you do not specify a time zone, course dates, including assignment deadlines, will be displayed in your browser's local time zone.": "Selecione o fuso hor\u00e1rio para exibir as datas do curso. Se n\u00e3o for especificado um fuso hor\u00e1rio, as datas do curso, incluindo os prazos de atribui\u00e7\u00e3o, ser\u00e3o exibidos no fuso hor\u00e1rio local do seu navegador.",
     "Select turnaround": "Selecione uma alernativa",
-    "Selected blocks": "Blocos selecionados",
     "Selected tab": "Separador selecionado",
     "Self": "Auto",
     "Send to:": "Enviar para:",
@@ -1602,6 +1564,7 @@
     "Show Annotations": "Mostrar Anota\u00e7\u00f5es",
     "Show Comment (%(num_comments)s)": [
       "Mostrar coment\u00e1rio (%(num_comments)s)",
+      "Mostrar Coment\u00e1rios (%(num_comments)s)",
       "Mostrar Coment\u00e1rios (%(num_comments)s)"
     ],
     "Show Deprecated Settings": "Mostrar Defini\u00e7\u00f5es Descontinuadas",
@@ -1621,6 +1584,7 @@
     "Showing all responses": "Mostrar todas as respostas",
     "Showing first response": [
       "A apresentar a primeira resposta",
+      "A mostar as primeiras {numResponses} respostas",
       "A mostar as primeiras {numResponses} respostas"
     ],
     "Showing results for \"{searchString}\"": "Mostrar resultados para \"{searchString}\"",
@@ -1863,6 +1827,7 @@
     "There was an error retrieving preview results for this catalog. Please check that your query is correct and try again.": "Ocorreu um erro ao tentar recuperar os resultados de visualiza\u00e7\u00e3o deste cat\u00e1logo. Por favor, verifique se a sua pesquisa est\u00e1 correta e tente novamente.",
     "There was an error when trying to add learners:": [
       "Ocorreu um erro na tentativa de adicionar estudantes:",
+      "{numErrors} estudantes n\u00e3o puderam ser adicionados a este grupo:",
       "{numErrors} estudantes n\u00e3o puderam ser adicionados a este grupo:"
     ],
     "There was an error while importing the new course to our database.": "Ocorreu um erro durante a importa\u00e7\u00e3o do novo curso para a nossa base de dados.",
@@ -1895,14 +1860,10 @@
     "This component has validation issues.": "Esta componente tem problemas de valida\u00e7\u00e3o.",
     "This configuration is currently used in content experiments. If you make changes to the groups, you may need to edit those experiments.": "Essa configura\u00e7\u00e3o \u00e9 atualmente utilizada em experi\u00eancias de conte\u00fado. Se fizer altera\u00e7\u00f5es nos grupos, talvez seja necess\u00e1rio editar estas experi\u00eancias.",
     "This content group is used in one or more units.": "Este grupo de conte\u00fado \u00e9 utilizado numa ou em mais unidades.",
-    "This course has automatic cohorting enabled for verified track learners, but cohorts are disabled. You must enable cohorts for the feature to work.": "Este curso tem ativada a atribui\u00e7\u00e3o autom\u00e1tica de grupo para estudantes em modo validado, mas os grupos est\u00e3o desativados. Dever\u00e1 ativar a op\u00e7\u00e3o de grupo para permitir esta funcionalidade autom\u00e1tica.",
-    "This course has automatic cohorting enabled for verified track learners, but the required cohort does not exist. You must create a manually-assigned cohort named '{verifiedCohortName}' for the feature to work.": "Este curso tem atribui\u00e7\u00e3o autom\u00e1tica de grupo ativada para estudantes em modo validado, mas o grupo solicitado n\u00e3o existe. Dever\u00e1 criar um grupo de atribui\u00e7\u00e3o manual denominada por '{verifiedCohortName}', para permitir esta funcionalidade autom\u00e1tica.",
-    "This course uses automatic cohorting for verified track learners. You cannot disable cohorts, and you cannot rename the manual cohort named '{verifiedCohortName}'. To change the configuration for verified track cohorts, contact your edX partner manager.": "Este curso utiliza a atribui\u00e7\u00e3o autom\u00e1tica de sub-comunidade para estudantes em modo validado. N\u00e3o pode desativar as sub-comunidades e n\u00e3o pode renomear a sub-comunidade manual '{verifiedCohortName}'. Para alterar a configura\u00e7\u00e3o de sub-comunidades em modo validado, entre em contacto com o gestor parceiro da edX.",
     "This discussion could not be loaded. Refresh the page and try again.": "N\u00e3o foi poss\u00edvel carregar este debate. Atualize a p\u00e1gina e tente novamente.",
     "This exam has a time limit associated with it.": "Este exame tem um limite de tempo associado a ele.",
     "This feedback could not be submitted.": "N\u00e3o foi poss\u00edvel submeter este coment\u00e1rio.",
     "This file type is not supported. Supported file type is {supportedFileFormat}.": "Este tipo de ficheiro n\u00e3o \u00e9 suportado. O tipo de ficheiro suportado \u00e9 {supportedFileFormat}.",
-    "This grade will be applied to all members of the team. Do you want to continue?": "Esta nota ser\u00e1 aplicada a todos os membros da equipa. Quer continuar?",
     "This group controls access to:": "Este grupo controla o acesso a:",
     "This group no longer exists. Choose another group or do not restrict access to this unit.": "Este grupo j\u00e1 n\u00e3o existe. Escolha outro grupo ou n\u00e3o restrinja o acesso a esta unidade.",
     "This image file type is not supported. Supported file types are {supportedFileFormats}.": "Este tipo de ficheiro de imagem n\u00e3o \u00e9 suportado. Os tipos de ficheiros com suporte s\u00e3o {supportedFileFormats}.",
@@ -1930,6 +1891,7 @@
     "This post will be visible only to %(group_name)s.": "Esta publica\u00e7\u00e3o ser\u00e1 vis\u00edvel apenas para %(group_name)s.",
     "This post will be visible to everyone.": "Esta publica\u00e7\u00e3o ser\u00e1 vis\u00edvel a todos.",
     "This problem could not be saved.": "N\u00e3o foi poss\u00edvel gravar este problema.",
+    "This problem has already been released. Any changes will apply only to future assessments.": "Este problema j\u00e1 foi desbloqueado. Quaisquer altera\u00e7\u00f5es efetuadas posteriormente aplicam-se apenas a avalia\u00e7\u00f5es futuras.",
     "This problem has been reset.": "Este problema foi reiniciado.",
     "This response could not be marked as an answer. Refresh the page and try again.": "N\u00e3o foi poss\u00edvel considerar esta resposta. Atualize a p\u00e1gina e tente de novo.",
     "This response could not be marked as endorsed. Refresh the page and try again.": "N\u00e3o foi poss\u00edvel aprovar esta resposta. Atualize a p\u00e1gina e tente de novo.",
@@ -2109,10 +2071,10 @@
     "Used": "Utilizado",
     "Used in {count} location": [
       "Usado em {count} local",
+      "Utilizado em {count} locais",
       "Utilizado em {count} locais"
     ],
     "User Email": "Email do Utilizador",
-    "User lookup failed": "A procura do utilizador falhou",
     "Username": "Nome de utilizador",
     "Username or email address": "Nome de utilizador ou endere\u00e7o de email",
     "Users must create and activate their account before they can be promoted to beta tester.": "Os utilizadores devem criar e ativar a sua conta antes de serem promovidos a utilizadores beta.",
@@ -2150,7 +2112,7 @@
     "View Cohort": "Ver Grupo",
     "View Course": "Ver Curso",
     "View Current Team Memberships": "Ver Equipas de Membros Actuais",
-    "View Live": "Ver em directo",
+    "View Live": "Visualizar Ao Vivo",
     "View Program Record": "Ver Registo do Programa",
     "View Report": "Ver Relat\u00f3rio",
     "View Teams in the {topic_name} Topic": "Ver equipas no {topic_name} T\u00f3pico",
@@ -2161,6 +2123,7 @@
     "View {span_start} {team_name} {span_end}": "Ver {span_start} {team_name} {span_end}",
     "Viewing %s course": [
       "A visualizar %s curso",
+      "A visualizar %s cursos",
       "A visualizar %s cursos"
     ],
     "Visibility": "Visibilidade",
@@ -2195,17 +2158,11 @@
     "Weight of Total Grade": "Peso da Classifica\u00e7\u00e3o Total",
     "We\u2019re sorry to see you go!": "Temos pena que se v\u00e1 embora!",
     "What You Need for Verification": "O que \u00e9 necess\u00e1rio para a Valida\u00e7\u00e3o",
-    "What can we help you with, {username}?": "Em que podemos ajud\u00e1-lo, {username}?",
     "What does %(platformName)s do with this photo?": "O que far\u00e1 a %(platformName)s com esta fotografia?",
     "What does this mean?": "O que significa isto?",
     "What if I can't see the camera image, or if I can't see my photo do determine which side is visible?": "E se n\u00e3o conseguir ver a imagem da c\u00e2mara, ou se eu n\u00e3o conseguir ver a minha fotografia para determinar qual lado \u00e9 vis\u00edvel?",
     "What if I have difficulty holding my ID in position relative to the camera?": "E se eu tiver dificuldade em manter o meu documento de identifica\u00e7\u00e3o em posi\u00e7\u00e3o em rela\u00e7\u00e3o \u00e0 c\u00e2mara?",
     "What if I have difficulty holding my head in position relative to the camera?": "E se eu tiver dificuldade em manter minha cabe\u00e7a em posi\u00e7\u00e3o em rela\u00e7\u00e3o \u00e0 c\u00e2mara?",
-    "What industry do you currently work in?": "Em que sector trabalha atualmente?",
-    "What industry do you want to work in?": "Em que sector pretende trabalhar?",
-    "What is the highest level of education that any of your parents or guardians have achieved?": "Qual o n\u00edvel mais alto de educa\u00e7\u00e3o que um dos seus pais ou tutores atingiu?",
-    "What is the highest level of education that you have achieved so far?": "Qual o n\u00edvel mais alto de educa\u00e7\u00e3o que atingiu at\u00e9 agora?",
-    "What was the total combined income, during the last 12 months, of all members of your family? ": "Qual foi o rendimento total combinado, de todos os seus membros da sua fam\u00edlia, durante os \u00faltimos 12 meses? ",
     "What's Your Next Accomplishment?": "Qual \u00e9 a Sua Pr\u00f3xima Realiza\u00e7\u00e3o?",
     "When learners submit an answer to an assessment, they immediately see whether the answer is correct or incorrect, and the score received.": "Quando os estudantes submetem uma resposta a uma avalia\u00e7\u00e3o, podem confirmar imediatamente se a resposta est\u00e1 correta ou incorreta e qual a pontua\u00e7\u00e3o recebida.",
     "When your face is in position, use the Take Photo button {icon} below to take your photo.": "Quando a sua cara estiver em posi\u00e7\u00e3o, use o bot\u00e3o Tirar foto {icon} abaixo para tirar uma fotografia.",
@@ -2214,7 +2171,6 @@
     "Whole words": "Palavras completas",
     "Why activate?": "Porqu\u00ea ativar?",
     "Why does %(platformName)s need my photo?": "Porque \u00e9 que a %(platformName)s necessita da minha fotografia?",
-    "Why does edX collect this information?": "Por que \u00e9 que a edX recolhe estas informa\u00e7\u00f5es?",
     "Width": "Largura",
     "Will Be Visible To:": "Estar\u00e1 vis\u00edvel para:",
     "Words: {0}": "Palavras: {0}",
@@ -2256,6 +2212,7 @@
     "You did not submit the required files: {requiredFiles}.": "N\u00e3o submeteu os ficheiros necess\u00e1rios: {requiredFiles}.",
     "You don't seem to have Flash installed. Get Flash to continue your verification.": "Parece que o Flash n\u00e3o est\u00e1 instalado. Por favor instale o Flash para continuar a sua verifica\u00e7\u00e3o.",
     "You don't seem to have a webcam connected.": "Parece que n\u00e3o tem nenhuma webcam conectada.",
+    "You have added a criterion. You will need to select an option for the criterion in the Learner Training step. To do this, click the Settings tab.": "Adicionou um novo crit\u00e9rio. Necessitar\u00e1 de selecionar uma op\u00e7\u00e3o para o crit\u00e9rio, na etapa de Forma\u00e7\u00e3o do Estudante. Para tal, clique no separador Configura\u00e7\u00f5es.",
     "You have already verified your ID!": "O ID j\u00e1 est\u00e1 validado!",
     "You have been logged out of your account. Click Okay to log in again now. Click Cancel to stay on this page (you must log in again to save your work).": "Foi desconectado da sua conta. Clique em Ok para iniciar sess\u00e3o novamente agora. Clique em Cancelar para permanecer nesta p\u00e1gina (tem de iniciar sess\u00e3o novamente para guardar o seu trabalho).",
     "You have deleted a criterion. The criterion has been removed from the example responses in the Learner Training step.": "Eliminou um crit\u00e9rio. O crit\u00e9rio foi removido dos exemplos de resposta da etapa de Forma\u00e7\u00e3o do Estudante.",
@@ -2360,6 +2317,7 @@
     "a timed exam": "um exame cronometrado",
     "about %d hour": [
       "cerca de %d hora",
+      "cerca de %d horas",
       "cerca de %d horas"
     ],
     "about a minute": "cerca de um minuto",
@@ -2402,7 +2360,6 @@
     "endorsed %(time_ago)s by %(user)s": "aprovado %(time_ago)s por %(user)s",
     "enter code here": "introduza o c\u00f3digo aqui",
     "enter link description here": "inserir descri\u00e7\u00e3o do link aqui",
-    "finish later": "terminar mais tarde",
     "follow this post": "siga esta publica\u00e7\u00e3o",
     "for": "para",
     "group configuration": "configura\u00e7\u00e3o de grupo",
@@ -2416,7 +2373,6 @@
     "minute": "minuto",
     "minutes": "minutos",
     "name": "nome",
-    "next page": "p\u00e1gina seguinte",
     "off": "desligado",
     "on": "ligado",
     "one letter Friday\u0004F": "S",
@@ -2448,9 +2404,9 @@
     "team count": "contagem de equipa",
     "text_word_{uniqueId}": "texto_palavra_{uniqueId}",
     "text_word_{uniqueId} title_word_{uniqueId}": "texto_palavra_{uniqueId} t\u00edtulo_palavra_{uniqueId}",
-    "the more quickly and helpfully we can respond!": "O mais r\u00e1pido e \u00fatil que conseguimos responder!",
     "there is currently {numVotes} vote": [
       "existe atualmente {numVotes} voto",
+      "existem atualmente {numVotes} votos",
       "existem atualmente {numVotes} votos"
     ],
     "title_word_{uniqueId}": "t\u00edtulo_palavra_{uniqueId}",
@@ -2477,10 +2433,12 @@
     "{download_link_start}Download this image (right-click or option-click, save as){link_end} and then {upload_link_start}upload{link_end} it to your backpack.": "{download_link_start} Transfira esta imagem (clique com o bot\u00e3o direito do rato, ou bot\u00e3o de op\u00e7\u00f5es, e use op\u00e7\u00e3o salvar como){link_end} e, em seguida, {upload_link_start}carregue-a{link_end}- para a sua mochila.",
     "{earned}/{possible} point (graded)": [
       "{earned}/{possible} ponto (classificado)",
+      "{earned}/{possible} pontos (classificado)",
       "{earned}/{possible} pontos (classificado)"
     ],
     "{earned}/{possible} point (ungraded)": [
       "{earned}/{possible} ponto (n\u00e3o classificado)",
+      "{earned}/{possible} pontos (n\u00e3o classificado)",
       "{earned}/{possible} pontos (n\u00e3o classificado)"
     ],
     "{email}": "{email}",
@@ -2494,30 +2452,37 @@
     "{minutes} {unit}": "{minutes} {unit}",
     "{numMoved} learner was moved from {prevCohort}": [
       "{numMoved} estudante foi movido de {prevCohort}",
+      "{numMoved} estudantes foram transferidos de {prevCohort}",
       "{numMoved} estudantes foram transferidos de {prevCohort}"
     ],
     "{numPreassigned} learner was pre-assigned for this cohort. This learner will automatically be added to the cohort when they enroll in the course.": [
       "{numPreassigned} estudante foi previamente designado para esta coorte. Este estudante ser\u00e1 automaticamente adicionado na coorte quando ingressar no curso.",
+      "{numPreassigned} estudantes foram previamente designados para este grupo. Estes estudantes ser\u00e3o automaticamente adicionados ao grupo quando ingressarem no curso.",
       "{numPreassigned} estudantes foram previamente designados para este grupo. Estes estudantes ser\u00e3o automaticamente adicionados ao grupo quando ingressarem no curso."
     ],
     "{numPresent} learner was already in the cohort": [
       "{numPresent} estudante j\u00e1 estava na coorte",
+      "estudantes{numPresent} estudantes j\u00e1 fazem parte do grupo",
       "estudantes{numPresent} estudantes j\u00e1 fazem parte do grupo"
     ],
     "{numResponses} other response": [
       "{numResponses} outra resposta",
+      "{numResponses} outras respostas",
       "{numResponses} outras respostas"
     ],
     "{numResponses} response": [
       "{numResponses} resposta",
+      "{numResponses} respostas",
       "{numResponses} respostas"
     ],
     "{numUsersAdded} learner has been added to this cohort. ": [
       "{numUsersAdded} estudante foi adicionado a esta coorte. ",
+      "{numUsersAdded} estudantes foram adicionados a este grupo.",
       "{numUsersAdded} estudantes foram adicionados a este grupo."
     ],
     "{numVotes} Vote": [
       "{numVotes} Voto",
+      "{numVotes} Votos",
       "{numVotes} Votos"
     ],
     "{num_of_hours} hour": "{num_of_hours} hora",
@@ -2526,18 +2491,22 @@
     "{num_of_minutes} minutes": "{num_of_minutes} minutos",
     "{num_points} point possible (graded)": [
       "{num_points} ponto poss\u00edvel (classificado)",
+      "{num_points} pontos poss\u00edveis (classificado)",
       "{num_points} pontos poss\u00edveis (classificado)"
     ],
     "{num_points} point possible (graded, results hidden)": [
       "{num_points} ponto poss\u00edvel (classificado, resultados ocultos)",
+      "{num_points} pontos poss\u00edveis (classificado, resultados ocultados)",
       "{num_points} pontos poss\u00edveis (classificado, resultados ocultados)"
     ],
     "{num_points} point possible (ungraded)": [
       "{num_points} ponto poss\u00edvel (n\u00e3o classificado)",
+      "{num_points} pontos poss\u00edveis (n\u00e3o classificado)",
       "{num_points} pontos poss\u00edveis (n\u00e3o classificado)"
     ],
     "{num_points} point possible (ungraded, results hidden)": [
       "{num_points} ponto poss\u00edvel (n\u00e3o classificado, resultados ocultos)",
+      "{num_points} pontos poss\u00edveis (n\u00e3o classificado, resultados ocultos)",
       "{num_points} pontos poss\u00edveis (n\u00e3o classificado, resultados ocultos)"
     ],
     "{organization}\\'s logo": "Logo da {organization}",
@@ -2555,11 +2524,13 @@
     "{strongStart}Warning: Account deletion is permanent.{strongEnd} Please read the above carefully before proceeding. This is an irreversible action, and {strongStart}you will no longer be able to use the same email on {platformName}.{strongEnd}": "{strongStart} Aviso: O apagar da conta \u00e9 permanente. {strongEnd} Leia atentamente o texto antes de prosseguir. Esta \u00e9 uma a\u00e7\u00e3o irrevers\u00edvel, e {strongStart} n\u00e3o poder\u00e1 voltar a usar o mesmo e-mail em {platformName}. {strongEnd}",
     "{team_count} Team": [
       "{team_count} Equipa",
+      "{team_count} Equipas",
       "{team_count} Equipas"
     ],
     "{totalItems} total": " total {totalItems}",
     "{total_results} result found for \"{search_term}\"": [
       "{total_results} resultado encontrado para \"{search_term}\"",
+      "{total_results} resultados encontrados para \"{search_term}\"",
       "{total_results} resultados encontrados para \"{search_term}\""
     ],
     "{transcriptClientTitle}_{transcriptLanguageCode}.{fileExtension}": "{transcriptClientTitle}_{transcriptLanguageCode}.{fileExtension}",
@@ -2567,24 +2538,24 @@
     "{unread_comments_count} new": "{unread_comments_count} novo",
     "\u2026": "\u2026"
   };
-  for (const key in newcatalog) {
+  for (var key in newcatalog) {
     django.catalog[key] = newcatalog[key];
   }
-  
+
 
   if (!django.jsi18n_initialized) {
     django.gettext = function(msgid) {
-      const value = django.catalog[msgid];
-      if (typeof value === 'undefined') {
+      var value = django.catalog[msgid];
+      if (typeof(value) == 'undefined') {
         return msgid;
       } else {
-        return (typeof value === 'string') ? value : value[0];
+        return (typeof(value) == 'string') ? value : value[0];
       }
     };
 
     django.ngettext = function(singular, plural, count) {
-      const value = django.catalog[singular];
-      if (typeof value === 'undefined') {
+      var value = django.catalog[singular];
+      if (typeof(value) == 'undefined') {
         return (count == 1) ? singular : plural;
       } else {
         return value.constructor === Array ? value[django.pluralidx(count)] : value;
@@ -2594,16 +2565,16 @@
     django.gettext_noop = function(msgid) { return msgid; };
 
     django.pgettext = function(context, msgid) {
-      let value = django.gettext(context + '\x04' + msgid);
-      if (value.includes('\x04')) {
+      var value = django.gettext(context + '\x04' + msgid);
+      if (value.indexOf('\x04') != -1) {
         value = msgid;
       }
       return value;
     };
 
     django.npgettext = function(context, singular, plural, count) {
-      let value = django.ngettext(context + '\x04' + singular, context + '\x04' + plural, count);
-      if (value.includes('\x04')) {
+      var value = django.ngettext(context + '\x04' + singular, context + '\x04' + plural, count);
+      if (value.indexOf('\x04') != -1) {
         value = django.ngettext(singular, plural, count);
       }
       return value;
@@ -2626,13 +2597,15 @@
       "%Y-%m-%d %H:%M:%S",
       "%Y-%m-%d %H:%M:%S.%f",
       "%Y-%m-%d %H:%M",
+      "%Y-%m-%d",
       "%d/%m/%Y %H:%M:%S",
       "%d/%m/%Y %H:%M:%S.%f",
       "%d/%m/%Y %H:%M",
+      "%d/%m/%Y",
       "%d/%m/%y %H:%M:%S",
       "%d/%m/%y %H:%M:%S.%f",
       "%d/%m/%y %H:%M",
-      "%Y-%m-%d"
+      "%d/%m/%y"
     ],
     "DATE_FORMAT": "j \\d\\e F \\d\\e Y",
     "DATE_INPUT_FORMATS": [
@@ -2657,8 +2630,8 @@
   };
 
     django.get_format = function(format_type) {
-      const value = django.formats[format_type];
-      if (typeof value === 'undefined') {
+      var value = django.formats[format_type];
+      if (typeof(value) == 'undefined') {
         return format_type;
       } else {
         return value;
@@ -2677,5 +2650,5 @@
 
     django.jsi18n_initialized = true;
   }
-};
 
+}(this));
