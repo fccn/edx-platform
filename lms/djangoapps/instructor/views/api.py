@@ -1166,6 +1166,9 @@ def get_students_features(request, course_id, csv=False):  # pylint: disable=red
         'external_user_key': _('External User Key'),
     }
 
+    if 'enrollment_date' in query_features:
+        query_features_names['enrollment_date'] = _('Enrollment Date')
+
     if is_course_cohorted(course.id):
         # Translators: 'Cohort' refers to a group of students within a course.
         query_features.append('cohort')
