@@ -26,7 +26,8 @@ from common.djangoapps.student.models import (
     CourseEnrollmentAttribute,
     CourseFullError,
     EnrollmentClosedError,
-    NonExistentCourseError
+    NonExistentCourseError,
+    EnrollmentNotAllowed,
 )
 from common.djangoapps.student.roles import RoleCache
 
@@ -148,6 +149,8 @@ def create_course_enrollment(username, course_id, mode, is_active):
     try:
         enrollment = CourseEnrollment.enroll(user, course_key, check_access=True)
         return _update_enrollment(enrollment, is_active=is_active, mode=mode)
+    except EnrollmentNotAllowed as err:
+        raise InvalidEnrollmentAttribute(str(err))
     except NonExistentCourseError as err:
         raise CourseNotFoundError(str(err))  # lint-amnesty, pylint: disable=raise-missing-from
     except EnrollmentClosedError as err:

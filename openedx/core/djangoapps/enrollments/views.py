@@ -20,7 +20,7 @@ from openedx.core.djangoapps.course_groups.cohorts import CourseUserGroup, add_u
 from openedx.core.djangoapps.embargo import api as embargo_api
 from openedx.core.djangoapps.enrollments import api
 from openedx.core.djangoapps.enrollments.errors import (
-    CourseEnrollmentError, CourseEnrollmentExistsError, CourseModeNotFoundError,
+    CourseEnrollmentError, CourseEnrollmentExistsError, CourseModeNotFoundError, InvalidEnrollmentAttribute,
 )
 from openedx.core.djangoapps.enrollments.forms import CourseEnrollmentsApiListForm
 from openedx.core.djangoapps.enrollments.paginators import CourseEnrollmentsApiListPagination
@@ -818,6 +818,13 @@ class EnrollmentListView(APIView, ApiKeyPermissionMixIn):
 
             log.info('The user [%s] has already been enrolled in course run [%s].', username, course_id)
             return Response(response)
+        except InvalidEnrollmentAttribute as error:
+            return Response(
+                status=status.HTTP_400_BAD_REQUEST,
+                data={
+                    "message": str(error)
+                }
+            )
         except CourseModeNotFoundError as error:
             return Response(
                 status=status.HTTP_400_BAD_REQUEST,
