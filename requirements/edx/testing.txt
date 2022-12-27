@@ -26,7 +26,7 @@ aniso8601==9.0.1          # via -r requirements/edx/base.txt, edx-tincan-py35, t
 apipkg==1.5               # via execnet
 appdirs==1.4.4            # via -r requirements/edx/base.txt, fs, virtualenv
 astroid==2.5.2            # via pylint, pylint-celery
-attrs==20.3.0             # via -r requirements/edx/base.txt, edx-ace, pytest
+attrs==20.3.0             # via -r requirements/edx/base.txt, edx-ace, openedx-events, pytest
 babel==2.9.0              # via -r requirements/edx/base.txt, enmerkar, enmerkar-underscore
 backports.entry-points-selectable==1.0.3  # via pytest-randomly
 beautifulsoup4==4.9.3     # via -r requirements/edx/base.txt, -r requirements/edx/testing.in, pynliner
@@ -85,7 +85,7 @@ django-ratelimit==3.0.1   # via -r requirements/edx/base.txt
 django-require==1.0.11    # via -r requirements/edx/base.txt
 django-sekizai==2.0.0     # via -r requirements/edx/base.txt, django-wiki
 django-ses==2.0.0         # via -r requirements/edx/base.txt
-django-simple-history==2.12.0  # via -r requirements/edx/base.txt, edx-enterprise, edx-organizations, ora2
+django-simple-history==2.12.0  # via -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt, -r requirements/edx/base.txt, edx-enterprise, edx-organizations, ora2
 django-splash==1.0.0      # via -r requirements/edx/base.txt
 django-statici18n==2.0.1  # via -r requirements/edx/base.txt
 django-storages==1.8      # via -c requirements/edx/../constraints.txt, -r requirements/edx/base.txt, edxval
@@ -95,7 +95,7 @@ django-webpack-loader==0.7.0  # via -r requirements/edx/base.txt, edx-proctoring
 djangorestframework-xml==2.0.0  # via -r requirements/edx/base.txt, edx-enterprise
 djangorestframework==3.12.4  # via -r requirements/edx/base.txt, django-config-models, django-user-tasks, drf-jwt, drf-yasg, edx-api-doc-tools, edx-completion, edx-drf-extensions, edx-enterprise, edx-organizations, edx-proctoring, edx-submissions, ora2, rest-condition, super-csv
 docopt==0.6.2             # via -r requirements/edx/base.txt, xmodule
-docutils==0.16            # via -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt, -r requirements/edx/base.txt, botocore
+docutils==0.16            # via -r requirements/edx/base.txt, botocore
 drf-jwt==1.19.0           # via -r requirements/edx/base.txt, edx-drf-extensions
 drf-yasg==1.20.0          # via -r requirements/edx/base.txt, edx-api-doc-tools
 edx-ace==1.1.0            # via -r requirements/edx/base.txt
@@ -114,10 +114,10 @@ edx-event-routing-backends==4.0.1  # via -r requirements/edx/base.txt
 edx-i18n-tools==0.5.3     # via -r requirements/edx/base.txt, -r requirements/edx/testing.in, ora2
 edx-lint==5.0.0           # via -r requirements/edx/testing.in
 edx-milestones==0.3.1     # via -r requirements/edx/base.txt
-edx-opaque-keys[django]==2.2.0  # via -r requirements/edx/base.txt, edx-bulk-grades, edx-ccx-keys, edx-completion, edx-drf-extensions, edx-enterprise, edx-milestones, edx-organizations, edx-proctoring, edx-user-state-client, edx-when, lti-consumer-xblock, xmodule
+edx-opaque-keys[django]==2.2.0  # via -r requirements/edx/base.txt, edx-bulk-grades, edx-ccx-keys, edx-completion, edx-drf-extensions, edx-enterprise, edx-milestones, edx-organizations, edx-proctoring, edx-user-state-client, edx-when, lti-consumer-xblock, openedx-events, xmodule
 edx-organizations==6.9.0  # via -r requirements/edx/base.txt
+git+https://github.com/edunext/edx-proctoring.git@3.8.5.1#egg=edx-proctoring  # via -r requirements/edx/base.txt, edx-proctoring-proctortrack
 edx-proctoring-proctortrack==1.0.5  # via -r requirements/edx/base.txt
-edx-proctoring==3.25.0     # via -r requirements/edx/base.txt, edx-proctoring-proctortrack
 edx-rbac==1.4.2           # via -r requirements/edx/base.txt, edx-enterprise
 edx-rest-api-client==5.3.0  # via -r requirements/edx/base.txt, edx-enterprise, edx-proctoring
 edx-search==3.0.0         # via -r requirements/edx/base.txt
@@ -128,13 +128,14 @@ edx-toggles==4.1.0        # via -r requirements/edx/base.txt, edx-completion, ed
 edx-user-state-client==1.3.0  # via -r requirements/edx/base.txt
 edx-when==2.0.0           # via -r requirements/edx/base.txt, edx-proctoring
 edxval==2.0.3             # via -r requirements/edx/base.txt
-elasticsearch==7.12.0     # via -r requirements/edx/base.txt, edx-search
+elasticsearch==7.12.0     # via -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt, -r requirements/edx/base.txt, edx-search
 enmerkar-underscore==2.0.0  # via -r requirements/edx/base.txt
 enmerkar==0.7.1           # via -r requirements/edx/base.txt, enmerkar-underscore
 event-tracking==1.0.4     # via -r requirements/edx/base.txt, edx-event-routing-backends, edx-proctoring, edx-search
 execnet==1.8.0            # via pytest-xdist
 factory-boy==2.8.1        # via -c requirements/edx/../constraints.txt, -r requirements/edx/testing.in
 faker==8.0.0              # via factory-boy
+fastavro==1.7.0           # via -r requirements/edx/base.txt, openedx-events
 filelock==3.0.12          # via tox, virtualenv
 freezegun==0.3.12         # via -c requirements/edx/../constraints.txt, -r requirements/edx/testing.in
 fs-s3fs==0.1.8            # via -r requirements/edx/base.txt, django-pyfs
@@ -260,11 +261,11 @@ semantic-version==2.8.5   # via -r requirements/edx/base.txt, edx-drf-extensions
 shapely==1.7.1            # via -r requirements/edx/base.txt
 simplejson==3.17.2        # via -r requirements/edx/base.txt, sailthru-client, super-csv, xblock-utils
 singledispatch==3.6.1     # via -r requirements/edx/testing.in
-six==1.15.0               # via -r requirements/edx/base.txt, analytics-python, bleach, bok-choy, chem, codejail, crowdsourcehinter-xblock, cryptography, django-countries, django-simple-history, edx-ace, edx-bulk-grades, edx-ccx-keys, edx-django-release-util, edx-drf-extensions, edx-enterprise, edx-i18n-tools, edx-lint, edx-milestones, edx-rbac, event-tracking, freezegun, fs, fs-s3fs, html5lib, httpretty, isodate, libsass, paver, pycontracts, pyjwkest, python-dateutil, python-memcached, python-swiftclient, singledispatch, social-auth-app-django, social-auth-core, stevedore, tox, transifex-client, virtualenv, xblock
+six==1.15.0               # via -r requirements/edx/base.txt, analytics-python, bleach, bok-choy, chem, codejail, crowdsourcehinter-xblock, cryptography, django-countries, edx-ace, edx-bulk-grades, edx-ccx-keys, edx-django-release-util, edx-drf-extensions, edx-enterprise, edx-i18n-tools, edx-lint, edx-milestones, edx-rbac, event-tracking, freezegun, fs, fs-s3fs, html5lib, httpretty, isodate, libsass, paver, pycontracts, pyjwkest, python-dateutil, python-memcached, python-swiftclient, singledispatch, social-auth-app-django, social-auth-core, stevedore, tox, transifex-client, virtualenv, xblock
 slumber==0.7.1            # via -r requirements/edx/base.txt, edx-bulk-grades, edx-enterprise, edx-rest-api-client
 smmap==4.0.0              # via gitdb
 social-auth-app-django==4.0.0  # via -r requirements/edx/base.txt
-social-auth-core==4.0.2   # via -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt, -r requirements/edx/base.txt, social-auth-app-django
+social-auth-core==4.0.2   # via -r requirements/edx/base.txt, social-auth-app-django
 sorl-thumbnail==12.7.0    # via -r requirements/edx/base.txt, django-wiki
 sortedcontainers==2.3.0   # via -r requirements/edx/base.txt
 soupsieve==2.2.1          # via -r requirements/edx/base.txt, beautifulsoup4
@@ -279,12 +280,12 @@ text-unidecode==1.3       # via -r requirements/edx/base.txt, faker, python-slug
 tincan==1.0.0             # via -r requirements/edx/base.txt, edx-event-routing-backends
 toml==0.10.2              # via pylint, pytest, tox
 tox-battery==0.6.1        # via -r requirements/edx/testing.in
-tox==3.23.0               # via -r requirements/edx/testing.in, tox-battery
+tox==3.23.0               # via -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt, -r requirements/edx/testing.in, tox-battery
 tqdm==4.60.0              # via -r requirements/edx/base.txt, nltk
 transifex-client==0.14.2  # via -r requirements/edx/testing.in
 ua-parser==0.10.0         # via -r requirements/edx/base.txt, django-cookies-samesite
 unicodecsv==0.14.1        # via -r requirements/edx/base.txt, edx-enterprise
-unidiff==0.6.0            # via -r requirements/edx/testing.in, coverage-pytest-plugin
+unidiff==0.6.0            # via -r requirements/edx/testing.in
 uritemplate==3.0.1        # via -r requirements/edx/base.txt, coreapi, drf-yasg
 urllib3==1.26.4           # via -r requirements/edx/base.txt, elasticsearch, geoip2, requests, selenium, transifex-client
 user-util==1.0.0          # via -r requirements/edx/base.txt
