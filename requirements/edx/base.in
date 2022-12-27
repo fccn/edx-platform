@@ -86,7 +86,7 @@ edx-enterprise
 edx-milestones
 edx-name-affirmation
 edx-organizations
-edx-proctoring>=2.0.1
+git+https://github.com/edunext/edx-proctoring.git@3.8.5.1#egg=edx-proctoring
 edx-proctoring-proctortrack==1.0.5  # Intentionally and permanently pinned to ensure code changes are reviewed
 edx-rest-api-client
 edx-search

@@ -619,12 +619,9 @@ edx-opaque-keys[django]==2.3.0
     #   xmodule
 edx-organizations==6.11.1
     # via -r requirements/edx/testing.txt
-edx-proctoring==4.10.2
-    # via
-    #   -r requirements/edx/testing.txt
-    #   edx-proctoring-proctortrack
 edx-proctoring-proctortrack==1.0.5
     # via -r requirements/edx/testing.txt
+git+https://github.com/edunext/edx-proctoring.git@3.8.5.1#egg=edx-proctoring  # via -r requirements/edx/testing.txt, edx-proctoring-proctortrack
 edx-rbac==1.6.0
     # via
     #   -r requirements/edx/testing.txt
@@ -695,7 +692,7 @@ fastapi==0.75.1
     # via
     #   -r requirements/edx/testing.txt
     #   pact-python
-fastavro==1.4.10
+fastavro==1.7.0
     # via
     #   -r requirements/edx/testing.txt
     #   openedx-events
@@ -1643,6 +1640,7 @@ zipp==3.8.0
     #   -r requirements/edx/testing.txt
     #   importlib-metadata
     #   importlib-resources
+
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
