@@ -822,7 +822,8 @@ class EnrollmentListView(APIView, ApiKeyPermissionMixIn):
             return Response(
                 status=status.HTTP_400_BAD_REQUEST,
                 data={
-                    "message": str(error)
+                    "message": str(error),
+                    "localizedMessage": str(error),
                 }
             )
         except CourseModeNotFoundError as error:
