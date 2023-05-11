@@ -5,8 +5,11 @@ Tests for instructor.basic
 
 from unittest.mock import MagicMock, Mock, patch
 
+import random
+import datetime
 import ddt
 import json  # lint-amnesty, pylint: disable=wrong-import-order
+from django.contrib.auth.models import User  # lint-amnesty, pylint: disable=imported-auth-user
 from edx_proctoring.api import create_exam
 from edx_proctoring.models import ProctoredExamStudentAttempt
 from opaque_keys.edx.locator import UsageKey
@@ -15,6 +18,7 @@ from lms.djangoapps.instructor_analytics.basic import (  # lint-amnesty, pylint:
     PROFILE_FEATURES,
     PROGRAM_ENROLLMENT_FEATURES,
     STUDENT_FEATURES,
+    ENROLLMENT_FEATURES,
     StudentModule,
     enrolled_students_features,
     get_proctored_exam_results,
@@ -24,6 +28,7 @@ from lms.djangoapps.instructor_analytics.basic import (  # lint-amnesty, pylint:
 )
 from lms.djangoapps.program_enrollments.tests.factories import ProgramEnrollmentFactory
 from openedx.core.djangoapps.course_groups.tests.helpers import CohortFactory
+from openedx.core.djangoapps.site_configuration.tests.factories import SiteConfigurationFactory
 from common.djangoapps.student.models import CourseEnrollment, CourseEnrollmentAllowed
 from common.djangoapps.student.tests.factories import InstructorFactory
 from common.djangoapps.student.tests.factories import UserFactory
@@ -251,8 +256,62 @@ class TestAnalyticsBasic(ModuleStoreTestCase):
                 assert '' == report['external_user_key']
 
     def test_available_features(self):
-        assert len(AVAILABLE_FEATURES) == len(STUDENT_FEATURES + PROFILE_FEATURES + PROGRAM_ENROLLMENT_FEATURES)
-        assert set(AVAILABLE_FEATURES) == set(STUDENT_FEATURES + PROFILE_FEATURES + PROGRAM_ENROLLMENT_FEATURES)
+
+        assert len(AVAILABLE_FEATURES) == len(
+            STUDENT_FEATURES +
+            PROFILE_FEATURES +
+            PROGRAM_ENROLLMENT_FEATURES +
+            ENROLLMENT_FEATURES
+        )
+        assert set(AVAILABLE_FEATURES) == set(
+            STUDENT_FEATURES +
+            PROFILE_FEATURES +
+            PROGRAM_ENROLLMENT_FEATURES +
+            ENROLLMENT_FEATURES
+        )
+
+    def test_enrolled_students_enrollment_date(self):
+        query_features = ('username', 'enrollment_date',)
+        for feature in query_features:
+            assert feature in AVAILABLE_FEATURES
+        with self.assertNumQueries(2):
+            userreports = enrolled_students_features(self.course_key, query_features)
+        assert len(userreports) == len(self.users)
+
+        userreports = sorted(userreports, key=lambda u: u["username"])
+        users = sorted(self.users, key=lambda u: u.username)
+        for userreport, user in zip(userreports, users):
+            assert set(userreport.keys()) == set(query_features)
+            assert userreport['enrollment_date'] == CourseEnrollment.enrollments_for_user(user)[0].created
+
+    def test_enrolled_students_extended_model_age(self):
+        SiteConfigurationFactory.create(
+            site_values={
+                'course_org_filter': ['robot'],
+                'student_profile_download_fields_custom_student_attributes': ['age'],
+            }
+        )
+
+        def get_age(self):
+            return datetime.datetime.now().year - self.profile.year_of_birth
+        setattr(User, "age", property(get_age))  # lint-amnesty, pylint: disable=literal-used-as-attribute
+
+        for user in self.users:
+            user.profile.year_of_birth = random.randint(1900, 2000)
+            user.profile.save()
+
+        query_features = ('username', 'age',)
+        with self.assertNumQueries(3):
+            userreports = enrolled_students_features(self.course_key, query_features)
+        assert len(userreports) == len(self.users)
+
+        userreports = sorted(userreports, key=lambda u: u["username"])
+        users = sorted(self.users, key=lambda u: u.username)
+        for userreport, user in zip(userreports, users):
+            assert set(userreport.keys()) == set(query_features)
+            assert userreport['age'] == str(user.age)
+
+        delattr(User, "age")  # lint-amnesty, pylint: disable=literal-used-as-attribute
 
     def test_list_may_enroll(self):
         may_enroll = list_may_enroll(self.course_key, ['email'])
