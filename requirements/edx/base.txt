@@ -168,7 +168,7 @@ numpy==1.20.2             # via chem, openedx-calc, scipy
 oauthlib==3.0.1           # via -c requirements/edx/../constraints.txt, -r requirements/edx/base.in, django-oauth-toolkit, lti-consumer-xblock, requests-oauthlib, social-auth-core
 openedx-calc==2.0.1       # via -r requirements/edx/base.in
 openedx-events==0.7.1     # via -r requirements/edx/base.in
-openedx-filters==0.4.3    # via -r requirements/edx/base.in
+openedx-filters==0.6.2    # via -r requirements/edx/base.in
 ora2==3.4.1               # via -r requirements/edx/base.in
 packaging==20.9           # via bleach, drf-yasg
 path.py==12.5.0           # via edx-enterprise, edx-i18n-tools, ora2, staff-graded-xblock, xmodule

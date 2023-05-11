@@ -9,6 +9,7 @@ cannot be generated, a message is logged and no further action is taken.
 import logging
 
 from edx_toggles.toggles import LegacyWaffleFlagNamespace
+from openedx_filters.learning.filters import CertificateCreationRequested
 
 from common.djangoapps.course_modes import api as modes_api
 from common.djangoapps.student.models import CourseEnrollment
@@ -28,6 +29,15 @@ from openedx.core.djangoapps.waffle_utils import CourseWaffleFlag
 from xmodule.modulestore.django import modulestore
 
 log = logging.getLogger(__name__)
+
+
+class GeneratedCertificateException(Exception):
+    pass
+
+
+class CertificateGenerationNotAllowed(GeneratedCertificateException):
+    pass
+
 
 WAFFLE_FLAG_NAMESPACE = LegacyWaffleFlagNamespace(name='certificates_revamp')
 
@@ -109,8 +119,16 @@ def generate_allowlist_certificate_task(user, course_key, generation_mode=None):
     if not _can_generate_allowlist_certificate(user, course_key):
         log.info(f'Cannot generate an allowlist certificate for {user.id} : {course_key}')
         return False
-
-    return _generate_certificate_task(user, course_key, generation_mode)
+    try:
+        return _generate_certificate_task(user, course_key, generation_mode)
+    except CertificateGenerationNotAllowed:
+        # Catch exception to contain error message in console.
+        log.error(
+            "Certificate generation not allowed for user %s in course %s",
+            user.id,
+            course_key,
+        )
+        return False
 
 
 def generate_regular_certificate_task(user, course_key, generation_mode=None):
@@ -125,11 +143,45 @@ def generate_regular_certificate_task(user, course_key, generation_mode=None):
     return _generate_certificate_task(user, course_key, generation_mode)
 
 
+def _get_enrollment_mode(user, course_key):
+    """
+    Get the user's enrollment mode for this course run. Note that this may be None.
+    """
+    enrollment_mode, __ = CourseEnrollment.enrollment_mode_for_user(user, course_key)
+    return enrollment_mode
+
+
+def _get_course_grade(user, course_key):
+    """
+    Get the user's course grade in this course run. Note that this may be None.
+    """
+    return CourseGradeFactory().read(user, course_key=course_key)
+
+
 def _generate_certificate_task(user, course_key, generation_mode=None):
     """
     Create a task to generate a certificate
     """
     log.info(f'About to create a V2 certificate task for {user.id} : {course_key}')
+
+    try:
+
+        enrollment_mode = _get_enrollment_mode(user, course_key)
+        course_grade = _get_course_grade(user, course_key)
+        status = None
+        generation_mode = None
+        # .. filter_implemented_name: CertificateCreationRequested
+        # .. filter_type: org.openedx.learning.certificate.creation.requested.v1
+        user, course_key, enrollment_mode, status, course_grade, generation_mode = CertificateCreationRequested.run_filter(  # pylint: disable=line-too-long
+            user=user,
+            course_key=course_key,
+            mode=enrollment_mode,
+            status=status,
+            grade=course_grade,
+            generation_mode=generation_mode,
+        )
+    except CertificateCreationRequested.PreventCertificateCreation as exc:
+        raise CertificateGenerationNotAllowed(str(exc)) from exc
 
     kwargs = {
         'student': str(user.id),

@@ -12,6 +12,7 @@ from common.djangoapps.course_modes.models import CourseMode
 from common.djangoapps.student.models import CourseEnrollment
 from common.djangoapps.student.signals import ENROLLMENT_TRACK_UPDATED
 from lms.djangoapps.certificates.generation_handler import (
+    CertificateGenerationNotAllowed,
     can_generate_certificate_task,
     generate_allowlist_certificate_task,
     generate_certificate_task,
@@ -84,7 +85,16 @@ def listen_for_passing_grade(sender, user, course_id, **kwargs):  # pylint: disa
     if can_generate_certificate_task(user, course_id):
         log.info(f'{course_id} is using V2 certificates. Attempt will be made to generate a V2 certificate for '
                  f'{user.id} as a passing grade was received.')
-        return generate_certificate_task(user, course_id)
+        try:
+            return generate_certificate_task(user, course_id)
+        except CertificateGenerationNotAllowed as e:
+            log.exception(
+                "Certificate generation not allowed for user %s in course %s",
+                str(user),
+                course_id,
+            )
+            return Fals
+
 
     if _fire_ungenerated_certificate_task(user, course_id):
         log.info('Certificate generation task initiated for {user} : {course} via passing grade'.format(
@@ -134,7 +144,15 @@ def _listen_for_id_verification_status_changed(sender, user, **kwargs):  # pylin
         if can_generate_certificate_task(user, enrollment.course_id):
             log.info(f'{enrollment.course_id} is using V2 certificates. Attempt will be made to generate a V2 '
                      f'certificate for {user.id}. Id verification status is {expected_verification_status}')
-            generate_certificate_task(user, enrollment.course_id)
+            try:
+                generate_certificate_task(user, enrollment.course_id)
+            except CertificateGenerationNotAllowed as e:
+                log.exception(
+                    "Certificate generation not allowed for user %s in course %s",
+                    str(user),
+                    course_id,
+                )
+                return False
         elif grade_factory.read(user=user, course=enrollment.course_overview).passed:
             if _fire_ungenerated_certificate_task(user, enrollment.course_id, expected_verification_status):
                 message = (
@@ -160,7 +178,15 @@ def _listen_for_enrollment_mode_change(sender, user, course_key, mode, **kwargs)
         if can_generate_certificate_task(user, course_key):
             log.info(f'{course_key} is using V2 certificates. Attempt will be made to generate a V2 certificate for '
                      f'{user.id} since the enrollment mode is now {mode}.')
-            generate_certificate_task(user, course_key)
+            try:
+                generate_certificate_task(user, course_key)
+            except CertificateGenerationNotAllowed as e:
+                log.exception(
+                    "Certificate generation not allowed for user %s in course %s",
+                    str(user),
+                    course_id,
+                )
+                return Fals
 
 
 def _fire_ungenerated_certificate_task(user, course_key, expected_verification_status=None):
