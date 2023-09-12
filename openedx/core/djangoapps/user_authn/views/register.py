@@ -85,7 +85,7 @@ from common.djangoapps.track import segment
 from common.djangoapps.util.db import outer_atomic
 from common.djangoapps.util.json_request import JsonResponse
 
-from edx_django_utils.user import generate_password  # lint-amnesty, pylint: disable=wrong-import-order
+from openedx.core.djangoapps.user_authn.utils import generate_password  # lint-amnesty, pylint: disable=wrong-import-order
 
 log = logging.getLogger("edx.student")
 AUDIT_LOG = logging.getLogger("audit")
