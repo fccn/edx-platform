@@ -75,7 +75,7 @@ def password_complexity():
         "common.djangoapps.util.password_policy_validators.MaximumLengthValidator": "max_length",
         "common.djangoapps.util.password_policy_validators.AlphabeticValidator": "min_alphabetic",
         "common.djangoapps.util.password_policy_validators.UppercaseValidator": "min_upper",
-        "common.djangoapps.util.password_policy_validators.LowerValidator": "min_lower",
+        "common.djangoapps.util.password_policy_validators.LowercaseValidator": "min_lower",
         "common.djangoapps.util.password_policy_validators.NumericValidator": "min_numeric",
         "common.djangoapps.util.password_policy_validators.PunctuationValidator": "min_punctuation",
         "common.djangoapps.util.password_policy_validators.SymbolValidator": "min_symbol",
