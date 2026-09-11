@@ -111,10 +111,17 @@ def get_extended_profile_form(
     field_errors, kwargs = {}, {}
     extended_profile_model = get_extended_profile_model()
 
+    if extended_profile_model is None:
+        # Either PROFILE_EXTENSION_FORM is unset, or the form it names is not
+        # model backed. Either way there is no model to write to, and building a
+        # form here would hand the caller something it would then save: on a site
+        # still using the deprecated REGISTRATION_EXTENSION_FORM that means a
+        # second row for a OneToOneField, or a row created on a site that never
+        # opted in. Returning early keeps the documented meta-only behaviour.
+        return None, field_errors
+
     try:
         kwargs["instance"] = extended_profile_model.objects.get(user=user)
-    except AttributeError:
-        logger.info("No extended profile model configured")
     except ObjectDoesNotExist:
         logger.info("No existing extended profile found for user %s, creating new instance", user.username)
 

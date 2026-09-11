@@ -3,6 +3,7 @@ Objects and utilities used to construct registration forms.
 """
 
 import copy
+import logging
 import re
 from importlib import import_module
 
@@ -35,6 +36,8 @@ from openedx.core.djangoapps.user_authn.utils import is_registration_api_v1 as i
 from openedx.core.djangoapps.user_authn.views.utils import remove_disabled_country_from_list
 from openedx.core.djangolib.markup import HTML, Text
 from openedx.features.enterprise_support.api import enterprise_customer_for_request
+
+log = logging.getLogger(__name__)
 
 
 class TrueCheckbox(widgets.CheckboxInput):

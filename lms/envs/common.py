@@ -4569,8 +4569,11 @@ REGISTRATION_EXTENSION_FORM = None  # DEPRECATED: Use PROFILE_EXTENSION_FORM ins
 #
 # Example: PROFILE_EXTENSION_FORM = 'myapp.forms.ExtendedProfileForm'
 #
-# The custom form's model should have:
-# - A OneToOneField to User (typically named 'user')
+# The custom form's model must have:
+# - A OneToOneField to User named exactly 'user'. This is a requirement, not a
+#   convention: the read and write paths look the row up by that field name, so a
+#   model that names it differently fails with a FieldError when the account page
+#   loads, and silently leaves the foreign key unset when saving.
 # - Additional fields for extended profile data
 #
 # MIGRATION NOTE: If you're currently using REGISTRATION_EXTENSION_FORM (deprecated),

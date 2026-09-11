@@ -419,20 +419,24 @@ def _update_extended_profile_if_needed(
                 # Now persist the instance with the user field properly set
                 extended_profile.save()
     except ValidationError as exc:
+        logger.error("Extended profile validation failed for user %s: %s", user_profile.user.username, exc)
         raise AccountUpdateError(
             developer_message=f"Extended profile validation failed: {str(exc)}",
             user_message=_("The extended profile information could not be saved due to validation errors."),
         ) from exc
     except IntegrityError as exc:
+        logger.error("Extended profile integrity error for user %s: %s", user_profile.user.username, exc)
         raise AccountUpdateError(
             developer_message=f"Extended profile integrity error: {str(exc)}",
             user_message=_("The extended profile information could not be saved. Please check for duplicate values."),
         ) from exc
     except DatabaseError as exc:
+        logger.exception("Database error saving extended profile for user %s: %s", user_profile.user.username, exc)
         raise AccountUpdateError(
             developer_message=f"Database error saving extended profile: {str(exc)}",
             user_message=_("The extended profile information could not be saved due to a system error."),
         ) from exc
+
 
 def _update_state_if_needed(data, user_profile):
     # If the country was changed to something other than US, remove the state.
